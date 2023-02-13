@@ -1,0 +1,50 @@
+/**@author : Hasitha Lakshan
+Project :CarRentalSystem
+Date :2/13/2023
+Time :11:30 AM
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Raleway:wght@600&display=swap');
+#headerTitles{
+    /*font-size: 25px;*/
+    position: absolute;
+    left: 900px;
+    top: 1px;
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    z-index: 1;
+}
+
+#headerTitles>ul>li{
+    display: inline-block;
+    margin-right: 35px;
+    padding-bottom: 10px;
+    /*border-bottom: 3px solid black;*/
+
+}
+
+#HomeLineOne{
+    position: absolute;
+    top: 46px;
+    width: 100vw;
+    /*background-color: #ccc;*/
+
+    height: 3px;
+    background-color: #455159;
+    border: none;
+}
+
+/*================================================*/
+
+#mainSecHome{
+    width: 1536px;
+    height: 757px;
+    /*background: url("asserts/image/slide01.jpg");*/
+    background: url("../asserts/image/slide01.jpg") no-repeat center;
+    background-size: 100% 100%;
+}
+
+
+
