@@ -238,6 +238,17 @@ section {
   content: "/";
 }
 
+#lineHome{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: #333333;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
 
 /*--------------------------------------------------------------
 # Scroll top button
