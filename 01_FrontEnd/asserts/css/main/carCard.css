@@ -76,3 +76,64 @@ Time :4:38 PM
     background: #444444;
     color: white;
 }
+
+/*Drop Down*/
+/*
+#carStoreDropDown1{
+    position: relative;
+    width: 300px;
+    margin-bottom: 10px;
+    !*left: 0;*!
+    !*top: 20px;*!
+}
+
+#carStoreDropDown2{
+    position: relative;
+    !*top: 80px;*!
+    !*left: -190px;*!
+}
+*/
+
+/* Slid Bar */
+.dashboard .news .post-item+.post-item {
+    margin-top: 15px;
+}
+
+.dashboard .news img {
+    width: 80px;
+    float: left;
+    border-radius: 5px;
+}
+
+.dashboard .news h4 {
+    font-size: 15px;
+    margin-left: 95px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dashboard .news h4 a {
+    color: #012970;
+    transition: 0.3s;
+}
+
+.dashboard .news h4 a:hover {
+    color: #4154f1;
+}
+
+.dashboard .news p {
+    font-size: 14px;
+    color: #777777;
+    margin-left: 95px;
+}
+
+#goToCartButton{
+    background: #333333;
+    color: white;
+}
+
+#goToCartButton:hover{
+    background: #444444;
+    color: white;
+    border: 2px solid #444444;
+}

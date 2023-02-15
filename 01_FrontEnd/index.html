@@ -11,9 +11,10 @@
 
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="asserts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,59 +25,57 @@
     <link href="asserts/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/main/normalize.css">
-
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
 
 
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <!-- ======= Header ======= -->
-    <header id="header" class="header d-flex align-items-center">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+<!-- ======= Header ======= -->
+<header class="header d-flex align-items-center" id="header">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center">
-                <!--logo-->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1>ECar Rental<span>.</span></h1>
-            </a>
+        <a class="logo d-flex align-items-center" href="index.html">
+            <!--logo-->
+            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <h1>ECar Rental<span>.</span></h1>
+        </a>
 
-            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="views/carStore.html">Car Store</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </nav><!-- .navbar -->
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="views/carStore.html">Car Store</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav><!-- .navbar -->
 
-        </div>
-    </header><!-- End Header -->
-</header>
+    </div>
+</header><!-- End Header -->
 
 
 <!-- ======= Hero Section/HomePageOne ======= -->
-<section id="hero" class="hero">
+<section class="hero" id="hero">
 
     <div class="info d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <h2 data-aos="fade-down">Welcome to <span>Easy Car Rental</span></h2>
-                    <p data-aos="fade-up">"Easy Car Rental" is a car rental service providing convenient and affordable vehicle options for customers. With a wide range of vehicles to choose from, customers are able to find the perfect car for their transportation needs.</p>
-                    <a data-aos="fade-up" data-aos-delay="200" href="#carStore" class="btn-get-started">Book Now</a>
+                    <p data-aos="fade-up">"Easy Car Rental" is a car rental service providing convenient and affordable
+                        vehicle options for customers. With a wide range of vehicles to choose from, customers are able
+                        to find the perfect car for their transportation needs.</p>
+                    <a class="btn-get-started" data-aos="fade-up" data-aos-delay="200" href="#carStore">Book Now</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel" id="hero-carousel">
 
         <div class="carousel-item active" style="background-image: url(asserts/image/carWithKey.jpg)"></div>
         <div class="carousel-item" style="background-image: url(asserts/image/34664326.jpg)"></div>
@@ -84,12 +83,12 @@
         <div class="carousel-item" style="background-image: url(asserts/image/carWithKey.jpg)"></div>
         <div class="carousel-item" style="background-image: url(asserts/image/34664326.jpg)"></div>
 
-        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        <a class="carousel-control-prev" data-bs-slide="prev" href="#hero-carousel" role="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon bi bi-chevron-left"></span>
         </a>
 
-        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        <a class="carousel-control-next" data-bs-slide="next" href="#hero-carousel" role="button">
+            <span aria-hidden="true" class="carousel-control-next-icon bi bi-chevron-right"></span>
         </a>
 
     </div>
@@ -98,7 +97,7 @@
 
 
 <!-- ======= Benefit /Services Section ======= -->
-<section id="services" class="services section-bg">
+<section class="services section-bg" id="services">
     <div class="container" data-aos="fade-up">
 
         <!--PageTwo Title-->
@@ -113,34 +112,37 @@
 
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-item  position-relative">
-<!--                    <div class="icon">-->
-                        <img src="asserts/image/as001C.jpg" alt="">
-<!--                    </div>-->
+                    <!--                    <div class="icon">-->
+                    <img alt="" src="asserts/image/as001C.jpg">
+                    <!--                    </div>-->
                     <h3>Our Customers Always
                         100% Satisfied</h3>
-                    <p>Every customer is happy with company's products/services. It showcases the company's commitment to customer satisfaction and positive experience.</p>
+                    <p>Every customer is happy with company's products/services. It showcases the company's commitment
+                        to customer satisfaction and positive experience.</p>
 
                 </div>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-item position-relative">
-<!--                    <div class="icon">-->
-                        <img src="asserts/image/as002C.jpg" alt="">
-<!--                    </div>-->
+                    <!--                    <div class="icon">-->
+                    <img alt="" src="asserts/image/as002C.jpg">
+                    <!--                    </div>-->
                     <h3>We Provide Easier & Faster Booking</h3>
-                    <p>Easier and faster booking made possible through streamlined process and simplified steps. Convenient and hassle-free for customers.</p>
+                    <p>Easier and faster booking made possible through streamlined process and simplified steps.
+                        Convenient and hassle-free for customers.</p>
 
                 </div>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-item position-relative">
-<!--                    <div class="icon">-->
-                        <img src="asserts/image/as003C.jpg" alt="">
-<!--                    </div>-->
+                    <!--                    <div class="icon">-->
+                    <img alt="" src="asserts/image/as003C.jpg">
+                    <!--                    </div>-->
                     <h3>Your Choice of Any Pickup Location</h3>
-                    <p>"Pickup location choice" allows customers to choose a location for pickup. Convenient and flexible.</p>
+                    <p>"Pickup location choice" allows customers to choose a location for pickup. Convenient and
+                        flexible.</p>
 
                 </div>
             </div><!-- End Service Item -->
@@ -151,9 +153,10 @@
 </section><!-- End Services Section -->
 
 <!-- ======= HomeHowToWorks ======= -->
-<div class="HomeHowToWorks d-flex align-items-center" style="background-image: url('asserts/image/couple-car-road-trip.jpg');">
+<div class="HomeHowToWorks d-flex align-items-center"
+     style="background-image: url('asserts/image/couple-car-road-trip.jpg');">
     <div class="bg-video">
-        <video class="bg-video__content" autoplay muted loop>
+        <video autoplay class="bg-video__content" loop muted>
             <source src="asserts/vedio/Car%20showroom%20buyer.mp4" type="video/mp4">
         </video>
         <div class="bg-video__overlay d-flex align-items-center justify-content-center">
@@ -163,11 +166,11 @@
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>HOW DOES THE</h2>>
-            <h2>EASY CAR RENTAL WORKS</h2>
+        <h2>EASY CAR RENTAL WORKS</h2>
         <ol>
-            <img src="asserts/image/steps01.png" alt="" class="me-5">
-            <img src="asserts/image/steps02.png" alt=""  class="me-5 ms-5" >
-            <img src="asserts/image/steps03.png" alt="" class="ms-5">
+            <img alt="" class="me-5" src="asserts/image/steps01.png">
+            <img alt="" class="me-5 ms-5" src="asserts/image/steps02.png">
+            <img alt="" class="ms-5" src="asserts/image/steps03.png">
 
         </ol>
 
@@ -176,10 +179,8 @@
 </div><!-- End HomeHowToWorks -->
 
 
-
-
 <!-- ======= Features Section ======= -->
-<section id="features" class="features section-bg">
+<section class="features section-bg" id="features">
 
     <!-- line -->
     <div id="lineHome"></div>
@@ -189,23 +190,36 @@
 
             <div class="tab-pane active show" id="tab-1">
                 <div class="row">
-                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                         data-aos="fade-up" data-aos-delay="100">
                         <h3>Easy Car Rental Service
                             With a wide range of Vehicles</h3>
                         <p class="fst-italic">
-                            "Easy Car Rental" is a car rental service that offers a diverse range of vehicles for customers to choose from. The company aims to provide convenient and affordable car rental options to meet the diverse transportation needs of its customers. Whether you are in need of a compact car for a city trip, a spacious SUV for a family vacation, or a luxury car for a special event,
+                            "Easy Car Rental" is a car rental service that offers a diverse range of vehicles for
+                            customers to choose from. The company aims to provide convenient and affordable car rental
+                            options to meet the diverse transportation needs of its customers. Whether you are in need
+                            of a compact car for a city trip, a spacious SUV for a family vacation, or a luxury car for
+                            a special event,
 
-                        </p><p class="fst-italic">
-                        "Easy Car Rental" has a variety of vehicles to choose from. The company's focus on a wide range of vehicles sets it apart from other car rental services, as customers are able to find the perfect vehicle for their specific needs and preferences.
+                        </p>
+                        <p class="fst-italic">
+                            "Easy Car Rental" has a variety of vehicles to choose from. The company's focus on a wide
+                            range of vehicles sets it apart from other car rental services, as customers are able to
+                            find the perfect vehicle for their specific needs and preferences.
                         </p>
                         <ul>
-                            <li><i class="bi bi-check2-all"></i>Pay for your rental online, making the process quick and effortless.</li>
-                            <li><i class="bi bi-check2-all"></i>A wealth of positive feedback and reviews from our satisfied customers.</li>
-                            <li><i class="bi bi-check2-all"></i> Offer competitive prices and great value for money.</li>
+                            <li><i class="bi bi-check2-all"></i>Pay for your rental online, making the process quick and
+                                effortless.
+                            </li>
+                            <li><i class="bi bi-check2-all"></i>A wealth of positive feedback and reviews from our
+                                satisfied customers.
+                            </li>
+                            <li><i class="bi bi-check2-all"></i> Offer competitive prices and great value for money.
+                            </li>
                         </ul>
                     </div>
                     <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                        <img src="asserts/image/sideC.png" alt="" class="img-fluid">
+                        <img alt="" class="img-fluid" src="asserts/image/sideC.png">
                     </div>
                 </div>
             </div><!-- End tab content item -->
@@ -216,13 +230,16 @@
 </section><!-- End Features Section -->
 
 <!-- ======= Cta Section ======= -->
-<section id="cta" class="cta">
+<section class="cta" id="cta">
     <div class="container" data-aos="zoom-in">
 
         <div class="row">
             <div class="col-lg-9 text-center text-lg-start">
                 <h3>Call To Rent</h3>
-                <p> "Book your next rental with us and experience the convenience, reliability, and affordability we have to offer. Our online booking system is easy to use and our team is always available to assist you. Don't wait - call us today or book your rental online now to secure your vehicle and enjoy the ultimate car rental experience."</p>
+                <p> "Book your next rental with us and experience the convenience, reliability, and affordability we
+                    have to offer. Our online booking system is easy to use and our team is always available to assist
+                    you. Don't wait - call us today or book your rental online now to secure your vehicle and enjoy the
+                    ultimate car rental experience."</p>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
                 <a class="cta-btn align-middle" href="#">Call To Rent</a>
@@ -268,10 +285,10 @@
                     <p>Drop a message</p>
                     <div class="social-links mt-3">
 
-                        <a href="#" class="twitter"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="twitter"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="twitter"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="twitter" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a class="twitter" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a class="twitter" href="#"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
 
@@ -289,7 +306,7 @@
     </div>
 </footer><!-- End Footer -->
 
-<script src="js/jquery-3.6.1.min.js"></script>
+<script src="asserts/js/jquery-3.6.1.min.js"></script>
 
 <!-- Vendor JS Files -->
 <script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -299,6 +316,6 @@
 <script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
 
-<script src="js/main.js"></script>
+<script src="asserts/js/main.js"></script>
 </body>
 </html>
