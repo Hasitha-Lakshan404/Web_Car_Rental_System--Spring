@@ -31,5 +31,4 @@ public class Customer {
     private String password;
     private String imageLocation;
 
-
 }
