@@ -1,4 +1,4 @@
-package ik.ijse.carRental.entity;
+package lk.ijse.carRental.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

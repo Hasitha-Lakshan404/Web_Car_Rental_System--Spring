@@ -1,4 +1,4 @@
-package ik.ijse.carRental;
+package lk.ijse.carRental;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
