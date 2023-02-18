@@ -17,9 +17,16 @@ import java.util.List;
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
+
+
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
 
+    }
+
+    @Override
+    public List<CustomerDTO> getAllCustomerDetail() {
+        return null;
     }
 
     @Override
@@ -34,11 +41,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO getCustomerDetail(String id) {
-        return null;
-    }
-
-    @Override
-    public List<CustomerDTO> getAllCustomerDetail() {
         return null;
     }
 

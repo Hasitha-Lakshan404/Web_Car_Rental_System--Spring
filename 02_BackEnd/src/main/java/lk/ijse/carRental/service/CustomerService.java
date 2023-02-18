@@ -16,13 +16,13 @@ public interface CustomerService {
 
     void saveCustomer(CustomerDTO customerDTO);
 
+    List<CustomerDTO> getAllCustomerDetail();
+
     String updateCustomer(CustomerDTO customerDTO);
 
     void deleteCustomer (String id);
 
     CustomerDTO getCustomerDetail(String id);
-
-    List<CustomerDTO> getAllCustomerDetail();
 
     List<CustomerDTO> getTodayRegisteredCustomers();
 }
