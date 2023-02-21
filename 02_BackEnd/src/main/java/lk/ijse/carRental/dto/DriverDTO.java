@@ -12,9 +12,9 @@ import lombok.ToString;
  * Time :12:07 AM
  */
 
-@AllArgsConstructor
+/*@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString
+@ToString*/
 public class DriverDTO {
 }

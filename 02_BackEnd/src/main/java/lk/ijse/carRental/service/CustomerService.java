@@ -1,6 +1,7 @@
 package lk.ijse.carRental.service;
 
 import lk.ijse.carRental.dto.CustomerDTO;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;

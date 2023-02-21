@@ -2,6 +2,7 @@ package lk.ijse.carRental.repo;
 
 import lk.ijse.carRental.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,8 +14,8 @@ import java.util.List;
  */
 
 public interface CustomerRepo extends JpaRepository<Customer,String> {
-    Customer findCustomerByName(String name);
-    Customer findByNameAndAddress(String name, String address);
-    Customer findByCustomerId(String id);
+//    Customer findCustomerByName(String name);
+//    Customer findByNameAndAddress(String name, String address);
+//    Customer findByCustomerId(String id);
 }
 

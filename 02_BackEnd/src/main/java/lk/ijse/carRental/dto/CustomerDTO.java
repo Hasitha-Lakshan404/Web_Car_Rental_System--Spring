@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.Id;
+
 /**
  * @author : Hasitha Lakshan
  * Project :CarRentalSystem
@@ -17,9 +19,13 @@ import lombok.ToString;
 @Data
 @ToString
 public class CustomerDTO {
+    private String customerId;
     private String name;
-    private String nic;
     private String address;
+    private String nic;
+    private String drivingLicenseNumber;
+    private String contactNumber;
     private String email;
-    private String image;
+    private String password;
+    private String imageLocation;
 }

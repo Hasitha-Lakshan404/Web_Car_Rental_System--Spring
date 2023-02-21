@@ -1,8 +1,12 @@
 package lk.ijse.carRental.service.impl;
 
 import lk.ijse.carRental.dto.CustomerDTO;
+import lk.ijse.carRental.entity.Customer;
+import lk.ijse.carRental.repo.CustomerRepo;
 import lk.ijse.carRental.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.modelmapper.ModelMapper;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -18,10 +22,18 @@ import java.util.List;
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 
+    @Autowired
+    private CustomerRepo repo;
+
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
-    public void saveCustomer(CustomerDTO customerDTO) {
-
+    public void saveCustomer(CustomerDTO dto) {
+        if (repo.existsById(dto.getCustomerId())) {
+            throw new RuntimeException("Customer "+dto.getCustomerId()+" Already Exist..!");
+        }
+        repo.save(mapper.map(dto, Customer.class));
     }
 
     @Override

@@ -12,9 +12,9 @@ import lombok.ToString;
  * Time :12:14 AM
  */
 
-@AllArgsConstructor
+/*@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString
+@ToString*/
 public class ReservationDTO {
 }
