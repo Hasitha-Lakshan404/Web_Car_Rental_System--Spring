@@ -37,6 +37,13 @@ public class CustomerController {
         return new ResponseUtil("200",dto.getCustomerId()+": Updated.!",null);
     }
 
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteCustomer(String id){
+        service.deleteCustomer(id);
+        return new ResponseUtil("200",id+" : Deleted.!",null);
+    }
+
+
     /*@PutMapping
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
         service.updateCustomer(dto);
