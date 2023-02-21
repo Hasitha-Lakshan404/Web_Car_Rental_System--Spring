@@ -22,13 +22,51 @@
 
 
     <link href="asserts/css/main/carDetail.css" rel="stylesheet">
-
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
+    <link href="asserts/css/main/carCard.css" rel="stylesheet">
 
 </head>
 <body>
 
 <header>
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center" id="header">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
+            <a class="logo d-flex align-items-center" href="index.html">
+                <!--logo-->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>ECar Rental<span>.</span></h1>
+            </a>
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="#">Car Store</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= HeadSlid ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('asserts/image/carWithKey.jpg')">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Car Store</h2>
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Car Store</li>
+            </ol>
+
+        </div>
+    </div><!-- End HeadSlid -->
 </header>
 
 
