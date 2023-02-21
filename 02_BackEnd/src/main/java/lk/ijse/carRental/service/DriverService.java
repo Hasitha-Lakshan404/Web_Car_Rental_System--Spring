@@ -2,6 +2,7 @@ package lk.ijse.carRental.service;
 
 import lk.ijse.carRental.dto.DriverDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public interface DriverService {
 
     DriverDTO getDriverDetail(String id);
 
-    List<DriverDTO> getAllDriverDetail();
+    ArrayList<DriverDTO> getAllDriverDetail();
 
     List<DriverDTO> getTodayAvailableAndOccupiedDrivers(String status);
 }

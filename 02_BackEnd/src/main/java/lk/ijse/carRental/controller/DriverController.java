@@ -1,12 +1,12 @@
 package lk.ijse.carRental.controller;
 
-import lk.ijse.carRental.dto.CustomerDTO;
 import lk.ijse.carRental.dto.DriverDTO;
-import lk.ijse.carRental.service.CustomerService;
 import lk.ijse.carRental.service.DriverService;
 import lk.ijse.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 /**
  * @author : Hasitha Lakshan
@@ -29,10 +29,21 @@ public class DriverController {
     }
 
     @PutMapping
-    public ResponseUtil updateCustomer(@RequestBody DriverDTO dto){
+    public ResponseUtil updateDriver(@RequestBody DriverDTO dto){
         service.UpdateDriver(dto);
         return new ResponseUtil("200",dto.getDriverId()+": Updated.!",null);
     }
 
+    @DeleteMapping(params = "id")
+    public ResponseUtil deleteDriver(String id){
+        service.deleteDriver(id);
+        return new ResponseUtil("200",id+" : Deleted.!",null);
+    }
 
+
+    @GetMapping
+    public ResponseUtil getAllDriver(){
+        ArrayList<DriverDTO> allDrivers = service.getAllDriverDetail();
+        return new ResponseUtil("200"," Success.!", allDrivers);
+    }
 }
