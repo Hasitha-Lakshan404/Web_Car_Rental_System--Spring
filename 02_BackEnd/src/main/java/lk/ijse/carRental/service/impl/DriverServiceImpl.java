@@ -1,5 +1,6 @@
 package lk.ijse.carRental.service.impl;
 
+import lk.ijse.carRental.dto.CustomerDTO;
 import lk.ijse.carRental.dto.DriverDTO;
 import lk.ijse.carRental.entity.Customer;
 import lk.ijse.carRental.entity.Driver;
@@ -7,6 +8,7 @@ import lk.ijse.carRental.repo.CustomerRepo;
 import lk.ijse.carRental.repo.DriverRepo;
 import lk.ijse.carRental.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,14 +49,17 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void UpdateDriver(DriverDTO driverDTO) {
         if (!repo.existsById(driverDTO.getDriverId())){
-            throw new RuntimeException("Customer "+driverDTO.getDriverId()+" Not Available to Update..!");
+            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Not Available to Update..!");
         }
         repo.save( mapper.map(driverDTO, Driver.class));
     }
 
     @Override
     public void deleteDriver(String id) {
-
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Driver "+id+" Not Available to Delete..!");
+        }
+        repo.deleteById(id);
     }
 
     @Override
@@ -64,7 +69,9 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public ArrayList<DriverDTO> getAllDriverDetail() {
-        return null;
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
+
+        }.getType());
     }
 
     @Override

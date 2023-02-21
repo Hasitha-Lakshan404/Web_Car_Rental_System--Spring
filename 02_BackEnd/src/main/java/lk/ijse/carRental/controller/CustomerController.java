@@ -28,6 +28,7 @@ public class CustomerController {
 
     @PostMapping
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO dto){
+        System.out.println("awooooooooo");
         service.saveCustomer(dto);
         return new ResponseUtil("200",dto.getCustomerId()+" Added.!",null);
     }
@@ -44,13 +45,11 @@ public class CustomerController {
         return new ResponseUtil("200",id+" : Deleted.!",null);
     }
 
-
     @GetMapping
     public ResponseUtil getAllCustomer(){
         ArrayList<CustomerDTO> allCustomers = service.getAllCustomerDetail();
         return new ResponseUtil("200"," Success.!",allCustomers);
     }
-
 
 
 }

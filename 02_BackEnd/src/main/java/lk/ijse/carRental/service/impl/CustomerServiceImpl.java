@@ -70,4 +70,5 @@ public class CustomerServiceImpl implements CustomerService {
     public List<CustomerDTO> getTodayRegisteredCustomers() {
         return null;
     }
+
 }
