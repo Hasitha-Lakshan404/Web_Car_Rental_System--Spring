@@ -28,5 +28,11 @@ public class DriverController {
         return new ResponseUtil("200",dto.getDriverId()+" Added.!",null);
     }
 
+    @PutMapping
+    public ResponseUtil updateCustomer(@RequestBody DriverDTO dto){
+        service.UpdateDriver(dto);
+        return new ResponseUtil("200",dto.getDriverId()+": Updated.!",null);
+    }
+
 
 }
