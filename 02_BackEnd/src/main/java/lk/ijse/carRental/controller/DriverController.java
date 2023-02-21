@@ -19,7 +19,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/driver")
 @CrossOrigin
 public class DriverController {
+    @Autowired
+    private DriverService service;
 
+    @PostMapping
+    public ResponseUtil saveDriver(@ModelAttribute DriverDTO dto){
+        service.saveDriver(dto);
+        return new ResponseUtil("200",dto.getDriverId()+" Added.!",null);
+    }
 
 
 }
