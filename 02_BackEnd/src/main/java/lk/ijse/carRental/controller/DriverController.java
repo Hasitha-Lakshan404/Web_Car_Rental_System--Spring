@@ -1,8 +1,12 @@
 package lk.ijse.carRental.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.carRental.dto.CustomerDTO;
+import lk.ijse.carRental.dto.DriverDTO;
+import lk.ijse.carRental.service.CustomerService;
+import lk.ijse.carRental.service.DriverService;
+import lk.ijse.carRental.util.ResponseUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : Hasitha Lakshan
@@ -15,4 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/driver")
 @CrossOrigin
 public class DriverController {
+
+
+
 }
