@@ -4,6 +4,7 @@ import lk.ijse.carRental.dto.CustomerDTO;
 import org.springframework.stereotype.Component;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface CustomerService {
 
     void saveCustomer(CustomerDTO customerDTO);
 
-    List<CustomerDTO> getAllCustomerDetail();
+    ArrayList<CustomerDTO> getAllCustomerDetail();
 
     void updateCustomer(CustomerDTO customerDTO);
 

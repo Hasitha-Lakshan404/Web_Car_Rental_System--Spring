@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * @author : Hasitha Lakshan
@@ -44,11 +45,12 @@ public class CustomerController {
     }
 
 
-    /*@PutMapping
-    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
-        service.updateCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+": Updated.!",null);
-    }*/
+    @GetMapping
+    public ResponseUtil getAllCustomer(){
+        ArrayList<CustomerDTO> allCustomers = service.getAllCustomerDetail();
+        return new ResponseUtil("200"," Success.!",allCustomers);
+    }
+
 
 
 }

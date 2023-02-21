@@ -4,11 +4,13 @@ import lk.ijse.carRental.dto.CustomerDTO;
 import lk.ijse.carRental.entity.Customer;
 import lk.ijse.carRental.repo.CustomerRepo;
 import lk.ijse.carRental.service.CustomerService;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,8 +39,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<CustomerDTO> getAllCustomerDetail() {
-        return null;
+    public ArrayList<CustomerDTO> getAllCustomerDetail() {
+        return mapper.map(repo.findAll(), new TypeToken<ArrayList<CustomerDTO>>() {
+
+        }.getType());
     }
 
     @Override
