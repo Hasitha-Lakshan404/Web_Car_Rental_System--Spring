@@ -169,5 +169,151 @@
 
 <!--=====================================================================================-->
 
+
+<main class="main" id="main">
+
+    <div class="container">
+        <section
+                class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                </div>
+
+                                <form class="row g-3">
+
+
+                                    <!--vehicle Type-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <!--<label for="name">vehicleType</label>-->
+                                        <input type="text" placeholder="Enter Type" name="carAddVehicleType" class="form-control" id="carAddVehicleType" required>
+                                    </div>
+
+                                    <!--Brand-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Brand" name="carAddVehicleBrand" class="form-control" id="carAddVehicleBrand" required>
+                                    </div>
+
+                                    <!--vehicle Modal-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Model" class="form-control" name="carAddVehicleModel" id="carAddVehicleModel" required>
+                                    </div>
+
+
+                                    <!--Transmission-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Enter Transmission" name="carAddVehicleTransmission" class="form-control" id="carAddVehicleTransmission" required>
+                                    </div>
+
+                                    <!--Fuel-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Fuel Type" name="carAddVehicleFuel" class="form-control" id="carAddVehicleFuel" required>
+                                    </div>
+
+                                    <!--Daily Rate-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Daily Rate" name="carAddVehicleDailyRate" class="form-control" id="carAddVehicleDailyRate" required>
+                                    </div>
+
+                                    <!--Monthly Rate-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Monthly Rate" name="carAddVehicleMonthlyRate" class="form-control" id="carAddVehicleMonthlyRate" required>
+                                    </div>
+
+                                    <!--Extra Km Price-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Price For Extra Km" name="carAddVehiclePriceForExtraKm" class="form-control" id="carAddVehiclePriceForExtraKm" required>
+                                    </div>
+
+                                    <!--Free Mileage-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Free Mileage" name="carAddVehicleFreeMileage" class="form-control" id="carAddVehicleFreeMileage" required>
+                                    </div>
+
+                                    <!--Last Service Mileage-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Last Service Mileage" name="carAddVehicleLastServiceMileage" class="form-control" id="carAddVehicleLastServiceMileage" required>
+                                    </div>
+
+                                    <!--RegID-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Registration Id" name="carAddVehicleRegistrationId" class="form-control" id="carAddVehicleRegistrationId" required>
+                                    </div>
+
+                                    <!--Colour-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <input type="text" placeholder="Vehicle Colour" name="carAddVehicleColour" class="form-control" id="carAddVehicleColour" required>
+                                    </div>
+
+                                    <!--Front-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Front-image" class="form-label ">Front</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Front-image">
+                                    </div>
+                                    <!--Back-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Back-image" class="form-label ">Back</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Back-image">
+                                    </div>
+                                    <!--Side-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Side-image" class="form-label ">Side</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Side-image">
+                                    </div>
+                                    <!--Interior-->
+                                    <div class="form-group col-md-6 mb-3">
+                                        <label for="register-form-Interior-image" class="form-label ">Interior</label>
+                                        <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Interior-image">
+                                    </div>
+
+
+                                    <!--Add btn-->
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add Vehicle</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+</main>
+
+
+
+
+
+
+<!--======================================================================================================-->
+
+
+
+<script src="asserts/js/jquery-3.6.1.min.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="asserts/vendor/aos/aos.js"></script>
+<script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
 </body>
 </html>
