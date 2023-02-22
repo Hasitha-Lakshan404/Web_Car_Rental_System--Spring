@@ -28,7 +28,6 @@ public class CustomerController {
 
     @PostMapping
     public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO dto){
-        System.out.println("awooooooooo");
         service.saveCustomer(dto);
         return new ResponseUtil("200",dto.getCustomerId()+" Added.!",null);
     }
