@@ -260,7 +260,7 @@ $('#loginCreateAccount').click(function () {
     $('#spaMainSignIn').css('display','block');
     $('#spaMainLogIn').css('display','none');
 })
-
+/*register Button*/
 $('#signInRegister').click(function () {
     $('#spaMainIndex').css('display','none');
     $('#spaMainCarStore').css('display','none');
@@ -268,6 +268,26 @@ $('#signInRegister').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+})
+
+/*login button*/
+$('#loginBtnLogIN').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','block');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','none');
+})
+
+/*send Rental rq*/
+$('#cartBtnSendRentalRq').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','block');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','none');
 })
 
 
