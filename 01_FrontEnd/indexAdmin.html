@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="asserts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="asserts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="asserts/vendor/aos/aos.css" rel="stylesheet">
+    <link href="asserts/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="asserts/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
+    <link href="asserts/css/main/carCard.css" rel="stylesheet">
+    <link href="asserts/css/main/cartCss.css" rel="stylesheet">
+    <link href="asserts/css/main/adminDashboard.css" rel="stylesheet">
+</head>
+<body>
+
+<main >
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center" id="header" >
+
+        <!--========================-->
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="asserts/image/logo.jpg" alt="">
+                <span class="d-none d-lg-block">ECar Rental</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0"  data-bs-toggle="dropdown">
+                        <img src="asserts/image/hatMan.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Hasitha Lakshan</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Hasitha Lakshan</h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-house"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-minecart"></i>
+                                <span>Car Rental</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" >
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+    </header><!-- End Header -->
+
+
+
+
+
+    <!-- ======= Sidebar ======= -->
+    <aside class="sidebar" id="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item" id="adDash">
+                <a class="nav-link " >
+                    <i class="bi bi-grid" ></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+
+            <li class="nav-heading">Pages</li>
+
+            <li class="nav-item" id="adRes">
+                <a class="nav-link collapsed" >
+                    <i class="fa-solid fa-book"></i>
+                    <span>Reservation</span>
+                </a>
+            </li><!-- End Reser Page Nav -->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse" >
+                    <i class="fa-solid fa-car-rear"></i><span>Car</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="car-nav">
+                    <li id="adViewCar">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View Car</span>
+                        </a>
+                    </li>
+                    <li id="adCarSchedule">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Car Schedule</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+
+
+            <li class="nav-item" id="adCustomer">
+                <a class="nav-link collapsed" >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Customer</span>
+                </a>
+            </li><!-- End Customer Page Nav -->
+
+            <li class="nav-item" >
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" >
+                    <i class="fa-solid fa-user-group"></i><span>Driver</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tables-nav">
+                    <li id="adViewDriver">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View Driver</span>
+                        </a>
+                    </li>
+                    <li id="adDriverSchedule">
+                        <a >
+                            <i class="bi bi-circle"></i><span>Driver Schedule</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+
+            <li class="nav-item" id="adPayment">
+                <a class="nav-link collapsed">
+                    <i class="fa-solid fa-money-check-dollar"></i></i>
+                    <span>Payment</span>
+                </a>
+            </li><!-- End Login Page Nav -->
+        </ul>
+    </aside>
+
+    <!--=====================================================================================-->
+<main id="adminDashboard">
+    <main class="main" id="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <div class="row">
+
+                <!-- Left side columns -->
+                <div class="col-lg-12">
+                    <div class="row">
+
+
+                        <!-- Booking Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card sales-card">
+
+                                <div class="filter">
+                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" >Today</a></li>
+                                        <li><a class="dropdown-item" >This Month</a></li>
+                                        <li><a class="dropdown-item" >This Year</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Booking <span>| Today</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-book-bookmark"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>145</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- End Sales Card -->
+
+                        <!-- Income Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card revenue-card">
+
+                                <div class="filter">
+                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" >Today</a></li>
+                                        <li><a class="dropdown-item" >This Month</a></li>
+                                        <li><a class="dropdown-item" >This Year</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Income <span>| This Month</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-money-check"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>LKR 3,264</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- End Income Card -->
+
+                        <!-- Customers Card -->
+                        <div class="col-xxl-4 col-xl-12">
+
+                            <div class="card info-card customers-card">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Customers</h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>1244</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- End Customers Card -->
+
+
+                        <!-- Driver Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card revenue-card">
+
+                                <div class="filter">
+                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" >All Drivers</a></li>
+                                        <li><a class="dropdown-item" >Occupied Drivers</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Driver <span>| All Drivers</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-people-group"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>30</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- End Driver Card -->
+
+
+                        <!-- Car Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card revenue-card">
+
+                                <div class="filter">
+                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" >All Cars</a></li>
+                                        <li><a class="dropdown-item" >Occupied Cars</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Car <span>| All Cars</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-car-rear"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>40</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div><!-- End Car Card -->
+
+
+                        <!-- Maintenance Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card revenue-card">
+
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Under Maintenance </h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-car-burst"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6>5</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End Maintenance Card -->
+
+                    </div>
+                </div><!-- End Left side columns -->
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+</main>
+
+</main>
+
+<!--Car ADD-->
+<main id="adminAddVehicle">
+    <main class="main" id="main">
+
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                    </div>
+
+                                    <div class="d-flex align-items-end flex-column bd-highlight pb-4">
+                                        <!--Add btn-->
+                                        <div>
+                                            <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">View Vehicles</button>
+                                        </div>
+                                    </div>
+
+                                    <form class="row g-3">
+
+                                        <!--vehicle Type-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <!--<label for="name">vehicleType</label>-->
+                                            <input type="text" placeholder="Enter Type" name="carAddVehicleType" class="form-control" id="carAddVehicleType" required>
+                                        </div>
+
+                                        <!--Brand-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Enter Brand" name="carAddVehicleBrand" class="form-control" id="carAddVehicleBrand" required>
+                                        </div>
+
+                                        <!--vehicle Modal-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Enter Model" class="form-control" name="carAddVehicleModel" id="carAddVehicleModel" required>
+                                        </div>
+
+
+                                        <!--Transmission-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Enter Transmission" name="carAddVehicleTransmission" class="form-control" id="carAddVehicleTransmission" required>
+                                        </div>
+
+                                        <!--Fuel-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Fuel Type" name="carAddVehicleFuel" class="form-control" id="carAddVehicleFuel" required>
+                                        </div>
+
+                                        <!--Daily Rate-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Daily Rate" name="carAddVehicleDailyRate" class="form-control" id="carAddVehicleDailyRate" required>
+                                        </div>
+
+                                        <!--Monthly Rate-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Monthly Rate" name="carAddVehicleMonthlyRate" class="form-control" id="carAddVehicleMonthlyRate" required>
+                                        </div>
+
+                                        <!--Extra Km Price-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Price For Extra Km" name="carAddVehiclePriceForExtraKm" class="form-control" id="carAddVehiclePriceForExtraKm" required>
+                                        </div>
+
+                                        <!--Free Mileage-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Free Mileage" name="carAddVehicleFreeMileage" class="form-control" id="carAddVehicleFreeMileage" required>
+                                        </div>
+
+                                        <!--Last Service Mileage-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Last Service Mileage" name="carAddVehicleLastServiceMileage" class="form-control" id="carAddVehicleLastServiceMileage" required>
+                                        </div>
+
+                                        <!--RegID-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Registration Id" name="carAddVehicleRegistrationId" class="form-control" id="carAddVehicleRegistrationId" required>
+                                        </div>
+
+                                        <!--Colour-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input type="text" placeholder="Vehicle Colour" name="carAddVehicleColour" class="form-control" id="carAddVehicleColour" required>
+                                        </div>
+
+                                        <!--Front-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label for="register-form-Front-image" class="form-label ">Front</label>
+                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Front-image">
+                                        </div>
+                                        <!--Back-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label for="register-form-Back-image" class="form-label ">Back</label>
+                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Back-image">
+                                        </div>
+                                        <!--Side-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label for="register-form-Side-image" class="form-label ">Side</label>
+                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Side-image">
+                                        </div>
+                                        <!--Interior-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label for="register-form-Interior-image" class="form-label ">Interior</label>
+                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Interior-image">
+                                        </div>
+
+
+                                        <!--Add btn-->
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add Vehicle</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+
+    </main>
+</main>
+
+<!--Customer Verification-->
+<main id="adminCustomerVerification"><main class="main" id="main">
+
+    <div class="pagetitle">
+        <h1>Customer Verification</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <!-- Customer Verification -->
+        <div class="container-fluid col-12">
+            <div class="card top-selling overflow-auto">
+
+                <div class="card-body pb-0">
+
+                    <table class="table table-borderless">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact Number</th>
+                            <th scope="col">NIC</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">NIC/License</th>
+                            <th scope="col">Verify</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr style="border-bottom: 1px solid #d9d9d9">
+                            <th scope="row">Sanath Nishantha</th>
+                            <td>panadura</td>
+                            <td>0776845184</td>
+                            <td>5151515475</td>
+                            <td>jayarathna15@gmail.com</td>
+                            <td><a class="text-primary fw-bold" >View Image</a></td>
+                            <td>
+                                <ul style="display: inline-block">
+                                    <li>
+
+                                        <span>Accept &nbsp;&nbsp;</span>
+                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                    </li>
+                                </ul>
+                            </td>
+
+                        </tr>
+
+
+                        <tr style="border-bottom: 1px solid #d9d9d9">
+                            <th scope="row">Sanath Nishantha</th>
+                            <td>panadura</td>
+                            <td>0776845184</td>
+                            <td>5151515475</td>
+                            <td>jayarathna15@gmail.com</td>
+                            <td><a class="text-primary fw-bold" >View Image</a></td>
+                            <td>
+                                <ul style="display: inline-block">
+                                    <li>
+
+                                        <span>Accept &nbsp;&nbsp;</span>
+                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                    </li>
+                                </ul>
+                            </td>
+
+                        </tr>
+
+
+                        <tr style="border-bottom: 1px solid #d9d9d9">
+                            <th scope="row">Sanath Nishantha</th>
+                            <td>panadura</td>
+                            <td>0776845184</td>
+                            <td>5151515475</td>
+                            <td>jayarathna15@gmail.com</td>
+                            <td><a class="text-primary fw-bold" >View Image</a></td>
+                            <td>
+                                <ul style="display: inline-block">
+                                    <li>
+
+                                        <span>Accept &nbsp;&nbsp;</span>
+                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                    </li>
+                                    <li>
+                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                    </li>
+                                </ul>
+                            </td>
+
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- End Customer Verification -->
+    </section>
+
+</main><!-- End #main --></main>
+
+
+<!-- Rental Verification-->
+<main id="adminRentalVerification">
+    <main class="main" id="main">
+
+        <div class="pagetitle">
+            <h1>Reservation Verification</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <!-- Rental Verification -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Driver</th>
+                                <th scope="col">Vehicle</th>
+                                <th scope="col">PickUp</th>
+                                <th scope="col">Return</th>
+                                <th scope="col">Pickup</th>
+                                <th scope="col">Return</th>
+                                <th scope="col">Receipt</th>
+                                <th scope="col">Verify</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>D-001</td>
+                                <td>V-001</td>
+                                <td>01-02-2023</td>
+                                <td>05-02-2023</td>
+                                <td>Panadura</td>
+                                <td>Bandaragama</td>
+                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
+
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>D-001</td>
+                                <td>V-001</td>
+                                <td>01-02-2023</td>
+                                <td>05-02-2023</td>
+                                <td>Panadura</td>
+                                <td>Bandaragama</td>
+                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
+
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>D-001</td>
+                                <td>V-001</td>
+                                <td>01-02-2023</td>
+                                <td>05-02-2023</td>
+                                <td>Panadura</td>
+                                <td>Bandaragama</td>
+                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
+
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Rental Verification -->
+        </section>
+
+    </main><!-- End #main -->
+</main>
+
+
+<main></main>
+
+
+
+
+<script src="asserts/js/jquery-3.6.1.min.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="asserts/vendor/aos/aos.js"></script>
+<script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+<script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
+</body>
+</html>
