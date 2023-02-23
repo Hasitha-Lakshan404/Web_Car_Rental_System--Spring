@@ -51,5 +51,4 @@ public class CustomerController {
         return new ResponseUtil("200"," Success.!",allCustomers);
     }
 
-
 }

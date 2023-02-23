@@ -7,6 +7,9 @@ Time :9:05 PM
 var customer;
 var baseurl="http://localhost:8080/02_BackEnd_war_exploded/";
 
+// Initialize the counter
+var counter = 2;
+var customerIds="C001";
 
 
 /*register Button*/
@@ -14,12 +17,21 @@ $('#signInRegister').click(function () {
        registerCustomer();
 })
 
+
+// Function to generate the next id
+function generateId() {
+    var id = "C" + ("000" + counter).slice(-3); // add leading zeroes
+    counter++; // increment the counter for the next id
+    return id;
+}
+
+
 function registerCustomer() {
     let nicFileName = $("#nicImageSignInForm")[0].files[0].name;
 
     // let id =  $("").val();
 
-    let id =  "C0012";
+    // let id =  customerIds;
     let name= $("#nameSignInForm").val();
     let email= $("#emailSignInForm").val();
     let nic= $("#nicSignInForm").val();
@@ -31,7 +43,7 @@ function registerCustomer() {
 
 
     var newDetails = {
-        customerId: "C002",
+        customerId: customerIds,
         name: name,
         address: address,
         nic:nic,
@@ -50,6 +62,7 @@ function registerCustomer() {
         contentType:"application/json",
         success: function (resp) {
             console.log(resp);
+            customerIds=generateId();
             alert(resp.message);
             navToLogIn(resp.data);
             // loadImage();
@@ -59,7 +72,6 @@ function registerCustomer() {
             alert(prase.message);
         }
     });
-
 }
 
 function navToLogIn(data) {
@@ -72,5 +84,4 @@ function navToLogIn(data) {
     $('#spaMainCarDetail').css('display','none');
 
     console.log(data.name,data.id,data.userName);
-
 }
