@@ -216,3 +216,58 @@ $('#navLogInLogIn').click(function () {
     $('#spaMainLogIn').css('display','block');
 })
 
+
+/*=======================
+        Car Store Type Drop Down
+* =======================*/
+
+$('#carStoreTypeLux').click(function () {
+
+})
+
+
+$('#carStoreTypePremium').click(function () {
+// Get the div you want to move
+    var divToMove = document.getElementById("carStoreTypePremium");
+
+// Get the div you want to move it to
+    var destinationDiv = document.getElementById("carStoreTypeLux");
+
+// Move the div by appending it to the destination div
+    destinationDiv.appendChild(divToMove);
+})
+
+$('#carStoreTypeGeneral').click(function () {
+
+})
+
+
+/*=====================*/
+$('.goToCartButton').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','block');
+})
+
+$('#loginCreateAccount').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','block');
+    $('#spaMainLogIn').css('display','none');
+})
+
+$('#signInRegister').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','block');
+})
+
+
