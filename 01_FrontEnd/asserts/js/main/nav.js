@@ -18,6 +18,7 @@ $('#navIndexHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navIndexCarStore').click(function () {
@@ -27,6 +28,7 @@ $('#navIndexCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navIndexLogIn').click(function () {
@@ -36,6 +38,7 @@ $('#navIndexLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 /*----------------CAR STORE----------------------*/
@@ -47,6 +50,7 @@ $('#navCarStoreHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navCarStoreCarStore').click(function () {
@@ -56,6 +60,7 @@ $('#navCarStoreCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navCarStoreLogIn').click(function () {
@@ -65,6 +70,7 @@ $('#navCarStoreLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 /*----------------CART----------------------*/
@@ -76,6 +82,7 @@ $('#navCartHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navCartCarStore').click(function () {
@@ -85,6 +92,7 @@ $('#navCartCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navCartLogIn').click(function () {
@@ -94,6 +102,7 @@ $('#navCartLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 
@@ -107,6 +116,7 @@ $('#navOverViewHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navOverViewCarStore').click(function () {
@@ -116,6 +126,7 @@ $('#navOverViewCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navOverViewLogIn').click(function () {
@@ -125,36 +136,40 @@ $('#navOverViewLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 
 /*----------------CAR DETAIL----------------------*/
 
-$('#navCarDetailHome').click(function () {
+$('#navCarDetailsHome').click(function () {
     $('#spaMainIndex').css('display','block');
     $('#spaMainCarStore').css('display','none');
     $('#spaMainCart').css('display','none');
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
-$('#navCarDetailCarStore').click(function () {
+$('#navCarDetailsCarStore').click(function () {
     $('#spaMainIndex').css('display','none');
     $('#spaMainCarStore').css('display','block');
     $('#spaMainCart').css('display','none');
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
-$('#navCarDetailLogIn').click(function () {
+$('#navCarDetailsLogIn').click(function () {
     $('#spaMainIndex').css('display','none');
     $('#spaMainCarStore').css('display','none');
     $('#spaMainCart').css('display','none');
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 
@@ -167,6 +182,7 @@ $('#navSignInHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navSignInCarStore').click(function () {
@@ -176,7 +192,7 @@ $('#navSignInCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
-})
+    $('#spaMainCarDetail').css('display','none');})
 
 $('#navSignInLogIn').click(function () {
     $('#spaMainIndex').css('display','none');
@@ -185,6 +201,7 @@ $('#navSignInLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 
@@ -196,6 +213,7 @@ $('#navLogInHome').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#navLogInCarStore').click(function () {
@@ -205,8 +223,12 @@ $('#navLogInCarStore').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
+
+
+/*-------------------*/
 $('#navLogInLogIn').click(function () {
     $('#spaMainIndex').css('display','none');
     $('#spaMainCarStore').css('display','none');
@@ -214,6 +236,7 @@ $('#navLogInLogIn').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 
@@ -250,6 +273,7 @@ $('.goToCartButton').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 $('#loginCreateAccount').click(function () {
@@ -259,6 +283,7 @@ $('#loginCreateAccount').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','block');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 /*register Button*/
 $('#signInRegister').click(function () {
@@ -268,6 +293,7 @@ $('#signInRegister').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 /*login button*/
@@ -278,6 +304,7 @@ $('#loginBtnLogIN').click(function () {
     $('#spaMainOverview').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
 
 /*send Rental rq*/
@@ -288,6 +315,31 @@ $('#cartBtnSendRentalRq').click(function () {
     $('#spaMainOverview').css('display','block');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
 })
+
+
+/*Car Detail ICon*/
+$('.carStoreIndexCarDetailIcon').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','none');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','block');
+})
+
+/*Book Now Btn*/
+$('#btnIndexBookNow').click(function () {
+    $('#spaMainIndex').css('display','none');
+    $('#spaMainCarStore').css('display','block');
+    $('#spaMainCart').css('display','none');
+    $('#spaMainOverview').css('display','none');
+    $('#spaMainSignIn').css('display','none');
+    $('#spaMainLogIn').css('display','none');
+    $('#spaMainCarDetail').css('display','none');
+})
+
 
 
