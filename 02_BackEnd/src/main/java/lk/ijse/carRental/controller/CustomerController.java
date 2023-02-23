@@ -27,9 +27,10 @@ public class CustomerController {
     private CustomerService service;
 
     @PostMapping
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDTO dto){
+    public ResponseUtil RegisterCustomer(@RequestBody CustomerDTO dto){
         service.saveCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+" Added.!",null);
+        return new ResponseUtil("200", "Added.!.", dto);
+
     }
 
     @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)

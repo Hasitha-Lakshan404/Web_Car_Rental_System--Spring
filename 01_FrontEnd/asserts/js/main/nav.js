@@ -285,16 +285,6 @@ $('#loginCreateAccount').click(function () {
     $('#spaMainLogIn').css('display','none');
     $('#spaMainCarDetail').css('display','none');
 })
-/*register Button*/
-$('#signInRegister').click(function () {
-    $('#spaMainIndex').css('display','none');
-    $('#spaMainCarStore').css('display','none');
-    $('#spaMainCart').css('display','none');
-    $('#spaMainOverview').css('display','none');
-    $('#spaMainSignIn').css('display','none');
-    $('#spaMainLogIn').css('display','block');
-    $('#spaMainCarDetail').css('display','none');
-})
 
 /*login button*/
 $('#loginBtnLogIN').click(function () {
