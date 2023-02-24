@@ -28,14 +28,14 @@
 </head>
 <body>
 
-<main >
+<main>
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header" >
+    <header class="header d-flex align-items-center" id="header">
 
         <!--========================-->
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="asserts/image/logo.jpg" alt="">
+            <a class="logo d-flex align-items-center" href="index.html">
+                <img alt="" src="asserts/image/logo.jpg">
                 <span class="d-none d-lg-block">ECar Rental</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -46,8 +46,8 @@
 
                 <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0"  data-bs-toggle="dropdown">
-                        <img src="asserts/image/hatMan.jpg" alt="Profile" class="rounded-circle">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+                        <img alt="Profile" class="rounded-circle" src="asserts/image/hatMan.jpg">
                         <span class="d-none d-md-block dropdown-toggle ps-2">Hasitha Lakshan</span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -81,7 +81,7 @@
 
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" >
+                            <a class="dropdown-item d-flex align-items-center">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
@@ -95,16 +95,13 @@
     </header><!-- End Header -->
 
 
-
-
-
     <!-- ======= Sidebar ======= -->
     <aside class="sidebar" id="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item" id="adDash">
-                <a class="nav-link " >
-                    <i class="bi bi-grid" ></i>
+                <a class="nav-link ">
+                    <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
@@ -113,7 +110,7 @@
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item" id="adRes">
-                <a class="nav-link collapsed" >
+                <a class="nav-link collapsed">
                     <i class="fa-solid fa-book"></i>
                     <span>Reservation</span>
                 </a>
@@ -121,7 +118,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse" >
+                <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse">
                     <i class="fa-solid fa-car-rear"></i><span>Car</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
@@ -140,15 +137,29 @@
             </li><!-- End Driver Nav -->
 
 
-            <li class="nav-item" id="adCustomer">
-                <a class="nav-link collapsed" >
-                    <i class="fa-regular fa-user"></i>
-                    <span>Customer</span>
+            <!-------------------------------->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#customer-nav" data-bs-toggle="collapse">
+                    <i class="fa-regular fa-user"></i><span>Customer</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li><!-- End Customer Page Nav -->
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="customer-nav">
+                    <li id="adCustomer">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Verifications</span>
+                        </a>
+                    </li>
+                    <li id="adViewAllCustomer">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View All</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+            <!-------------------------------->
 
-            <li class="nav-item" >
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" >
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse">
                     <i class="fa-solid fa-user-group"></i><span>Driver</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
@@ -159,7 +170,7 @@
                         </a>
                     </li>
                     <li id="adDriverSchedule">
-                        <a >
+                        <a>
                             <i class="bi bi-circle"></i><span>Driver Schedule</span>
                         </a>
                     </li>
@@ -176,215 +187,215 @@
     </aside>
 
     <!--=====================================================================================-->
-<main id="adminDashboard">
-    <main class="main" id="main">
+    <main id="adminDashboard">
+        <main class="main" id="main">
 
-        <div class="pagetitle">
-            <h1>Dashboard</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title -->
+            <div class="pagetitle">
+                <h1>Dashboard</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
 
-        <section class="section dashboard">
-            <div class="row">
+            <section class="section dashboard">
+                <div class="row">
 
-                <!-- Left side columns -->
-                <div class="col-lg-12">
-                    <div class="row">
+                    <!-- Left side columns -->
+                    <div class="col-lg-12">
+                        <div class="row">
 
 
-                        <!-- Booking Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card sales-card">
+                            <!-- Booking Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card sales-card">
 
-                                <div class="filter">
-                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
 
-                                        <li><a class="dropdown-item" >Today</a></li>
-                                        <li><a class="dropdown-item" >This Month</a></li>
-                                        <li><a class="dropdown-item" >This Year</a></li>
-                                    </ul>
-                                </div>
+                                            <li><a class="dropdown-item">Today</a></li>
+                                            <li><a class="dropdown-item">This Month</a></li>
+                                            <li><a class="dropdown-item">This Year</a></li>
+                                        </ul>
+                                    </div>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">Booking <span>| Today</span></h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Booking <span>| Today</span></h5>
 
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="fa-solid fa-book-bookmark"></i>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-book-bookmark"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>145</h6>
+
+                                            </div>
                                         </div>
-                                        <div class="ps-3">
-                                            <h6>145</h6>
+                                    </div>
 
+                                </div>
+                            </div><!-- End Sales Card -->
+
+                            <!-- Income Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">Today</a></li>
+                                            <li><a class="dropdown-item">This Month</a></li>
+                                            <li><a class="dropdown-item">This Year</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Income <span>| This Month</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-money-check"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>LKR 3,264</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End Income Card -->
+
+                            <!-- Customers Card -->
+                            <div class="col-xxl-4 col-xl-12">
+
+                                <div class="card info-card customers-card">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers</h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-people"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>1244</h6>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div>
-                        </div><!-- End Sales Card -->
+                            </div><!-- End Customers Card -->
 
-                        <!-- Income Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card revenue-card">
 
-                                <div class="filter">
-                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
+                            <!-- Driver Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
 
-                                        <li><a class="dropdown-item" >Today</a></li>
-                                        <li><a class="dropdown-item" >This Month</a></li>
-                                        <li><a class="dropdown-item" >This Year</a></li>
-                                    </ul>
-                                </div>
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">Income <span>| This Month</span></h5>
+                                            <li><a class="dropdown-item">All Drivers</a></li>
+                                            <li><a class="dropdown-item">Occupied Drivers</a></li>
+                                        </ul>
+                                    </div>
 
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="fa-solid fa-money-check"></i>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Driver <span>| All Drivers</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-people-group"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>30</h6>
+
+                                            </div>
                                         </div>
-                                        <div class="ps-3">
-                                            <h6>LKR 3,264</h6>
+                                    </div>
 
+                                </div>
+                            </div><!-- End Driver Card -->
+
+
+                            <!-- Car Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">All Cars</a></li>
+                                            <li><a class="dropdown-item">Occupied Cars</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Car <span>| All Cars</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-car-rear"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>40</h6>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div>
-                        </div><!-- End Income Card -->
 
-                        <!-- Customers Card -->
-                        <div class="col-xxl-4 col-xl-12">
-
-                            <div class="card info-card customers-card">
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Total Customers</h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-people"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>1244</h6>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- End Customers Card -->
+                            </div><!-- End Car Card -->
 
 
-                        <!-- Driver Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card revenue-card">
+                            <!-- Maintenance Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
 
-                                <div class="filter">
-                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
 
-                                        <li><a class="dropdown-item" >All Drivers</a></li>
-                                        <li><a class="dropdown-item" >Occupied Drivers</a></li>
-                                    </ul>
-                                </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Under Maintenance </h5>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">Total Driver <span>| All Drivers</span></h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-car-burst"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>5</h6>
 
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="fa-solid fa-people-group"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>30</h6>
-
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div><!-- End Maintenance Card -->
 
-                            </div>
-                        </div><!-- End Driver Card -->
+                        </div>
+                    </div><!-- End Left side columns -->
+                </div>
+            </section>
 
-
-                        <!-- Car Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card revenue-card">
-
-                                <div class="filter">
-                                    <a class="icon" data-bs-toggle="dropdown" ><i class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" >All Cars</a></li>
-                                        <li><a class="dropdown-item" >Occupied Cars</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Total Car <span>| All Cars</span></h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="fa-solid fa-car-rear"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>40</h6>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div><!-- End Car Card -->
-
-
-                        <!-- Maintenance Card -->
-                        <div class="col-xxl-4 col-md-6">
-                            <div class="card info-card revenue-card">
-
-
-                                <div class="card-body">
-                                    <h5 class="card-title">Under Maintenance </h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="fa-solid fa-car-burst"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h6>5</h6>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Maintenance Card -->
-
-                    </div>
-                </div><!-- End Left side columns -->
-            </div>
-        </section>
-
-    </main><!-- End #main -->
-</main>
+        </main><!-- End #main -->
+    </main>
 
 </main>
 
@@ -410,7 +421,9 @@
                                     <div class="d-flex align-items-end flex-column bd-highlight pb-4">
                                         <!--Add btn-->
                                         <div>
-                                            <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">View Vehicles</button>
+                                            <button class="btn btn-primary w-100" id="carAddVehicleAddButton"
+                                                    type="submit">View Vehicles
+                                            </button>
                                         </div>
                                     </div>
 
@@ -419,90 +432,124 @@
                                         <!--vehicle Type-->
                                         <div class="form-group col-md-6 mb-3">
                                             <!--<label for="name">vehicleType</label>-->
-                                            <input type="text" placeholder="Enter Type" name="carAddVehicleType" class="form-control" id="carAddVehicleType" required>
+                                            <input class="form-control" id="carAddVehicleType" name="carAddVehicleType"
+                                                   placeholder="Enter Type" required type="text">
                                         </div>
 
                                         <!--Brand-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Enter Brand" name="carAddVehicleBrand" class="form-control" id="carAddVehicleBrand" required>
+                                            <input class="form-control" id="carAddVehicleBrand"
+                                                   name="carAddVehicleBrand"
+                                                   placeholder="Enter Brand" required type="text">
                                         </div>
 
                                         <!--vehicle Modal-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Enter Model" class="form-control" name="carAddVehicleModel" id="carAddVehicleModel" required>
+                                            <input class="form-control" id="carAddVehicleModel"
+                                                   name="carAddVehicleModel"
+                                                   placeholder="Enter Model" required type="text">
                                         </div>
 
 
                                         <!--Transmission-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Enter Transmission" name="carAddVehicleTransmission" class="form-control" id="carAddVehicleTransmission" required>
+                                            <input class="form-control" id="carAddVehicleTransmission"
+                                                   name="carAddVehicleTransmission" placeholder="Enter Transmission"
+                                                   required type="text">
                                         </div>
 
                                         <!--Fuel-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Fuel Type" name="carAddVehicleFuel" class="form-control" id="carAddVehicleFuel" required>
+                                            <input class="form-control" id="carAddVehicleFuel" name="carAddVehicleFuel"
+                                                   placeholder="Fuel Type" required type="text">
                                         </div>
 
                                         <!--Daily Rate-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Daily Rate" name="carAddVehicleDailyRate" class="form-control" id="carAddVehicleDailyRate" required>
+                                            <input class="form-control" id="carAddVehicleDailyRate"
+                                                   name="carAddVehicleDailyRate"
+                                                   placeholder="Daily Rate" required type="text">
                                         </div>
 
                                         <!--Monthly Rate-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Monthly Rate" name="carAddVehicleMonthlyRate" class="form-control" id="carAddVehicleMonthlyRate" required>
+                                            <input class="form-control" id="carAddVehicleMonthlyRate"
+                                                   name="carAddVehicleMonthlyRate" placeholder="Monthly Rate"
+                                                   required type="text">
                                         </div>
 
                                         <!--Extra Km Price-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Price For Extra Km" name="carAddVehiclePriceForExtraKm" class="form-control" id="carAddVehiclePriceForExtraKm" required>
+                                            <input class="form-control" id="carAddVehiclePriceForExtraKm"
+                                                   name="carAddVehiclePriceForExtraKm" placeholder="Price For Extra Km"
+                                                   required type="text">
                                         </div>
 
                                         <!--Free Mileage-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Free Mileage" name="carAddVehicleFreeMileage" class="form-control" id="carAddVehicleFreeMileage" required>
+                                            <input class="form-control" id="carAddVehicleFreeMileage"
+                                                   name="carAddVehicleFreeMileage" placeholder="Free Mileage"
+                                                   required type="text">
                                         </div>
 
                                         <!--Last Service Mileage-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Last Service Mileage" name="carAddVehicleLastServiceMileage" class="form-control" id="carAddVehicleLastServiceMileage" required>
+                                            <input class="form-control" id="carAddVehicleLastServiceMileage"
+                                                   name="carAddVehicleLastServiceMileage"
+                                                   placeholder="Last Service Mileage"
+                                                   required type="text">
                                         </div>
 
                                         <!--RegID-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Registration Id" name="carAddVehicleRegistrationId" class="form-control" id="carAddVehicleRegistrationId" required>
+                                            <input class="form-control" id="carAddVehicleRegistrationId"
+                                                   name="carAddVehicleRegistrationId" placeholder="Registration Id"
+                                                   required type="text">
                                         </div>
 
                                         <!--Colour-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input type="text" placeholder="Vehicle Colour" name="carAddVehicleColour" class="form-control" id="carAddVehicleColour" required>
+                                            <input class="form-control" id="carAddVehicleColour"
+                                                   name="carAddVehicleColour"
+                                                   placeholder="Vehicle Colour" required type="text">
                                         </div>
 
                                         <!--Front-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="register-form-Front-image" class="form-label ">Front</label>
-                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Front-image">
+                                            <label class="form-label " for="register-form-Front-image">Front</label>
+                                            <input class="form-control  " id="register-form-Front-image"
+                                                   style="border: 1px solid gray"
+                                                   type="file">
                                         </div>
                                         <!--Back-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="register-form-Back-image" class="form-label ">Back</label>
-                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Back-image">
+                                            <label class="form-label " for="register-form-Back-image">Back</label>
+                                            <input class="form-control  " id="register-form-Back-image"
+                                                   style="border: 1px solid gray"
+                                                   type="file">
                                         </div>
                                         <!--Side-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="register-form-Side-image" class="form-label ">Side</label>
-                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Side-image">
+                                            <label class="form-label " for="register-form-Side-image">Side</label>
+                                            <input class="form-control  " id="register-form-Side-image"
+                                                   style="border: 1px solid gray"
+                                                   type="file">
                                         </div>
                                         <!--Interior-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label for="register-form-Interior-image" class="form-label ">Interior</label>
-                                            <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-Interior-image">
+                                            <label class="form-label "
+                                                   for="register-form-Interior-image">Interior</label>
+                                            <input class="form-control  " id="register-form-Interior-image"
+                                                   style="border: 1px solid gray"
+                                                   type="file">
                                         </div>
 
 
                                         <!--Add btn-->
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add Vehicle</button>
+                                            <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add
+                                                Vehicle
+                                            </button>
                                         </div>
 
                                     </form>
@@ -523,122 +570,125 @@
 </main>
 
 <!--Customer Verification-->
-<main id="adminCustomerVerification"><main class="main" id="main">
+<main id="adminCustomerVerification">
+    <main class="main" id="main">
 
-    <div class="pagetitle">
-        <h1>Customer Verification</h1>
-    </div><!-- End Page Title -->
+        <div class="pagetitle">
+            <h1>Customer Verification</h1>
+        </div><!-- End Page Title -->
 
-    <section class="section dashboard">
-        <!-- Customer Verification -->
-        <div class="container-fluid col-12">
-            <div class="card top-selling overflow-auto">
+        <section class="section dashboard">
+            <!-- Customer Verification -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
 
-                <div class="card-body pb-0">
+                    <div class="card-body pb-0">
 
-                    <table class="table table-borderless">
-                        <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Contact Number</th>
-                            <th scope="col">NIC</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">NIC/License</th>
-                            <th scope="col">Verify</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr style="border-bottom: 1px solid #d9d9d9">
-                            <th scope="row">Sanath Nishantha</th>
-                            <td>panadura</td>
-                            <td>0776845184</td>
-                            <td>5151515475</td>
-                            <td>jayarathna15@gmail.com</td>
-                            <td><a class="text-primary fw-bold" >View Image</a></td>
-                            <td>
-                                <ul style="display: inline-block">
-                                    <li>
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">NIC</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC/License</th>
+                                <th scope="col">Verify</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
 
-                                        <span>Accept &nbsp;&nbsp;</span>
-                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
 
-                                    </li>
-                                    <li>
-                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
 
-                                    </li>
-                                </ul>
-                            </td>
+                                        </li>
+                                    </ul>
+                                </td>
 
-                        </tr>
-
-
-                        <tr style="border-bottom: 1px solid #d9d9d9">
-                            <th scope="row">Sanath Nishantha</th>
-                            <td>panadura</td>
-                            <td>0776845184</td>
-                            <td>5151515475</td>
-                            <td>jayarathna15@gmail.com</td>
-                            <td><a class="text-primary fw-bold" >View Image</a></td>
-                            <td>
-                                <ul style="display: inline-block">
-                                    <li>
-
-                                        <span>Accept &nbsp;&nbsp;</span>
-                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
-
-                                    </li>
-                                    <li>
-                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
-
-                                    </li>
-                                </ul>
-                            </td>
-
-                        </tr>
+                            </tr>
 
 
-                        <tr style="border-bottom: 1px solid #d9d9d9">
-                            <th scope="row">Sanath Nishantha</th>
-                            <td>panadura</td>
-                            <td>0776845184</td>
-                            <td>5151515475</td>
-                            <td>jayarathna15@gmail.com</td>
-                            <td><a class="text-primary fw-bold" >View Image</a></td>
-                            <td>
-                                <ul style="display: inline-block">
-                                    <li>
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
 
-                                        <span>Accept &nbsp;&nbsp;</span>
-                                        <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
 
-                                    </li>
-                                    <li>
-                                        <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                        <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
 
-                                    </li>
-                                </ul>
-                            </td>
+                                        </li>
+                                    </ul>
+                                </td>
 
-                        </tr>
+                            </tr>
 
 
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">Sanath Nishantha</th>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+                                <td>
+                                    <ul style="display: inline-block">
+                                        <li>
 
-                        </tbody>
-                    </table>
+                                            <span>Accept &nbsp;&nbsp;</span>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
+
+                                        </li>
+                                        <li>
+                                            <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
+
+                                        </li>
+                                    </ul>
+                                </td>
+
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </div><!-- End Customer Verification -->
-    </section>
+            </div><!-- End Customer Verification -->
+        </section>
 
-</main><!-- End #main --></main>
+    </main><!-- End #main --></main>
 
 
-<!-- Rental Verification-->
+<!---->
+<!--========================================================================
+                                Rental Verification
+============================================================================-->
 <main id="adminRentalVerification">
     <main class="main" id="main">
 
@@ -676,18 +726,18 @@
                                 <td>05-02-2023</td>
                                 <td>Panadura</td>
                                 <td>Bandaragama</td>
-                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
                                 <td>
                                     <ul style="display: inline-block">
                                         <li>
 
                                             <span>Accept &nbsp;&nbsp;</span>
-                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
 
                                         </li>
                                         <li>
                                             <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
 
                                         </li>
                                     </ul>
@@ -703,18 +753,18 @@
                                 <td>05-02-2023</td>
                                 <td>Panadura</td>
                                 <td>Bandaragama</td>
-                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
                                 <td>
                                     <ul style="display: inline-block">
                                         <li>
 
                                             <span>Accept &nbsp;&nbsp;</span>
-                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
 
                                         </li>
                                         <li>
                                             <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
 
                                         </li>
                                     </ul>
@@ -730,25 +780,24 @@
                                 <td>05-02-2023</td>
                                 <td>Panadura</td>
                                 <td>Bandaragama</td>
-                                <td><a class="text-primary fw-bold" >View Image</a></td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
                                 <td>
                                     <ul style="display: inline-block">
                                         <li>
 
                                             <span>Accept &nbsp;&nbsp;</span>
-                                            <i style="color: limegreen; font-size: 20px" class="bi bi-check-circle"></i>
+                                            <i class="bi bi-check-circle" style="color: limegreen; font-size: 20px"></i>
 
                                         </li>
                                         <li>
                                             <span>Deny &nbsp;&nbsp; &nbsp;&nbsp;</span>
-                                            <i style="color: orangered; font-size: 20px" class="bi bi-x-circle"></i>
+                                            <i class="bi bi-x-circle" style="color: orangered; font-size: 20px"></i>
 
                                         </li>
                                     </ul>
                                 </td>
 
                             </tr>
-
 
 
                             </tbody>
@@ -761,10 +810,82 @@
     </main><!-- End #main -->
 </main>
 
+<!---->
+<!--========================================================================
+                                View All Customer
+============================================================================-->
+<main id="adminViewAllCustomer">
+    <main class="main" id="main">
 
-<main></main>
+        <div class="pagetitle">
+            <h1>All Customers</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <!-- All Customers -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">NIC</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC/License</th>
+
+                            </tr>
+                            </thead>
+                            <tbody id="adminSeeAllCustomer">
+                            <!--<tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Sanath Nishantha</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
 
 
+                            </tr>
+
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Sanath Nishantha</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+
+                            </tr>
+
+
+                            <tr style="border-bottom: 1px solid #d9d9d9">
+                                <th scope="row">C001</th>
+                                <td>Sanath Nishantha</td>
+                                <td>panadura</td>
+                                <td>0776845184</td>
+                                <td>5151515475</td>
+                                <td>jayarathna15@gmail.com</td>
+                                <td><a class="text-primary fw-bold">View Image</a></td>
+
+                            </tr>-->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Customer Verification -->
+        </section>
+    </main>
+</main>
 
 
 <script src="asserts/js/jquery-3.6.1.min.js"></script>
@@ -779,5 +900,6 @@
 
 
 <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
+<script src="asserts/js/controller/customerController.js"></script>
 </body>
 </html>

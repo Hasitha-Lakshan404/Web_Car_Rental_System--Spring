@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 
 @RestController
-@RequestMapping("/customer")
 @CrossOrigin
+@RequestMapping("/customer")
 public class CustomerController {
 
     @Autowired
@@ -30,13 +30,12 @@ public class CustomerController {
     public ResponseUtil RegisterCustomer(@RequestBody CustomerDTO dto){
         service.saveCustomer(dto);
         return new ResponseUtil("200", "Added.!.", dto);
-
     }
 
-    @PutMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateCustomer(CustomerDTO dto){
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO dto){
         service.updateCustomer(dto);
-        return new ResponseUtil("200",dto.getCustomerId()+": Updated.!",null);
+        return new ResponseUtil("200",dto.getCustomerId()+": Updated.!",dto);
     }
 
     @DeleteMapping(params = "id")
@@ -45,10 +44,13 @@ public class CustomerController {
         return new ResponseUtil("200",id+" : Deleted.!",null);
     }
 
-    @GetMapping
+    /*@GetMapping
     public ResponseUtil getAllCustomer(){
         ArrayList<CustomerDTO> allCustomers = service.getAllCustomerDetail();
         return new ResponseUtil("200"," Success.!",allCustomers);
+    }*/
+    @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllCustomerDetail() {
+        return new ResponseUtil("200", "Done", service.getAllCustomerDetail());
     }
-
 }

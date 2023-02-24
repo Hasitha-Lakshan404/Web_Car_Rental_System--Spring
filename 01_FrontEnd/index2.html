@@ -1747,16 +1747,13 @@
                 <img alt="" src="asserts/image/hatMan.jpg" style="border-radius: 50px">
                 <h5 class="mt-2" style="color: white">Hasitha Lakshan<span>.</span></h5>
             </a>
+            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i class="bi bi-pen"></i><span> Edit Details</span></a></div>
+
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
             <nav class="navbar" id="navbar">
                 <ul>
-                    <!--<li><a href="index.html">Home</a></li>
-                    <li><a href="#">Car Store</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>-->
                     <li id="navCartHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navCartCarStore"><a style="color: #CCCCCC">Car Store</a></li>
                     <li id="navCartAboutUs"><a style="color: #CCCCCC">About Us</a></li>
@@ -2017,15 +2014,14 @@
                 <h5 class="mt-2" style="color: white">Hasitha Lakshan<span>.</span></h5>
             </a>
 
+            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i class="bi bi-pen"></i><span> Edit Details</span></a></div>
+
+
+
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
             <nav class="navbar" id="navbar">
                 <ul>
-                    <!--<li><a href="index.html">Home</a></li>
-                    <li><a href="#">Car Store</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>-->
                     <li id="navOverViewHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navOverViewCarStore"><a style="color: #CCCCCC">Car Store</a></li>
                     <li id="navOverViewAboutUs"><a style="color: #CCCCCC">About Us</a></li>
@@ -2630,7 +2626,7 @@
 </main>
 
 
-<!--========================================================================
+<!--==========================================================================
                                   Customer Update
 ============================================================================-->
 <main id="spaMainCustomerUpdate">
@@ -2650,6 +2646,13 @@
                                     </a>
                                 </div><!-- End Logo -->
 
+                                <div class="d-flex align-items-end flex-column bd-highlight pb-4">
+                                    <!--Return Btn-->
+                                    <div>
+                                        <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">back to Home</button>
+                                    </div>
+                                </div>
+
                                 <div class="card mb-3">
 
                                     <div class="card-body">
@@ -2657,46 +2660,46 @@
                                             <!--name-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Name</label>-->
-                                                <input type="text" placeholder="Your Name" name="name" class="form-control" id="nameSignIn" required>
+                                                <input type="text" placeholder="Your Name" name="name" class="form-control" id="cusUpName" required>
                                             </div>
 
                                             <!--email-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Email</label>-->
-                                                <input type="email" placeholder="Email" class="form-control" name="email" id="emailSignIn" required>
+                                                <input type="email" placeholder="Email" class="form-control" name="email" id="cusUpEmail" required>
                                             </div>
 
                                             <!--nic-->
                                             <div class="form-group col-md-6 mb-3">
-                                                <input type="text" placeholder="NIC" name="name" class="form-control" id="nicSignIn" required>
+                                                <input type="text" placeholder="NIC" name="name" class="form-control" id="cusUpNic" required>
                                             </div>
 
                                             <!--Address-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Address" name="name" class="form-control" id="addressSignIn" required>
+                                                <input type="text" placeholder="Address" name="name" class="form-control" id="cusUpAddress" required>
                                             </div>
 
                                             <!--Contact-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Contact" name="name" class="form-control" id="contactSignIn" required>
+                                                <input type="text" placeholder="Contact" name="name" class="form-control" id="cusUpContact" required>
                                             </div>
 
                                             <!--Driving License-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Driving License" name="name" class="form-control" id="drivingLicenseSignIn" required>
+                                                <input type="text" placeholder="Driving License" name="name" class="form-control" id="cusUpDrivingLicence" id="drivingLicenseSignIn" required>
                                             </div>
 
                                             <div class="w-100">
                                                 <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
-                                                <input style="border: 1px solid gray" class="form-control  " type="file" id="register-form-NIC-image">
+                                                <input style="border: 1px solid gray" class="form-control  " type="file" id="cusUpNicImage">
                                             </div>
 
                                             <!--username-->
                                             <div class="col-12">
-                                                <label class="form-label" for="yourUsername">Username</label>
+                                                <label class="form-label" for="cusUpUserName">Username</label>
                                                 <div class="input-group has-validation">
                                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                                    <input class="form-control" id="yourUsername" name="username" required
+                                                    <input class="form-control" id="cusUpUserName" name="username" required
                                                            type="text">
                                                     <div class="invalid-feedback">Please enter your username.</div>
                                                 </div>
@@ -2704,15 +2707,15 @@
 
                                             <!--Password-->
                                             <div class="col-12">
-                                                <label class="form-label" for="yourPassword">Password</label>
-                                                <input class="form-control" id="yourPassword" name="password" required
+                                                <label class="form-label" for="cusUpPassword">Password</label>
+                                                <input class="form-control" id="cusUpPassword" name="password" required
                                                        type="password">
                                                 <div class="invalid-feedback">Please enter your password!</div>
                                             </div>
 
                                             <!--submit btn-->
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100" id="btnSignIn" type="button">Update</button>
+                                                <button class="btn btn-primary w-100" id="btnUpdate" type="button">Update</button>
                                             </div>
 
                                         </form>
@@ -2746,7 +2749,7 @@
 <script src="asserts/js/main.js"></script>
 <script src="asserts/js/main/carDetail.js"></script>
 <script src="asserts/js/main/nav.js"></script>
-<script src="asserts/js/main/customerController.js"></script>
+<script src="asserts/js/controller/customerController.js"></script>
 
 
 </body>
