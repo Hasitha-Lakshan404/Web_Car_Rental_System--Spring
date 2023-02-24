@@ -142,7 +142,6 @@ function updateCustomer(){
 
 /*load All*/
 function loadAllCustomers(){
-    alert("awo loadall")
     // $("#admin-customer-table").empty();
     $("#adminSeeAllCustomer").empty();
 
@@ -154,7 +153,6 @@ function loadAllCustomers(){
                 let im=customer.imageLocation;
 
                let row= `<tr style="border-bottom: 1px solid #d9d9d9"><th scope="row">${customer.customerId}</th><td>${customer.name}</td><td>${customer.address}</td><td>${customer.contactNumber}</td> <td>${customer.nic}</td><td>${customer.email}</td><td><a style="cursor: pointer" class="text-primary fw-bold">View Image</a></td></tr>>`;
-
 
                 $("#adminSeeAllCustomer").append(row);
 

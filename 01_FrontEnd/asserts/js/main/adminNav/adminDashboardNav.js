@@ -86,7 +86,6 @@ $('#adViewAllCustomer').click(function () {
 
     loadAllCustomers();
 
-    // alert("awooo")
 
 
 })
