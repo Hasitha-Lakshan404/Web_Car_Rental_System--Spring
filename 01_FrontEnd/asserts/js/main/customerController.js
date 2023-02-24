@@ -82,6 +82,7 @@ function navToLogIn(data) {
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','block');
     $('#spaMainCarDetail').css('display','none');
+    $('#spaMainCustomerUpdate').css('display','none');
 
     console.log(data.name,data.id,data.userName);
 }
