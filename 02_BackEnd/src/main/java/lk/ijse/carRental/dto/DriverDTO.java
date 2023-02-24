@@ -23,6 +23,7 @@ public class DriverDTO {
     private String name;
     private String nic;
     private String drivingLicenseNumber;
+    private String address;
     private LocalDate dob;
     private String status;
 }

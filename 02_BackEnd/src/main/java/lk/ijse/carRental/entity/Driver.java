@@ -26,8 +26,9 @@ public class Driver {
     private String driverId;
     private String name;
     private String nic;
-    private String drivingLicenseNumber;
     private LocalDate dob;
+    private String address;
+    private String drivingLicenseNumber;
     private String status;
 
     @OneToMany(mappedBy = "driverId")

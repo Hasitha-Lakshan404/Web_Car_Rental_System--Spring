@@ -40,24 +40,25 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driverDTO) {
-        if (repo.existsById(driverDTO.getDriverId())) {
-            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Already Exist..!");
+        if (repo.existsById(driverDTO.getDriverId())){
+            throw new RuntimeException("Driver" +driverDTO.getDriverId()+"Already Exist..!");
         }
-        repo.save(mapper.map(driverDTO, Driver.class));
+        repo.save(mapper.map(driverDTO,Driver.class));
     }
 
     @Override
-    public void UpdateDriver(DriverDTO driverDTO) {
-        if (!repo.existsById(driverDTO.getDriverId())){
-            throw new RuntimeException("Driver "+driverDTO.getDriverId()+" Not Available to Update..!");
+    public void updateDriver(DriverDTO driverDTO) {
+        if (repo.existsById(driverDTO.getDriverId())){
+            repo.save( mapper.map(driverDTO, Driver.class));
+        }else {
+            throw new RuntimeException("Driver " + driverDTO.getDriverId() + " Not Available to Update..!");
         }
-        repo.save( mapper.map(driverDTO, Driver.class));
     }
 
     @Override
     public void deleteDriver(String id) {
         if (!repo.existsById(id)){
-            throw new RuntimeException("Driver "+id+" Not Available to Delete..!");
+            throw new RuntimeException("Customer "+id+" Not Available To Delete.");
         }
         repo.deleteById(id);
     }
@@ -69,9 +70,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public ArrayList<DriverDTO> getAllDriverDetail() {
-        return mapper.map(repo.findAll(), new TypeToken<ArrayList<DriverDTO>>() {
-
-        }.getType());
+        return mapper.map(repo.findAll(),new TypeToken<List<DriverDTO>>(){}.getType());
     }
 
     @Override

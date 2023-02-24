@@ -887,103 +887,164 @@
     </main>
 </main>
 
+<!--========================================================================
+                               Driver
+============================================================================-->
+<main id="adminDriver">
+    <main class="main" id="main">
+
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                    </div>
 
 
-<!--Admin View Driver-->
-<main id="spaAdminViewDriver">
-    <main id="adminViewDriverSpa" >
-        <div class="carAdminBody container-fluid mt-5 ms-5" style="top:-15px;height: 691px;">
-            <h3 style="margin-left: 26px; margin-top: 23px;">View Driver</h3>
-            <form id="carAdminForm" style="margin-left: 5px; margin-top: 44px;" >
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-groupCF">
+                                    <form class="row g-3">
 
-                            <input class="form-control" id="save-driver-Id" placeholder="Driver Id" type="text">
-                            <span class="control-error" id="lblcbrnd"></span>
+                                        <!--Type-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-Id" name="carAddVehicleType"
+                                                   placeholder="Enter Id" required type="text">
+                                        </div>
+
+                                        <!--Name-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-name" placeholder="Name" type="text">
+                                            <span class="control-error" id="lbltrnsm"></span>
+                                        </div>
+
+                                        <!--Address-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-address" placeholder="Address" type="text">
+                                            <span class="control-error" id="lbltype"></span>
+                                        </div>
+
+                                        <!--DOB-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-dob" placeholder="DOB" type="date">
+                                            <span class="control-error" id="lblnoofpass"></span>
+                                        </div>
+
+                                        <!--NIC-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-nic" placeholder="NIC" type="text">
+                                            <span class="control-error" id="lblfuel"></span>
+                                        </div>
+
+                                        <!--License-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-license" placeholder="License Number" type="text">
+                                            <span class="control-error" id="lblmrt"></span>
+                                        </div>
+
+                                    </form>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary" id="btnAddDriver" style="background-color: #14131C;color: white; border: none;width: 150px">Add Driver</button>
+                                        </div>
+
+                                        <div class="col-sm-3" style="margin-left: -70px">
+                                            <button class="btn btn-primary" id="btnUpdateDriver" style="background-color: navy;color: white; border: none;width: 150px">Update</button>
+                                        </div>
+
+                                        <div class="col-sm-3" style="margin-left: -65px">
+                                            <button class="btn btn-primary" id="btnDeleteDriver" style="background-color: orangered;color: white; border: none; width: 150px">Delete</button>
+                                        </div>
+                                    </div>
+
+                                    <!--================================-->
+                                    <div class="card top-selling overflow-auto mt-5">
+
+                                        <div class="card-body pb-0">
+
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Driver Id</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">DOB</th>
+                                                    <th scope="col">NIC</th>
+                                                    <th scope="col">License No</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="admin-view-driver">
+                                                <tr style="border-bottom: 1px solid #d9d9d9">
+                                                    <th scope="row">C001</th>
+                                                    <td>kasun perice</td>
+                                                    <td>panadura</td>
+                                                    <td>0776845184</td>
+                                                    <td>5151515475</td>
+                                                    <td>jayarathna15@gmail.com</td>
+                                                    <td><a class="text-primary fw-bold">View Image</a></td>
+                                                </tr>
+
+                                                <!--<tr style="border-bottom: 1px solid #d9d9d9">
+                                                    <th scope="row">C001</th>
+                                                    <td>Sanath Nishantha</td>
+                                                    <td>panadura</td>
+                                                    <td>0776845184</td>
+                                                    <td>5151515475</td>
+                                                    <td>jayarathna15@gmail.com</td>
+                                                    <td><a class="text-primary fw-bold">View Image</a></td>
+
+
+                                                </tr>
+
+
+                                                <tr style="border-bottom: 1px solid #d9d9d9">
+                                                    <th scope="row">C001</th>
+                                                    <td>Sanath Nishantha</td>
+                                                    <td>panadura</td>
+                                                    <td>0776845184</td>
+                                                    <td>5151515475</td>
+                                                    <td>jayarathna15@gmail.com</td>
+                                                    <td><a class="text-primary fw-bold">View Image</a></td>
+
+                                                </tr>
+
+
+                                                <tr style="border-bottom: 1px solid #d9d9d9">
+                                                    <th scope="row">C001</th>
+                                                    <td>Sanath Nishantha</td>
+                                                    <td>panadura</td>
+                                                    <td>0776845184</td>
+                                                    <td>5151515475</td>
+                                                    <td>jayarathna15@gmail.com</td>
+                                                    <td><a class="text-primary fw-bold">View Image</a></td>
+
+                                                </tr>-->
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
 
-                    <div class="col-sm-6">
-                        <div class="form-groupTF">
-
-                            <input class="form-control" id="save-driver-name" placeholder="Name" type="text">
-                            <span class="control-error" id="lbltrnsm"></span>
-                        </div>
-                    </div>
                 </div>
 
-                <br>
+            </section>
 
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-groupTT">
-                            <input class="form-control" id="save-driver-address" placeholder="Address" type="text">
-                            <span class="control-error" id="lbltype"></span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-groupNFP">
-                            <input class="form-control" id="save-driver-dob" placeholder="DOB" type="text">
-                            <span class="control-error" id="lblnoofpass"></span>
-                        </div>
-                    </div>
-                </div>
-                <br>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="form-groupFT">
-                            <input class="form-control" id="save-driver-nic" placeholder="NIC" type="text">
-                            <span class="control-error" id="lblfuel"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-groupMRT">
-                            <input class="form-control" id="save-driver-license" placeholder="License Number" type="text">
-                            <span class="control-error" id="lblmrt"></span>
-                        </div>
-                    </div>
-                </div>
-                <br>
-
-            </form>
-
-            <div class="row">
-                <div class="col-sm-3">
-                    <button class="btn btn-primary" id="btnAddDriver" style="background-color: #14131C;color: white; border: none">Add Driver</button>
-                </div>
-
-                <div class="col-sm-3" style="margin-left: -72px">
-                    <button class="btn btn-primary" id="btnUpdateDriver" style="background-color: navy;color: white; border: none">Update</button>
-                </div>
-
-                <div class="col-sm-3" style="margin-left: -111px">
-                    <button class="btn btn-primary" id="btnDeleteDriver" style="background-color: orangered;color: white; border: none">Delete</button>
-                </div>
-            </div>
-
-            <div class="col-sm-9 mt-lg-3">
-
-                <table style="width: 798px;margin-left: -10px; margin-top: 46px;" class="table table-borderless">
-                    <thead class="bg-dark shadow-lg" style="background-color:white; color: black;">
-                    <tr>
-                        <th scope="col" class="text-light">Driver Id</th>
-                        <th scope="col" class="text-light">Name</th>
-                        <th scope="col" class="text-light">Address</th>
-                        <th scope="col" class="text-light">DOB</th>
-                        <th scope="col" class="text-light">NIC</th>
-                        <th scope="col" class="text-light">License No</th>
-                        <th scope="col" class="text-light">Status</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
         </div>
     </main>
 </main>
@@ -1002,5 +1063,6 @@
 
 <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
 <script src="asserts/js/controller/customerController.js"></script>
+<script src="asserts/js/controller/driverController.js"></script>
 </body>
 </html>
