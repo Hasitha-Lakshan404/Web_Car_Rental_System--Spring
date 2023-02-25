@@ -431,117 +431,154 @@
 
                                         <!--vehicle Type-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <!--<label for="name">vehicleType</label>-->
-                                            <input class="form-control" id="carAddVehicleType" name="carAddVehicleType"
-                                                   placeholder="Enter Type" required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3 "
+                                                   id="save-car-registration" placeholder="Registration Id"
+                                                   type="text">
                                         </div>
 
                                         <!--Brand-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleBrand"
-                                                   name="carAddVehicleBrand"
-                                                   placeholder="Enter Brand" required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="new_car_brand"
+                                                   name="brand"
+                                                   type="text" placeholder="Brand">
                                         </div>
 
-                                        <!--vehicle Modal-->
+                                        <!--Model-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleModel"
-                                                   name="carAddVehicleModel"
-                                                   placeholder="Enter Model" required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-model"
+                                                   type="text" placeholder="Model">
+                                        </div>
+
+
+                                        <!--Colour-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-color"
+                                                   type="text" placeholder="Colour">
+                                        </div>
+
+                                        <!--Type-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-type">
+                                                <option value="" selected disabled>Select Type</option>
+                                                <option value="General">General</option>
+                                                <option value="Premium">Premium</option>
+                                                <option value="Luxury">Luxury</option>
+                                            </select>
                                         </div>
 
 
                                         <!--Transmission-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleTransmission"
-                                                   name="carAddVehicleTransmission" placeholder="Enter Transmission"
-                                                   required type="text">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-transmission">
+                                                <option value="" disabled selected>Transmission Type</option>
+                                                <option value="Auto">Auto</option>
+                                                <option value="Manual">Manual</option>
+                                            </select>
+                                        </div>
+
+                                        <!--No Of Passenger-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-passengers"
+                                                   type="number" placeholder="No Of Passenger">
+                                        </div>
+
+                                        <!--Status-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-status">
+                                                <option disabled selected>Availability</option>
+                                                <option value="Available">Available</option>
+                                                <option value="Unavailable">Unavailable</option>
+                                            </select>
                                         </div>
 
                                         <!--Fuel-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleFuel" name="carAddVehicleFuel"
-                                                   placeholder="Fuel Type" required type="text">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-fuelType">
+                                                <option selected disabled>Fuel Type</option>
+                                                <option value="Petrol">Petrol</option>
+                                                <option value="Diesel">Diesel</option>
+                                            </select>
                                         </div>
+
 
                                         <!--Daily Rate-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleDailyRate"
-                                                   name="carAddVehicleDailyRate"
-                                                   placeholder="Daily Rate" required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-daily"
+                                                   type="number" placeholder="Daily Rate">
                                         </div>
 
                                         <!--Monthly Rate-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleMonthlyRate"
-                                                   name="carAddVehicleMonthlyRate" placeholder="Monthly Rate"
-                                                   required type="text">
-                                        </div>
-
-                                        <!--Extra Km Price-->
-                                        <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehiclePriceForExtraKm"
-                                                   name="carAddVehiclePriceForExtraKm" placeholder="Price For Extra Km"
-                                                   required type="text">
-                                        </div>
-
-                                        <!--Free Mileage-->
-                                        <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleFreeMileage"
-                                                   name="carAddVehicleFreeMileage" placeholder="Free Mileage"
-                                                   required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-monthly"
+                                                   type="number" placeholder="Monthly Rate">
                                         </div>
 
                                         <!--Last Service Mileage-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleLastServiceMileage"
-                                                   name="carAddVehicleLastServiceMileage"
-                                                   placeholder="Last Service Mileage"
-                                                   required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-freeKm-day"
+                                                   type="number" placeholder="Last Service Mileage">
                                         </div>
 
-                                        <!--RegID-->
+                                        <!--Free Service Mileage-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleRegistrationId"
-                                                   name="carAddVehicleRegistrationId" placeholder="Registration Id"
-                                                   required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-freeKm-month"
+                                                   type="number" placeholder="Free Service Mileage">
                                         </div>
 
-                                        <!--Colour-->
+                                        <!--Price For Extra Km-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <input class="form-control" id="carAddVehicleColour"
-                                                   name="carAddVehicleColour"
-                                                   placeholder="Vehicle Colour" required type="text">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-extraKm-price"
+                                                   type="number" placeholder="Price FOr Extra Km">
                                         </div>
 
-                                        <!--Front-->
+
+                                        <!--Waiver Payment-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label class="form-label " for="register-form-Front-image">Front</label>
-                                            <input class="form-control  " id="register-form-Front-image"
-                                                   style="border: 1px solid gray"
-                                                   type="file">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                            id="save-car-waiver-payment"
+                                            type="number" placeholder="Waiver Payment">
                                         </div>
-                                        <!--Back-->
+
+                                        <!--Description-->
                                         <div class="form-group col-md-6 mb-3">
-                                            <label class="form-label " for="register-form-Back-image">Back</label>
-                                            <input class="form-control  " id="register-form-Back-image"
-                                                   style="border: 1px solid gray"
-                                                   type="file">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                            id="save-car-Description"
+                                            type="number" placeholder="Vehicle Description">
                                         </div>
-                                        <!--Side-->
+
                                         <div class="form-group col-md-6 mb-3">
-                                            <label class="form-label " for="register-form-Side-image">Side</label>
-                                            <input class="form-control  " id="register-form-Side-image"
-                                                   style="border: 1px solid gray"
-                                                   type="file">
+                                            <label class="form-label fw-bold">Front View Of Car</label>
+                                            <input class="form-control " id="save-car-frontView"
+                                                   name="file" type="file">
                                         </div>
-                                        <!--Interior-->
+
                                         <div class="form-group col-md-6 mb-3">
-                                            <label class="form-label "
-                                                   for="register-form-Interior-image">Interior</label>
-                                            <input class="form-control  " id="register-form-Interior-image"
-                                                   style="border: 1px solid gray"
-                                                   type="file">
+                                            <label class="form-label fw-bold">Back View Of Car</label>
+                                            <input class="form-control " id="save-car-backView"
+                                                   name="file" type="file">
+                                        </div>
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Side View Of Car</label>
+                                            <input class="form-control " id="save-car-sideView"
+                                                   name="file" type="file">
+                                        </div>
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Interior View Of Car</label>
+                                            <input class="form-control " id="save-car-interior"
+                                                   name="file" type="file">
                                         </div>
 
 

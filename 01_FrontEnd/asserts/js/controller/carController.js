@@ -127,8 +127,6 @@ function loadAllCars(path) {
         method: "GET",
         success: function (resp) {
             for (const car of resp.data) {
-                // let row = `<tr><td>${car.registrationId}</td><td>${car.brand}</td><td>${car.type}</td><td>${car.transmissionType}</td><td>${car.fuelType}</td></tr>`;
-
                 let div=`<div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"
                          data-aos-delay="100">
                         <div class="icon-box">
@@ -208,7 +206,17 @@ function loadAllCars(path) {
 
                         </div>
                     </div>`;
-                $("#cusLuxCarContainer").append(div);
+
+                if (car.type==="Luxury"){
+                    $("#cusLuxCarContainer").append(div);
+                }else if(car.type==="Premium"){
+                    $("#cusPremiumCarContainer").append(div);
+                }else if(car.type==="General"){
+                    $("#cusCarGeneralContainer").append(div);
+                }
+
+
+
 
                 // $("#admin-cars-table>tr").off("click");
                 // $("#admin-cars-table>tr").click(function () {
@@ -216,7 +224,6 @@ function loadAllCars(path) {
                 //     $("#viewButton").prop('disabled', false);
 
             }
-
         }
     });
 }

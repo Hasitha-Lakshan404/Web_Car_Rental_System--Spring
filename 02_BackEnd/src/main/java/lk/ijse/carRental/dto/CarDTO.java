@@ -29,6 +29,7 @@ public class CarDTO {
     private String image2;
     private String image3;
     private String image4;
+    private String VehicleDescription;
     private double lastServiceMileage;
     private double freeKmDay;
     private long freeKmMonth;

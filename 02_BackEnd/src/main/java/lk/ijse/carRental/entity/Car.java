@@ -33,6 +33,7 @@ public class Car {
     private String image2;
     private String image3;
     private String image4;
+    private String VehicleDescription;
     private long lastServiceMileage;
     private long freeKmDay;
     private long freeKmMonth;
