@@ -7,6 +7,8 @@ $(window).on('load',function () {
     $('#spaMainCarDetail').css('display','none');
     $('#spaMainSignIn').css('display','none');
     $('#spaMainLogIn').css('display','none');
+
+    loadAllCars("allCarDetail");
 })
 
  $('#spaMainCustomerUpdate').css('display','none');

@@ -1,10 +1,16 @@
 package lk.ijse.carRental.service.impl;
 
 import lk.ijse.carRental.dto.CarDTO;
+import lk.ijse.carRental.entity.Car;
+import lk.ijse.carRental.repo.CarRepo;
 import lk.ijse.carRental.service.CarService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,19 +23,36 @@ import java.util.List;
 @Service
 @Transactional
 public class CarServiceImpl implements CarService {
+    @Autowired
+    CarRepo repo;
+
+    @Autowired
+    ModelMapper mapper;
+
     @Override
     public void saveCar(CarDTO carDTO) {
-
+        if (repo.existsById(carDTO.getRegistrationId())){
+            throw new RuntimeException("Car "+carDTO.getRegistrationId()+" Already Exist..!");
+        }
+        Car entity = mapper.map(carDTO, Car.class);
+        repo.save(entity);
     }
 
     @Override
     public void updateCar(CarDTO carDTO) {
-
+        if (!repo.existsById(carDTO.getRegistrationId())){
+            throw new RuntimeException("Car "+carDTO.getRegistrationId()+" Not Available to Update..!");
+        }
+        Car entity = mapper.map(carDTO, Car.class);
+        repo.save(entity);
     }
 
     @Override
     public void deleteCar(String id) {
-
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Car "+id+" Not Available to Delete..!");
+        }
+        repo.deleteById(id);
     }
 
     @Override
@@ -38,8 +61,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<CarDTO> getAllCarDetail() {
-        return null;
+    public ArrayList<CarDTO> getAllCarDetail() {
+        return mapper.map(repo.findAll(), new TypeToken<List<CarDTO>>() {
+        }.getType());
     }
 
     @Override
@@ -71,4 +95,19 @@ public class CarServiceImpl implements CarService {
     public List<CarDTO> sortCarsByAttributes(CarDTO carDTO) {
         return null;
     }
+
+    @Override
+    public void uploadCarImages(String frontPath, String backPath, String sidePath, String interiorPath, String registrationNum) {
+        if (repo.existsById(registrationNum)) {
+            repo.updateCarFilePaths(frontPath, backPath, sidePath,interiorPath, registrationNum);
+        } else {
+            throw new RuntimeException("User Not Found");
+        }
+    }
+
+    @Override
+    public CarDTO searchCarByRegistrationId(String registrationId) {
+        return mapper.map( repo.getCarByRegistrationId(registrationId),CarDTO.class);
+    }
+
 }

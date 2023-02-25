@@ -12,9 +12,29 @@ import lombok.ToString;
  * Time :12:05 AM
  */
 
-/*@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString*/
+@ToString
 public class CarDTO {
+    private String registrationId;
+    private String brand;
+    private String type;
+    private String model;
+    private String fuelType;
+    private String transmissionType;
+    private String color;
+    private int noOfPassenger;
+    private String image1;
+    private String image2;
+    private String image3;
+    private String image4;
+    private double lastServiceMileage;
+    private double freeKmDay;
+    private long freeKmMonth;
+    private double dailyRate;
+    private double monthlyRate;
+    private double priceForExtraKm;
+    private double waiver_payment;
+    private String availability;
 }

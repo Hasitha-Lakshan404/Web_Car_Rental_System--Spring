@@ -22,7 +22,7 @@ import javax.persistence.Id;
 public class Car {
     @Id
     private String registrationId;
-    private String Brand;
+    private String brand;
     private String type;
     private String model;
     private String fuelType;
@@ -34,9 +34,11 @@ public class Car {
     private String image3;
     private String image4;
     private long lastServiceMileage;
-    private long freeServiceMileage;
+    private long freeKmDay;
+    private long freeKmMonth;
     private double dailyRate;
     private double monthlyRate;
     private double priceForExtraKm;
+    private double waiver_payment;
     private String availability;
 }

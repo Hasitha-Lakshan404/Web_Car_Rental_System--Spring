@@ -34,4 +34,8 @@ public interface CarService {
     void setCarStatusUnavailableOrAvailable(String id, String status);
 
     List<CarDTO> sortCarsByAttributes(CarDTO carDTO);
+
+    void uploadCarImages(String carFrontViewPath, String carBackViewPath, String carSideViewPath, String carInteriorViewPath, String registrationNum);
+
+    CarDTO searchCarByRegistrationId(String registrationId);
 }
