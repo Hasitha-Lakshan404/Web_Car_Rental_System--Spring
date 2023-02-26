@@ -147,7 +147,7 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img class="carCardMainImg" alt="" src="../image/ToyotaPremi.png"
+                                    <div class="icon"><img class="carCardMainImg" alt="" src="asserts/image/ToyotaPremi.png "
                                                            style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
@@ -215,8 +215,6 @@ function loadAllCars(path) {
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
                                 </div>
                             </div>
-
-
                         </div>
                     </div>`;
 
@@ -230,8 +228,62 @@ function loadAllCars(path) {
 
                 /*---SET IMG----*/
 
-
             }
+            /*Event in this Car Card*/
+            carStoreCarDetailsIcon();
+            rentItClick();
         }
     });
 }
+
+
+function rentItClick() {
+    $(".btn_RentIt").click(function () {
+        var bgColor = $(this).css("background-color");
+
+        if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
+            $(this).text("Added");
+            $(this).css({
+                "background":"#D50137",
+                "color":"#ffffff"
+            });
+        }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){
+            $(this).text("Rent It");
+            $(this).css({
+                "background":"#F7F7F7",
+                "color":"#444444",
+            });
+        }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){
+            $(this).text("Added");
+            $(this).css({
+                "background":"#D50137",
+                "color":"#ffffff"
+            });
+        }
+    })
+}
+
+
+/*check Colour Equal*/
+function colorsAreEqual(color1, color2) {
+    var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
+    var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
+    if (rgb1.length !== 3 || rgb2.length !== 3) {
+        return false;  // Invalid input - not a valid color
+    }
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(rgb1[i]) !== parseInt(rgb2[i])) {
+            return false;  // The colors are not equal
+        }
+    }
+    return true;  // The colors are equal
+}
+
+// Example usage:
+var color1 = "rgb(255, 0, 0)";
+var color2 = "rgb(255, 0, 0)";
+console.log(colorsAreEqual(color1, color2));  // true
+
+var color3 = "rgb(255, 255, 0)";
+var color4 = "rgb(255, 0, 0)";
+console.log(colorsAreEqual(color3, color4));  // false

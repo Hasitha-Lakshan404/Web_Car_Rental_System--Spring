@@ -337,17 +337,22 @@ $('#cartBtnSendRentalRq').click(function () {
 })
 
 
-/*Car Detail ICon*/
-$('.carStoreIndexCarDetailIcon').click(function () {
-    $('#spaMainIndex').css('display','none');
-    $('#spaMainCarStore').css('display','none');
-    $('#spaMainCart').css('display','none');
-    $('#spaMainOverview').css('display','none');
-    $('#spaMainSignIn').css('display','none');
-    $('#spaMainLogIn').css('display','none');
-     $('#spaMainCustomerUpdate').css('display','none');
-    $('#spaMainCarDetail').css('display','block');
-})
+
+function carStoreCarDetailsIcon() {
+    /*Car Detail ICon*/
+    $('.carStoreIndexCarDetailIcon').click(function () {
+        $('#spaMainIndex').css('display','none');
+        $('#spaMainCarStore').css('display','none');
+        $('#spaMainCart').css('display','none');
+        $('#spaMainOverview').css('display','none');
+        $('#spaMainSignIn').css('display','none');
+        $('#spaMainLogIn').css('display','none');
+        $('#spaMainCustomerUpdate').css('display','none');
+        $('#spaMainCarDetail').css('display','block');
+    })
+
+}
+
 
 /*Book Now Btn*/
 $('#btnIndexBookNow').click(function () {
