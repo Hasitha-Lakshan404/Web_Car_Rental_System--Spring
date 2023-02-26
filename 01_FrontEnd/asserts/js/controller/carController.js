@@ -240,31 +240,43 @@ function loadAllCars(path) {
 function rentItClick() {
     $(".btn_RentIt").click(function () {
         var bgColor = $(this).css("background-color");
+        console.log(bgColor)
 
-        if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){
+        // "rgb("+ 68 +","+ 68 +","+ 68 +")"
+
+        // carController.js:243
+        console.log(this.bgColor==="rgb("+ 255 +","+ 0 +","+ 0 +")");
+
+        if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){ //firstTime With hover
             $(this).text("Added");
             $(this).css({
                 "background":"#D50137",
                 "color":"#ffffff"
             });
-        }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){
+        }else if(colorsAreEqual(bgColor, "rgb(213, 1, 55)")){ //red
             $(this).text("Rent It");
             $(this).css({
                 "background":"#F7F7F7",
                 "color":"#444444",
+
             });
-        }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){
+        }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){ //red turn to past value
             $(this).text("Added");
             $(this).css({
                 "background":"#D50137",
                 "color":"#ffffff"
             });
         }
+
+
+
+
+
     })
 }
 
 
-/*check Colour Equal*/
+
 function colorsAreEqual(color1, color2) {
     var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
     var rgb2 = color2.match(/\d+/g);  // Get the RGB values of color2
