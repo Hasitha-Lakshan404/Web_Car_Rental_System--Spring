@@ -62,6 +62,8 @@ $('#adViewDriver').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','block');
     $('#adminViewAllCustomer').css('display','none');
+
+    loadAllDrivers();
 })
 
 /*Driver shedule*/

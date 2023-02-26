@@ -1,5 +1,6 @@
 package lk.ijse.carRental.controller;
 
+import lk.ijse.carRental.dto.CarDTO;
 import lk.ijse.carRental.service.CarService;
 import lk.ijse.carRental.service.CustomerService;
 import lk.ijse.carRental.util.ResponseUtil;
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+
 
 /**
  * @author : Hasitha Lakshan
@@ -26,11 +28,17 @@ public class CarController {
     @Autowired
     private CarService service;
 
+    @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseUtil updateCar(@RequestBody CarDTO dto){
+        service.saveCar(dto);
+        return new ResponseUtil("200", "Registration Successfully....", dto);
+    }
+
 
     @PutMapping(path = "/uploadImg/{registrationNum}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil uploadImagesAndPath(@RequestPart("image_1") MultipartFile image_1, @RequestPart("image_2") MultipartFile image_2, @RequestPart("image_3") MultipartFile image_3, @RequestPart("image_4") MultipartFile image_4, @PathVariable String registrationNum) {
+        System.out.println("AWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         try {
-
             String projectPath = String.valueOf(new File("E:\\imageSave\\uploads"));
             File uploadsDir = new File(projectPath + "\\carImage");
             uploadsDir.mkdir();

@@ -3,28 +3,28 @@ var driver_nic;
 
 /*Save Driver*/
 $("#btnAddDriver").click(function (){
-    alert("add")
     saveDriver();
+    loadAllDrivers();
 });
 
 /*Update Driver*/
 $("#btnUpdateDriver").click(function (){
-    alert("upd")
     updateDriver();
+    loadAllDrivers();
 });
 
 /*Delete Driver*/
 $("#btnDeleteDriver").click(function (){
-    alert("del")
+    // alert("del")
     $.ajax({
-        url:baseurl+$("#save-driver-Id").val(),
+        url:"http://localhost:8080/02_BackEnd_war_exploded/"+$("#save-driver-Id").val(),
         method:"delete",
         success(resp){
             alert(resp.message);
             loadAllDrivers();
         }
     });
-    clearDriverText();
+    // clearDriverText();
 });
 
 
@@ -93,7 +93,6 @@ function updateDriver(){
         dob: $("#save-driver-dob").val(),
         address: $("#save-driver-address").val(),
         drivingLicenseNumber: $("#save-driver-license").val()
-
     }
 
     $.ajax({

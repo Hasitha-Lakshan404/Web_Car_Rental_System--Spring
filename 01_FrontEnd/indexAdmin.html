@@ -419,7 +419,7 @@
                                     </div>
 
                                     <div class="d-flex align-items-end flex-column bd-highlight pb-4">
-                                        <!--Add btn-->
+                                        <!--View btn-->
                                         <div>
                                             <button class="btn btn-primary w-100" id="carAddVehicleAddButton"
                                                     type="submit">View Vehicles
@@ -429,7 +429,7 @@
 
                                     <form class="row g-3">
 
-                                        <!--vehicle Type-->
+                                        <!--Registration Id-->
                                         <div class="form-group col-md-6 mb-3">
                                             <input aria-label="Disabled input example" class="form-control mb-3 "
                                                    id="save-car-registration" placeholder="Registration Id"
@@ -526,15 +526,22 @@
                                         <!--Last Service Mileage-->
                                         <div class="form-group col-md-6 mb-3">
                                             <input aria-label="Disabled input example" class="form-control mb-3"
-                                                   id="save-car-freeKm-day"
+                                                   id="save-car-lastService-mileage"
                                                    type="number" placeholder="Last Service Mileage">
                                         </div>
 
-                                        <!--Free Service Mileage-->
+                                        <!--freeKmDay-->
                                         <div class="form-group col-md-6 mb-3">
                                             <input aria-label="Disabled input example" class="form-control mb-3"
-                                                   id="save-car-freeKm-month"
-                                                   type="number" placeholder="Free Service Mileage">
+                                                   id="save-car-freeKm-Day"
+                                                   type="number" placeholder="Free Km Day">
+                                        </div>
+
+                                        <!--freeKmMonth-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-freeKm-Month"
+                                                   type="number" placeholder="Free Km Month">
                                         </div>
 
                                         <!--Price For Extra Km-->
@@ -556,7 +563,11 @@
                                         <div class="form-group col-md-6 mb-3">
                                             <input aria-label="Disabled input example" class="form-control mb-3"
                                             id="save-car-Description"
-                                            type="number" placeholder="Vehicle Description">
+                                            type="text" placeholder="Vehicle Description">
+                                        </div>
+
+                                        <div class="form-group col-md-6 mb-3">
+
                                         </div>
 
                                         <div class="form-group col-md-6 mb-3">
@@ -584,7 +595,7 @@
 
                                         <!--Add btn-->
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" id="btnSignIn" type="submit">Add
+                                            <button class="btn btn-primary w-100" id="btnAdminAddCar" type="button">Add
                                                 Vehicle
                                             </button>
                                         </div>
@@ -1101,5 +1112,6 @@
 <script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
 <script src="asserts/js/controller/customerController.js"></script>
 <script src="asserts/js/controller/driverController.js"></script>
+<script src="asserts/js/controller/carController.js"></script>
 </body>
 </html>
