@@ -1,9 +1,42 @@
+var vNameAr=[];
+var baseurl="http://localhost:8080/02_BackEnd_war_exploded/";
 
 $("#btnAdminAddCar").click(function () {
+    let registrationNum = $("#save-car-registration").val();
     addCar();
+    // saveCar();
+    // newM();
 })
 
+function newM() {
+    let driverLicenseImg=$("#frontView")[0].files[0];
+    console.log($(".front")[0].files[0])
+}
 function addCar() {
+    var vData = new FormData();
+
+    let frontViewFile = $(".frontView")[0].files[0];
+    console .log(frontViewFile)
+    let backViewFile = $(".backView")[0].files[0];
+    let sideViewFile = $(".sideView")[0].files[0];
+    let interiorViewFile = $(".interior")[0].files[0];
+
+    console.log(frontViewFile)
+    console.log(backViewFile)
+    console.log(sideViewFile)
+    console.log(interiorViewFile)
+
+    let frontFileName =$(".frontView")[0].files[0].name;
+    let backFileName = $(".backView")[0].files[0].name;
+    let sideFileName = $(".sideView")[0].files[0].name;
+    let interiorFileName =$(".interior")[0].files[0].name;
+    console.log(frontFileName)
+    console.log(backFileName)
+    console.log(sideFileName)
+    console.log(interiorFileName)
+
+
+
     let registrationNum = $("#save-car-registration").val();
     let brand = $("#new_car_brand").val();
     let type = $("#save-car-type").val();
@@ -25,7 +58,12 @@ function addCar() {
     let wavier = $("#save-car-waiver-payment").val();
     let status = $("#save-car-status").val();
 
-    var car = {
+    let image1 = frontFileName;
+    let image2 = backFileName;
+    let image3 = sideFileName;
+    let image4 = interiorFileName;
+
+    var carDTO = {
         registrationId: registrationNum,
         brand: brand,
         type: type,
@@ -34,6 +72,10 @@ function addCar() {
         transmissionType: transmission,
         colour: colour,
         noOfPassenger: noOfPassengers,
+        image1:"uploads/"+ image1,
+        image2:"uploads/"+ image2,
+        image3:"uploads/"+ image3,
+        image4:"uploads/"+ image4,
         VehicleDescription:description,
         lastServiceMileage: lastServiceMileage,
         freeKmDay: freeKmDay,
@@ -45,15 +87,23 @@ function addCar() {
         availability: status,
     }
 
+    vData.append("carFiles" , frontViewFile)
+    vData.append("carFiles" , backViewFile)
+    vData.append("carFiles" , sideViewFile)
+    vData.append("carFiles" , interiorViewFile)
+    vData.append("vehicle", new Blob([JSON.stringify(carDTO)], {type: "application/json"}))
+
     $.ajax({
         url: baseurl + "car",
         method: "POST",
-        contentType: "application/json",
-        data: JSON.stringify(car),
+        async:true,
+        contentType: false,
+        processData: false,
+        data: vData,
         success: function (resp) {
-            alert("Add Susses");
-            uploadCarImages(registrationNum);
-            loadAllCars();
+            // alert("Add Susses");
+            // uploadCarImages(registrationNum);
+            // loadAllCars();
 
             /*Swal.fire({
                 position: 'top-end',
@@ -62,10 +112,18 @@ function addCar() {
                 showConfirmButton: false,
                 timer: 1500
             });*/
+            if (resp.status === 200) {
+                alert(resp.message);
+                // loadAllCars("allCarDetail");
+
+                uploadCarImages(registrationNum);
+
+            }
 
         },
         error: function (error) {
-            let errorReason = JSON.parse(error.responseText);
+            // alert(error.responseJSON.message)
+            console.log(error);
             /*Swal.fire({
                 position: 'top-end',
                 icon: 'error',
@@ -79,29 +137,29 @@ function addCar() {
 
 
 function uploadCarImages(registrationNum) {
-    alert("save Image eke")
+    alert("save Image ")
 
     let frontViewFile = $("#save-car-frontView")[0].files[0];
     let backViewFile = $("#save-car-backView")[0].files[0];
     let sideViewFile = $("#save-car-sideView")[0].files[0];
     let interiorViewFile = $("#save-car-interior")[0].files[0];
 
-    let frontFileName = registrationNum + "-image_1-" + $("#save-car-frontView")[0].files[0].name;
-    let backFileName = registrationNum + "-image_2-" + $("#save-car-backView")[0].files[0].name;
-    let sideFileName = registrationNum + "-image_3-" + $("#save-car-sideView")[0].files[0].name;
-    let interiorFileName = registrationNum + "-image_4-" + $("#save-car-interior")[0].files[0].name;
+    let frontFileName = registrationNum + "-image1-" + $("#save-car-frontView")[0].files[0].name;
+    let backFileName = registrationNum + "-image2-" + $("#save-car-backView")[0].files[0].name;
+    let sideFileName = registrationNum + "-image3-" + $("#save-car-sideView")[0].files[0].name;
+    let interiorFileName = registrationNum + "-image4-" + $("#save-car-interior")[0].files[0].name;
 
 
     var data = new FormData();
 
-    data.append("image_1", frontViewFile, frontFileName);
-    data.append("image_2", backViewFile, backFileName);
-    data.append("image_3", sideViewFile, sideFileName);
-    data.append("image_4", interiorViewFile, interiorFileName);
+    data.append("image1", frontViewFile, frontFileName);
+    data.append("image2", backViewFile, backFileName);
+    data.append("image3", sideViewFile, sideFileName);
+    data.append("image4", interiorViewFile, interiorFileName);
 
     $.ajax({
         url: baseurl + "car/uploadImg/" + registrationNum,
-        method: "PUT",
+        method: "Post",
         async: true,
         contentType: false,
         processData: false,
@@ -117,8 +175,8 @@ function uploadCarImages(registrationNum) {
             });*/
         },
         error: function (error) {
-            // let errorReason = JSON.parse(error.responseText);
-            console.log(error);
+            let errorReason = JSON.parse(error.responseText);
+            // console.log(error);
             /*Swal.fire({
                 position: 'top-end',
                 icon: 'error',
@@ -129,6 +187,8 @@ function uploadCarImages(registrationNum) {
         }
     });
 }
+
+
 
 /*====================RENTAL=========================*/
 
@@ -147,7 +207,7 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img class="carCardMainImg" alt="" src="asserts/image/ToyotaPremi.png "
+                                    <div class="icon"><img class="carCardMainImg" alt="" src=""
                                                            style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
@@ -155,7 +215,7 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <h4><a href="">${car.brand}</a></h4>
+                                    <h4 class="vehicleName"><a href="">${car.brand}</a></h4>
                                 </div>
                             </div>
 
@@ -207,7 +267,7 @@ function loadAllCars(path) {
 
 
                             <!--Button-->
-                            <div class="row mt-3">
+                            <div data-btnRentIt="${car}"  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
                                     <button class="btn_RentIt">RENT IT</button>
                                 </div>
@@ -227,25 +287,55 @@ function loadAllCars(path) {
                 }
 
                 /*---SET IMG----*/
-
+                vNameAr.push(resp.name);
             }
             /*Event in this Car Card*/
             carStoreCarDetailsIcon();
             rentItClick();
+
         }
     });
 }
 
 
 function rentItClick() {
+
+    const buttons = document.querySelectorAll('.btn_RentIt');
+
+
+
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', () => {
+    //         console.log("clicked")
+    //         // Find the corresponding h1 element
+    //         const title = button.parentNode.querySelector('.item-title');
+    //         // Get the text content of the h1 element
+    //         const titleText = title.textContent;
+    //         // Display the h1 name
+    //         console.log(titleText);
+    //     });
+    // });
+
+
     $(".btn_RentIt").click(function () {
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
 
+        console.log($(this).attr("data-btnRentIt"));
         // "rgb("+ 68 +","+ 68 +","+ 68 +")"
 
         // carController.js:243
-        console.log(this.bgColor==="rgb("+ 255 +","+ 0 +","+ 0 +")");
+        // console.log(this.bgColor==="rgb("+ 255 +","+ 0 +","+ 0 +")");
+        console.log($(".vehicleName").text()+"--");
+
+
+        // // Find the corresponding h1 element
+        // const title = this.parentNode.querySelector('.vehicleName');
+        // // Get the text content of the h1 element
+        // const titleText = title.textContent;
+        // // Display the h1 name
+        // console.log(titleText);
+
 
         if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){ //firstTime With hover
             $(this).text("Added");
@@ -258,7 +348,6 @@ function rentItClick() {
             $(this).css({
                 "background":"#F7F7F7",
                 "color":"#444444",
-
             });
         }else if(colorsAreEqual(bgColor, "rgb(247, 247, 247)")){ //red turn to past value
             $(this).text("Added");
@@ -267,14 +356,8 @@ function rentItClick() {
                 "color":"#ffffff"
             });
         }
-
-
-
-
-
     })
 }
-
 
 
 function colorsAreEqual(color1, color2) {
@@ -291,11 +374,4 @@ function colorsAreEqual(color1, color2) {
     return true;  // The colors are equal
 }
 
-// Example usage:
-var color1 = "rgb(255, 0, 0)";
-var color2 = "rgb(255, 0, 0)";
-console.log(colorsAreEqual(color1, color2));  // true
 
-var color3 = "rgb(255, 255, 0)";
-var color4 = "rgb(255, 0, 0)";
-console.log(colorsAreEqual(color3, color4));  // false

@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackageClasses = {CustomerRepo.class})
+@EnableJpaRepositories(basePackages = "lk.ijse.carRental.repo")
 public class JPAConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource ds, JpaVendorAdapter jpa){

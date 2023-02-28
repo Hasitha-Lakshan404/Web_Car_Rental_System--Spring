@@ -28,7 +28,7 @@
 ======================================================================-->
 <main id="spaMainIndex">
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header">
+    <header class="header d-flex align-items-center" id="index_Header">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a class="logo d-flex align-items-center" href="index.html">
@@ -39,7 +39,7 @@
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar" id="index_Nav">
                 <ul>
                     <li id="navIndexHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navIndexCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -66,7 +66,8 @@
                             vehicle options for customers. With a wide range of vehicles to choose from, customers are
                             able
                             to find the perfect car for their transportation needs.</p>
-                        <a class="btn-get-started" data-aos="fade-up" data-aos-delay="200" id="btnIndexBookNow">Book Now</a>
+                        <a class="btn-get-started" data-aos="fade-up" data-aos-delay="200" id="btnIndexBookNow">Book
+                            Now</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@
 
 
     <!-- ======= Benefit /Services Section ======= -->
-    <section class="services section-bg" id="services">
+    <section class="services section-bg" id="sectionService">
         <div class="container" data-aos="fade-up">
 
             <!--PageTwo Title-->
@@ -315,7 +316,7 @@
 ============================================================================-->
 <main id="spaMainCarStore">
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header">
+    <header class="header d-flex align-items-center" id="headerCarStore">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a class="logo d-flex align-items-center" href="index.html">
@@ -326,7 +327,7 @@
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar" id="headerNav">
                 <ul>
                     <li id="navCarStoreHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navCarStoreCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -354,7 +355,7 @@
 
 
     <!-- ======= CarCard Section/Luxury ======= -->
-    <section class="services section-bg" id="services">
+    <section class="services section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Luxury Cars</h2>
@@ -364,454 +365,127 @@
             <!--main flex-->
             <div class="row">
                 <!--Cars -->
-                <div carStoreMainLuxuryContainer class="d-flex col-xl-10 id="">
-                <!--divide 2-->
-                <div class="row" id="cusLuxCarContainer">
-                    <!--First Car Card-->
-<!--                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"-->
-<!--                         data-aos-delay="100">-->
-<!--                        <div class="icon-box">-->
+                <div class="d-flex col-xl-10" id="">
+                    <!--divide 2-->
+                    <div class="row" id="cusLuxCarContainer">
 
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <div class="icon"><img alt="" src="asserts/image/ToyotaPremi.png "-->
-<!--                                                           style="width: 250px;height: 175px"></i></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                    </div>
+                </div>
 
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <h4><a href="">Toyota Premio</a></h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                <!--Light DropDown-->
+                <div class="d-flex col-xl-2  justify-content-center align-items-xl-stretch"
+                     style="background: #F7F7F7 ">
+                    <!-- Slid bar -->
+                    <div class="card">
+                        <div class="card-body pb-0">
+                            <h6 class="card-title">Pick up <span>| Date</span></h6>
 
+                            <div class="news">
+                                <div class="post-item clearfix mb-3">
+                                    <div class="form-floating">
+                                        <input class="form-control border-secondary " id="lux-car_Store_pickup_date"
+                                               type="date">
+                                        <label>Date</label>
+                                    </div>
+                                </div>
 
-<!--                            &lt;!&ndash;Type&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Hybrid</h6>-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Manual</h6>-->
-<!--                            </div>-->
+                                <h6 class="card-title">Return <span>| Date</span></h6>
+                                <div class="post-item clearfix mb-4">
+                                    <div class="form-floating">
+                                        <input class="form-control border-secondary " id="lux-car_Store_Return_date"
+                                               type="date">
+                                        <label>Date</label>
+                                    </div>
+                                </div>
 
-<!--                            &lt;!&ndash;Line&ndash;&gt;-->
-<!--                            <div id="lineHome"></div>-->
+                                <h5 class="card-title">Sort By </h5>
+                                <!--Type-->
+                                <div class="dropdown-center mb-2">
+                                    <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            type="button">
+                                        Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" id="carStoreTypeLux">Luxury</a></li>
+                                        <li><a class="dropdown-item" id="carStoreTypePremium">Premium</a></li>
+                                        <li><a class="dropdown-item" id="carStoreTypeGeneral">General</a></li>
+                                    </ul>
+                                </div>
 
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex ">-->
-<!--                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a-->
-<!--                                        compact-->
-<!--                                        sedan known for comfort,-->
-<!--                                        technology, and efficiency</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                <!--Brand-->
+                                <div class="dropdown-center mb-2">
+                                    <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            type="button">
+                                        Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Action two</a></li>
+                                        <li><a class="dropdown-item" href="#">Action three</a></li>
+                                    </ul>
+                                </div>
 
+                                <!--Fuel Type-->
+                                <div class="dropdown-center mb-2">
+                                    <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            type="button">
+                                        Fuel Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Hybrid</a></li>
+                                        <li><a class="dropdown-item" href="#">Petrol</a></li>
+                                        <li><a class="dropdown-item" href="#">Diesel</a></li>
+                                    </ul>
+                                </div>
 
-<!--                            &lt;!&ndash;Price&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">10,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">227,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">20,000-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Day-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Month-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">On Hold-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                <!--Transmission-->
+                                <div class="dropdown-center mb-2">
+                                    <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            type="button">
+                                        Transmission&nbsp
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Manual</a></li>
+                                        <li><a class="dropdown-item" href="#">Auto</a></li>
+                                    </ul>
+                                </div>
 
+                                <!--Passenger-->
+                                <div class="dropdown-center mb-2">
+                                    <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                            type="button">
+                                        Passenger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">4</a></li>
+                                        <li><a class="dropdown-item" href="#">6</a></li>
+                                        <li><a class="dropdown-item" href="#">8</a></li>
+                                    </ul>
+                                </div>
 
-<!--                            &lt;!&ndash;Button&ndash;&gt;-->
-<!--                            <div class="row mt-3">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">-->
-<!--                                    <button class="btn_RentIt">RENT IT</button>-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">-->
-<!--                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                <!--Button-->
+                                <div class="row mt-5">
+                                    <div class="d-flex align-items-sm-stretch justify-content-around">
+                                        <button class="btn_RentIt p-2 goToCartButton">Go to Cart</button>
+                                    </div>
+                                </div>
 
-
-<!--                        </div>-->
-<!--                    </div>-->
-                    <!--2 Car Card-->
-<!--                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"-->
-<!--                         data-aos-delay="100">-->
-<!--                        <div class="icon-box">-->
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <div class="icon"><img alt=""-->
-<!--                                                           src="asserts/image/ToyotaPremi.png "-->
-<!--                                                           style="width: 250px;height: 175px"></i></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <h4><a href="">Toyota Premio</a></h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Type&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Hybrid</h6>-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Manual</h6>-->
-<!--                            </div>-->
-
-<!--                            &lt;!&ndash;Line&ndash;&gt;-->
-<!--                            <div id="lineHome"></div>-->
-
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex ">-->
-<!--                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a-->
-<!--                                        compact-->
-<!--                                        sedan known for comfort,-->
-<!--                                        technology, and efficiency</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Price&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">10,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">227,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">20,000-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Day-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Month-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">On Hold-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Button&ndash;&gt;-->
-<!--                            <div class="row mt-3">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">-->
-<!--                                    <button class="btn_RentIt">RENT IT</button>-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">-->
-<!--                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                        </div>-->
-<!--                    </div>-->
-                    <!--3 Car Card-->
-<!--                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"-->
-<!--                         data-aos-delay="100">-->
-<!--                        <div class="icon-box">-->
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <div class="icon"><img alt=""-->
-<!--                                                           src="asserts/image/ToyotaPremi.png "-->
-<!--                                                           style="width: 250px;height: 175px"></i></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <h4><a href="">Toyota Premio</a></h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Type&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Hybrid</h6>-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Manual</h6>-->
-<!--                            </div>-->
-
-<!--                            &lt;!&ndash;Line&ndash;&gt;-->
-<!--                            <div id="lineHome"></div>-->
-
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex ">-->
-<!--                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a-->
-<!--                                        compact-->
-<!--                                        sedan known for comfort,-->
-<!--                                        technology, and efficiency</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Price&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">10,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">227,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">20,000-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Day-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Month-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">On Hold-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Button&ndash;&gt;-->
-<!--                            <div class="row mt-3">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">-->
-<!--                                    <button class="btn_RentIt">RENT IT</button>-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">-->
-<!--                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                        </div>-->
-<!--                    </div>-->
-                    <!--4 Car Card-->
-<!--                    <div class="col-xl-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in"-->
-<!--                         data-aos-delay="100">-->
-<!--                        <div class="icon-box">-->
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <div class="icon"><img alt=""-->
-<!--                                                           src="asserts/image/ToyotaPremi.png "-->
-<!--                                                           style="width: 250px;height: 175px"></i></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Title/V Name&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex justify-content-center">-->
-<!--                                    <h4><a href="">Toyota Premio</a></h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Type&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Hybrid</h6>-->
-<!--                                <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">-->
-<!--                                    Manual</h6>-->
-<!--                            </div>-->
-
-<!--                            &lt;!&ndash;Line&ndash;&gt;-->
-<!--                            <div id="lineHome"></div>-->
-
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex ">-->
-<!--                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a-->
-<!--                                        compact-->
-<!--                                        sedan known for comfort,-->
-<!--                                        technology, and efficiency</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Price&ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">10,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">227,000-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"-->
-<!--                                     style="font-weight: 900">20,000-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Day-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">Per Month-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center"-->
-<!--                                     style="font-size: 13px">On Hold-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                            &lt;!&ndash;Button&ndash;&gt;-->
-<!--                            <div class="row mt-3">-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">-->
-<!--                                    <button class="btn_RentIt">RENT IT</button>-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">-->
-<!--                                    <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-
-<!--                        </div>-->
-<!--                    </div>-->
-
+                            </div><!-- End sidebar recent posts-->
+                        </div>
+                    </div><!-- Slid Bar -->
                 </div>
             </div>
-
-
-            <!--Light DropDown-->
-            <div class="d-flex col-xl-2  justify-content-center align-items-xl-stretch"
-                 style="background: #F7F7F7 ">
-                <!-- Slid bar -->
-                <div class="card">
-                    <div class="card-body pb-0">
-                        <h6 class="card-title">Pick up <span>| Date</span></h6>
-
-                        <div class="news">
-                            <div class="post-item clearfix mb-3">
-                                <div class="form-floating">
-                                    <input class="form-control border-secondary " id="car_Store_pickup_date"
-                                           type="date">
-                                    <label>Date</label>
-                                </div>
-                            </div>
-
-                            <h6 class="card-title">Return <span>| Date</span></h6>
-                            <div class="post-item clearfix mb-4">
-                                <div class="form-floating">
-                                    <input class="form-control border-secondary " id="car_Store_Return_date"
-                                           type="date">
-                                    <label>Date</label>
-                                </div>
-                            </div>
-
-                            <h5 class="card-title">Sort By </h5>
-                            <!--Type-->
-                            <div class="dropdown-center mb-2">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        type="button">
-                                    Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id="carStoreTypeLux">Luxury</a></li>
-                                    <li><a class="dropdown-item" id="carStoreTypePremium">Premium</a></li>
-                                    <li><a class="dropdown-item" id="carStoreTypeGeneral">General</a></li>
-                                </ul>
-                            </div>
-
-                            <!--Brand-->
-                            <div class="dropdown-center mb-2">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        type="button">
-                                    Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Action two</a></li>
-                                    <li><a class="dropdown-item" href="#">Action three</a></li>
-                                </ul>
-                            </div>
-
-                            <!--Fuel Type-->
-                            <div class="dropdown-center mb-2">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        type="button">
-                                    Fuel Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Hybrid</a></li>
-                                    <li><a class="dropdown-item" href="#">Petrol</a></li>
-                                    <li><a class="dropdown-item" href="#">Diesel</a></li>
-                                </ul>
-                            </div>
-
-                            <!--Transmission-->
-                            <div class="dropdown-center mb-2">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        type="button">
-                                    Transmission&nbsp
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Manual</a></li>
-                                    <li><a class="dropdown-item" href="#">Auto</a></li>
-                                </ul>
-                            </div>
-
-                            <!--Passenger-->
-                            <div class="dropdown-center mb-2">
-                                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                        type="button">
-                                    Passenger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">4</a></li>
-                                    <li><a class="dropdown-item" href="#">6</a></li>
-                                    <li><a class="dropdown-item" href="#">8</a></li>
-                                </ul>
-                            </div>
-
-                            <!--Button-->
-                            <div class="row mt-5">
-                                <div class="d-flex align-items-sm-stretch justify-content-around">
-                                    <button class="btn_RentIt p-2 goToCartButton">Go to Cart</button>
-                                </div>
-                            </div>
-
-                        </div><!-- End sidebar recent posts-->
-                    </div>
-                </div><!-- Slid Bar -->
-            </div>
-        </div>
         </div>
     </section>
 
 
     <!-- ======= CarCard Section/Premium ======= -->
-    <section class="services section-bg" id="services">
+    <section class="services section-bg" id="sectionMainCarCard">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Premium Cars</h2>
@@ -842,7 +516,7 @@
                             <div class="news">
                                 <div class="post-item clearfix mb-3">
                                     <div class="form-floating">
-                                        <input class="form-control border-secondary " id="car_Store_pickup_date"
+                                        <input class="form-control border-secondary " id="premiumCar_Store_pickup_date"
                                                type="date">
                                         <label>Date</label>
                                     </div>
@@ -851,7 +525,7 @@
                                 <h6 class="card-title">Return <span>| Date</span></h6>
                                 <div class="post-item clearfix mb-4">
                                     <div class="form-floating">
-                                        <input class="form-control border-secondary " id="car_Store_Return_date"
+                                        <input class="form-control border-secondary " id="premiumCar_Store_Return_date"
                                                type="date">
                                         <label>Date</label>
                                     </div>
@@ -1084,7 +758,7 @@
 ============================================================================-->
 <main id="spaMainCart">
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header">
+    <header class="header d-flex align-items-center" id="cartHeader">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a class="logo d-flex align-items-center" href="index.html">
@@ -1092,12 +766,13 @@
                 <img alt="" src="asserts/image/hatMan.jpg" style="border-radius: 50px">
                 <h5 class="mt-2" style="color: white">Hasitha Lakshan<span>.</span></h5>
             </a>
-            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i class="bi bi-pen"></i><span> Edit Details</span></a></div>
+            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i
+                    class="bi bi-pen"></i><span> Edit Details</span></a></div>
 
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar" id="cartNavbar">
                 <ul>
                     <li id="navCartHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navCartCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -1164,7 +839,7 @@
 
                         <td>
                             <div class="w-100">
-                                <input class="form-control" id="register-form-NIC-image" style="border: 1px solid gray"
+                                <input class="form-control" id="register-form-NIC-image1" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -1187,7 +862,7 @@
                         </td>
                         <td>
                             <div class="w-100">
-                                <input class="form-control" id="register-form-NIC-image" style="border: 1px solid gray"
+                                <input class="form-control" id="register-form-NIC-image2" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -1210,7 +885,7 @@
                         </td>
                         <td>
                             <div class="w-100">
-                                <input class="form-control" id="register-form-NIC-image" style="border: 1px solid gray"
+                                <input class="form-control" id="register-form-NIC-image4" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -1233,7 +908,7 @@
                         </td>
                         <td>
                             <div class="w-100">
-                                <input class="form-control" id="register-form-NIC-image" style="border: 1px solid gray"
+                                <input class="form-control" id="register-form-NIC-image3" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -1350,7 +1025,7 @@
 ============================================================================-->
 <main id="spaMainOverview">
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header">
+    <header class="header d-flex align-items-center" id="overviewHeader">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a class="logo d-flex align-items-center" href="index.html">
@@ -1359,13 +1034,13 @@
                 <h5 class="mt-2" style="color: white">Hasitha Lakshan<span>.</span></h5>
             </a>
 
-            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i class="bi bi-pen"></i><span> Edit Details</span></a></div>
-
+            <div class="btnCustomerUpdate"><a class="text-light pt-3" style="font-size: 10px;margin-right: 200px;"><i
+                    class="bi bi-pen"></i><span> Edit Details</span></a></div>
 
 
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar" id="overviewNavbar">
                 <ul>
                     <li id="navOverViewHome"><a style="color: #CCCCCC">Home</a></li>
                     <li id="navOverViewCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -1465,7 +1140,7 @@
 <main id="spaMainCarDetail">
     <header>
         <!-- ======= Header ======= -->
-        <header class="header d-flex align-items-center" id="header">
+        <header class="header d-flex align-items-center" id="carFetailheader">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
                 <a class="logo d-flex align-items-center" href="index.html">
@@ -1476,7 +1151,7 @@
 
                 <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
                 <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-                <nav class="navbar" id="navbar">
+                <nav class="navbar" id="carDetailNavbar">
                     <ul>
                         <li id="navCarDetailsHome"><a style="color: #CCCCCC">Home</a></li>
                         <li id="navCarDetailsCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -1662,7 +1337,7 @@
 <main id="spaMainSignIn">
     <header>
         <!-- ======= Header ======= -->
-        <header class="header d-flex align-items-center" id="header">
+        <header class="header d-flex align-items-center" id="SignInheader">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
                 <a class="logo d-flex align-items-center" href="index.html">
@@ -1673,7 +1348,7 @@
 
                 <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
                 <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-                <nav class="navbar" id="navbar">
+                <nav class="navbar" id="SignInnavbar">
                     <ul>
                         <li id="navSignInHome"><a style="color: #CCCCCC">Home</a></li>
                         <li id="navSignInCarStore"><a style="color: #CCCCCC">Car Store</a></li>
@@ -1692,7 +1367,7 @@
 
 
     <!-- ======= Contact Section ======= -->
-    <section class="contact" id="contact">
+    <section class="contact" id="SignInContact">
         <div class="container" data-aos="fade-up">
 
 
@@ -1719,7 +1394,7 @@
                                             <p class="text-center small">Enter your details to Register</p>
                                         </div>
 
-                                        <form class="row g-3 needs-validation" id="signInForm" novalidate>
+                                        <form class="row g-3 needs-validation" id="SignInSignInForm" novalidate>
 
 
                                             <!--name-->
@@ -1739,7 +1414,8 @@
 
                                             <!--nic-->
                                             <div class="form-group col-md-6 mb-3">
-                                                <input class="form-control" id="nicSignInForm" name="name" placeholder="NIC"
+                                                <input class="form-control" id="nicSignInForm" name="name"
+                                                       placeholder="NIC"
                                                        required type="text">
                                             </div>
 
@@ -1773,7 +1449,7 @@
                                             <div class="col-12">
                                                 <label class="form-label" for="userNameSignInForm">Username</label>
                                                 <div class="input-group has-validation">
-                                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                    <span class="input-group-text" id="inputGroupPrepend1">@</span>
                                                     <input class="form-control" id="userNameSignInForm" name="username"
                                                            required
                                                            type="text">
@@ -1784,7 +1460,8 @@
                                             <!--Password-->
                                             <div class="col-12">
                                                 <label class="form-label" for="passwordSignInForm">Password</label>
-                                                <input class="form-control" id="passwordSignInForm" name="password" required
+                                                <input class="form-control" id="passwordSignInForm" name="password"
+                                                       required
                                                        type="password">
                                                 <div class="invalid-feedback">Please enter your password!</div>
                                             </div>
@@ -1792,10 +1469,12 @@
                                             <!--RememberMe-->
                                             <div class="col-12">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" id="rememberMeSignForm" name="remember"
+                                                    <input class="form-check-input" id="rememberMeSignForm"
+                                                           name="remember"
                                                            type="checkbox"
                                                            value="true">
-                                                    <label class="form-check-label" for="rememberMeSignForm">Remember me</label>
+                                                    <label class="form-check-label" for="rememberMeSignForm">Remember
+                                                        me</label>
                                                 </div>
                                             </div>
 
@@ -1906,7 +1585,7 @@
                                         <div class="col-12">
                                             <label class="form-label" for="yourUsername">Username</label>
                                             <div class="input-group has-validation">
-                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                                 <input class="form-control" id="yourUsername" name="username" required
                                                        type="text">
                                                 <div class="invalid-feedback">Please enter your username.</div>
@@ -1994,49 +1673,60 @@
                                 <div class="d-flex align-items-end flex-column bd-highlight pb-4">
                                     <!--Return Btn-->
                                     <div>
-                                        <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">back to Home</button>
+                                        <button class="btn btn-primary w-100" id="carAddVehicleAddButton" type="submit">
+                                            back to Home
+                                        </button>
                                     </div>
                                 </div>
 
                                 <div class="card mb-3">
 
                                     <div class="card-body">
-                                        <form class="row g-3 needs-validation" novalidate id="signInForm">
+                                        <form class="row g-3 needs-validation" id="signInForm" novalidate>
                                             <!--name-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Name</label>-->
-                                                <input type="text" placeholder="Your Name" name="name" class="form-control" id="cusUpName" required>
+                                                <input class="form-control" id="cusUpName" name="name"
+                                                       placeholder="Your Name" required type="text">
                                             </div>
 
                                             <!--email-->
                                             <div class="form-group col-md-6 mb-3">
                                                 <!--                                            <label for="name">Your Email</label>-->
-                                                <input type="email" placeholder="Email" class="form-control" name="email" id="cusUpEmail" required>
+                                                <input class="form-control" id="cusUpEmail" name="email"
+                                                       placeholder="Email" required type="email">
                                             </div>
 
                                             <!--nic-->
                                             <div class="form-group col-md-6 mb-3">
-                                                <input type="text" placeholder="NIC" name="name" class="form-control" id="cusUpNic" required>
+                                                <input class="form-control" id="cusUpNic" name="name" placeholder="NIC"
+                                                       required type="text">
                                             </div>
 
                                             <!--Address-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Address" name="name" class="form-control" id="cusUpAddress" required>
+                                                <input class="form-control" id="cusUpAddress" name="name"
+                                                       placeholder="Address" required type="text">
                                             </div>
 
                                             <!--Contact-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Contact" name="name" class="form-control" id="cusUpContact" required>
+                                                <input class="form-control" id="cusUpContact" name="name"
+                                                       placeholder="Contact" required type="text">
                                             </div>
 
                                             <!--Driving License-->
                                             <div class="form-group col-md-6">
-                                                <input type="text" placeholder="Driving License" name="name" class="form-control" id="cusUpDrivingLicence" id="drivingLicenseSignIn" required>
+                                                <input class="form-control" id="cusUpDrivingLicence" id="drivingLicenseSignIn"
+                                                       name="name" placeholder="Driving License"
+                                                       required type="text">
                                             </div>
 
                                             <div class="w-100">
-                                                <label for="register-form-NIC-image" class="form-label ">NIC Image or Driving Licence Image</label>
-                                                <input style="border: 1px solid gray" class="form-control  " type="file" id="cusUpNicImage">
+                                                <label class="form-label " for="register-form-NIC-image">NIC Image or
+                                                    Driving Licence Image</label>
+                                                <input class="form-control  " id="cusUpNicImage" style="border: 1px solid gray"
+                                                       type="file">
                                             </div>
 
                                             <!--username-->
@@ -2044,7 +1734,8 @@
                                                 <label class="form-label" for="cusUpUserName">Username</label>
                                                 <div class="input-group has-validation">
                                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                                    <input class="form-control" id="cusUpUserName" name="username" required
+                                                    <input class="form-control" id="cusUpUserName" name="username"
+                                                           required
                                                            type="text">
                                                     <div class="invalid-feedback">Please enter your username.</div>
                                                 </div>
@@ -2060,7 +1751,9 @@
 
                                             <!--submit btn-->
                                             <div class="col-12">
-                                                <button class="btn btn-primary w-100" id="btnUpdate" type="button">Update</button>
+                                                <button class="btn btn-primary w-100" id="btnUpdate" type="button">
+                                                    Update
+                                                </button>
                                             </div>
 
                                         </form>

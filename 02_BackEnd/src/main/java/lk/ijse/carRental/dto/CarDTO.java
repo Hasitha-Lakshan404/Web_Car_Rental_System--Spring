@@ -40,24 +40,5 @@ public class CarDTO {
     private String availability;
 
 
-    public CarDTO(String registrationId, String brand, String type, String model, String fuelType, String transmissionType, String color, int noOfPassenger, String vehicleDescription, long lastServiceMileage, long freeKmDay, long freeKmMonth, double dailyRate, double monthlyRate, double priceForExtraKm, double waiver_payment, String availability) {
-        this.registrationId = registrationId;
-        this.brand = brand;
-        this.type = type;
-        this.model = model;
-        this.fuelType = fuelType;
-        this.transmissionType = transmissionType;
-        this.color = color;
-        this.noOfPassenger = noOfPassenger;
-        VehicleDescription = vehicleDescription;
-        this.lastServiceMileage = lastServiceMileage;
-        this.freeKmDay = freeKmDay;
-        this.freeKmMonth = freeKmMonth;
-        this.dailyRate = dailyRate;
-        this.monthlyRate = monthlyRate;
-        this.priceForExtraKm = priceForExtraKm;
-        this.waiver_payment = waiver_payment;
-        this.availability = availability;
-    }
 
 }

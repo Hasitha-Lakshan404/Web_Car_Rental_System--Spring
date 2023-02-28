@@ -1,6 +1,8 @@
 package lk.ijse.carRental.controller;
 
 import lk.ijse.carRental.dto.CarDTO;
+import lk.ijse.carRental.dto.CustomerDTO;
+import lk.ijse.carRental.entity.Car;
 import lk.ijse.carRental.service.CarService;
 import lk.ijse.carRental.service.CustomerService;
 import lk.ijse.carRental.util.ResponseUtil;
@@ -11,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 
 /**
@@ -26,34 +29,67 @@ import java.io.IOException;
 public class CarController {
 
     @Autowired
-    private CarService service;
+    CarService carService;
 
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseUtil addVehicle(@RequestPart("carFiles") MultipartFile[] file, @RequestPart("vehicle") CarDTO carDTO) {
+
+
+        for (MultipartFile myFile : file) {
+
+            try {
+                String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
+                File uploadsDir = new File(projectPath + "/uploads");
+                uploadsDir.mkdir();
+                myFile.transferTo(new File(uploadsDir.getAbsolutePath() + "/" + myFile.getOriginalFilename()));
+                System.out.println(projectPath);
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+                return new ResponseUtil("500", "Registration Failed.Try Again Latter", null);
+            }
+        }
+
+        carService.saveCar(carDTO);
+        return new ResponseUtil("200", "Registration Successfully....", carDTO);
+    }
+
+//    @PostMapping
+//    public ResponseUtil RegisterCustomer(@RequestBody CarDTO dto){
+//        carService.saveCar(dto);
+//        return new ResponseUtil("200", "Added.!.", dto);
+//    }
+
+
+    @PutMapping()
     public ResponseUtil updateCar(@RequestBody CarDTO dto){
-        service.saveCar(dto);
-        return new ResponseUtil("200", "Registration Successfully....", dto);
+        carService.updateCar(dto);
+        return new ResponseUtil("200",dto.getRegistrationId()+": Updated.!",null);
     }
 
 
-    @PutMapping(path = "/uploadImg/{registrationNum}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil uploadImagesAndPath(@RequestPart("image_1") MultipartFile image_1, @RequestPart("image_2") MultipartFile image_2, @RequestPart("image_3") MultipartFile image_3, @RequestPart("image_4") MultipartFile image_4, @PathVariable String registrationNum) {
-        System.out.println("AWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    @PostMapping(path = "/uploadImg/{registrationNum}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil uploadImagesAndPath(@RequestPart("image1") MultipartFile image1, @RequestPart("image2") MultipartFile image2, @RequestPart("image3") MultipartFile image3, @RequestPart("image4") MultipartFile image4, @PathVariable String registrationNum) {
         try {
+
+
+            System.out.println(image1.getOriginalFilename());
+            System.out.println("Upload Image");
+
             String projectPath = String.valueOf(new File("E:\\imageSave\\uploads"));
             File uploadsDir = new File(projectPath + "\\carImage");
             uploadsDir.mkdir();
 
-            image_1.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_1.getOriginalFilename()));
-            image_2.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_2.getOriginalFilename()));
-            image_3.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_3.getOriginalFilename()));
-            image_4.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image_4.getOriginalFilename()));
+            image1.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image1.getOriginalFilename()));
+            image2.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image2.getOriginalFilename()));
+            image3.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image3.getOriginalFilename()));
+            image4.transferTo(new File(uploadsDir.getAbsolutePath() + "\\" + image4.getOriginalFilename()));
 
-            String carFrontViewPath = projectPath + "\\carImage" + image_1.getOriginalFilename();
-            String carBackViewPath = projectPath + "\\carImage" + image_2.getOriginalFilename();
-            String carSideViewPath = projectPath + "\\carImage" + image_3.getOriginalFilename();
-            String carInteriorViewPath = projectPath + "\\carImage" + image_4.getOriginalFilename();
+            String carFrontViewPath = projectPath + "\\carImage" + image1.getOriginalFilename();
+            String carBackViewPath = projectPath + "\\carImage" + image2.getOriginalFilename();
+            String carSideViewPath = projectPath + "\\carImage" + image3.getOriginalFilename();
+            String carInteriorViewPath = projectPath + "\\carImage" + image4.getOriginalFilename();
 
-            service.uploadCarImages(carFrontViewPath, carBackViewPath, carSideViewPath, carInteriorViewPath, registrationNum);
+            carService.uploadCarImage(carFrontViewPath, carBackViewPath, carSideViewPath, carInteriorViewPath, registrationNum);
 
             return new ResponseUtil("200", "Uploaded", null);
 
@@ -66,9 +102,8 @@ public class CarController {
 
     @GetMapping(path = "allCarDetail", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCarDetail() {
-        return new ResponseUtil("200", "Done", service.getAllCarDetail());
+        return new ResponseUtil("200", "Done", carService.getAllCarDetail());
     }
-
 
 }
 

@@ -96,18 +96,22 @@ public class CarServiceImpl implements CarService {
         return null;
     }
 
-    @Override
-    public void uploadCarImages(String frontPath, String backPath, String sidePath, String interiorPath, String registrationNum) {
-        if (repo.existsById(registrationNum)) {
-            repo.updateCarFilePaths(frontPath, backPath, sidePath,interiorPath, registrationNum);
-        } else {
-            throw new RuntimeException("User Not Found");
-        }
-    }
+
 
     @Override
     public CarDTO searchCarByRegistrationId(String registrationId) {
         return mapper.map( repo.getCarByRegistrationId(registrationId),CarDTO.class);
+    }
+
+    @Override
+    public void uploadCarImage(String frontPath, String BackPath, String sidePath, String InteriorPath, String registrationNumber) {
+
+        if (repo.existsById(registrationNumber)) {
+            System.out.println("Car Impl-if");
+            repo.updateCarFilePaths(frontPath, BackPath, sidePath,InteriorPath, registrationNumber);
+        } else {
+            throw new RuntimeException("User Not Found");
+        }
     }
 
 }
