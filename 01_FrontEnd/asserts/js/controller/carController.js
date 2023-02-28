@@ -31,14 +31,16 @@ function addCar() {
     let backFileName = $(".backView")[0].files[0].name;
     let sideFileName = $(".sideView")[0].files[0].name;
     let interiorFileName =$(".interior")[0].files[0].name;
-    console.log(frontFileName)
-    console.log(backFileName)
-    console.log(sideFileName)
-    console.log(interiorFileName)
+    // console.log(frontFileName)
+    // console.log(backFileName)
+    // console.log(sideFileName)
+    // console.log(interiorFileName)
 
 
 
     let registrationNum = $("#save-car-registration").val();
+    console.log("registration----"+"------"+registrationNum);
+
     let brand = $("#new_car_brand").val();
     let type = $("#save-car-type").val();
     let model = $("#save-car-model").val();
@@ -190,7 +192,6 @@ function uploadCarImages(registrationNum) {
 }
 
 
-
 /*====================RENTAL=========================*/
 
 function loadAllCars(path) {
@@ -208,7 +209,7 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img class="carCardMainImg" alt="" src=""
+                                    <div class="icon"><img class="carCardMainImg" alt="" src=${"http://localhost:8080/02_BackEnd_war_exploded/"+car.image3}
                                                            style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
@@ -216,17 +217,17 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <h4 class="vehicleName"><a href="">${car.brand}</a></h4>
+                                    <h4 class="vehicleName"><a href="">${car.model}</a></h4>
                                 </div>
                             </div>
-
+                            
 
                             <!--Type-->
                             <div class="row">
                                 <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
-                                    Hybrid</h6>
+                                    ${car.fuelType}</h6>
                                 <h6 class="d-flex justify-content-center col-xl-6" style="display: inline">
-                                    Manual</h6>
+                                    ${car.transmissionType}</h6>
                             </div>
 
                             <!--Line-->
@@ -234,10 +235,7 @@ function loadAllCars(path) {
 
                             <div class="row">
                                 <div class="d-flex ">
-                                    <p class="mt-5 mb-3 ps-4 justify-content-center">The Toyota Premio is a
-                                        compact
-                                        sedan known for comfort,
-                                        technology, and efficiency</p>
+                                    <p class="mt-5 mb-3 ps-4 justify-content-center">${car.description}</p>
                                 </div>
                             </div>
 
@@ -245,13 +243,13 @@ function loadAllCars(path) {
                             <!--Price-->
                             <div class="row">
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">10,000
+                                     style="font-weight: 900">${car.dailyRate}
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">227,000
+                                     style="font-weight: 900">${car.monthlyRate}
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 text-danger justify-content-center"
-                                     style="font-weight: 900">20,000
+                                     style="font-weight: 900">${car.waiver_payment}
                                 </div>
                             </div>
                             <div class="row">
@@ -270,7 +268,7 @@ function loadAllCars(path) {
                             <!--Button-->
                             <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-btnRentIt="${car.brand}" class="btn_RentIt">RENT IT</button>
+                                    <button data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
@@ -293,7 +291,6 @@ function loadAllCars(path) {
             /*Event in this Car Card*/
             carStoreCarDetailsIcon();
             rentItClick();
-
         }
     });
 }
@@ -303,30 +300,16 @@ function loadAllCars(path) {
 function rentItClick() {
     const buttons = document.querySelectorAll('.btn_RentIt');
 
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         console.log("clicked")
-    //         // Find the corresponding h1 element
-    //         const title = button.parentNode.querySelector('.item-title');
-    //         // Get the text content of the h1 element
-    //         const titleText = title.textContent;
-    //         // Display the h1 name
-    //         console.log(titleText);
-    //     });
-    // });
-
 
     $(".btn_RentIt").click(function () {
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
 
-
         // let x=$(this).dataset.btnRentIt;
         console.log($(this).attr("data-btnRentIt"));
         setBrandToArray(this);
 
-        console.log($(".vehicleName").text()+"--");
-
+        // console.log($(".vehicleName").text()+"--");
 
         // // Find the corresponding h1 element
         // const title = this.parentNode.querySelector('.vehicleName');
@@ -356,9 +339,6 @@ function rentItClick() {
             });
         }
 
-        /*=================================================*/
-        // vNameAr.push($(this).attr("data-btnRentIt"))
-
     })
 }
 
@@ -378,14 +358,10 @@ function colorsAreEqual(color1, color2) {
 
 
 function setBrandToArray(param) {
-
     let bool=true;
 
     let elementToRemove = $(param).attr("data-btnRentIt");
     let index = vNameAr.indexOf(elementToRemove);
-
-
-
 
 
     for(let i=0;i<vNameAr.length;i++){
@@ -403,7 +379,13 @@ function setBrandToArray(param) {
             vNameAr.splice(index, 1);
         }
     }
+}
 
 
+/*-------------------------
+*    send data to the cart
+* ------------------------------*/
 
+function sendVehicleNameToCart() {
+    return vNameAr;
 }

@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 
 /**
@@ -32,11 +33,10 @@ public class CarController {
     CarService carService;
 
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseUtil addVehicle(@RequestPart("carFiles") MultipartFile[] file, @RequestPart("vehicle") CarDTO carDTO) {
+    public ResponseUtil addVehicle(@RequestPart("carFiles") MultipartFile[] file,@RequestPart("vehicle") CarDTO carDTO) {
 
 
         for (MultipartFile myFile : file) {
-
             try {
                 String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
                 File uploadsDir = new File(projectPath + "/uploads");
@@ -52,12 +52,6 @@ public class CarController {
         carService.saveCar(carDTO);
         return new ResponseUtil("200", "Registration Successfully....", carDTO);
     }
-
-//    @PostMapping
-//    public ResponseUtil RegisterCustomer(@RequestBody CarDTO dto){
-//        carService.saveCar(dto);
-//        return new ResponseUtil("200", "Added.!.", dto);
-//    }
 
 
     @PutMapping()
@@ -98,7 +92,6 @@ public class CarController {
             return new ResponseUtil("500",e.getMessage(),null);
         }
     }
-
 
     @GetMapping(path = "allCarDetail", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCarDetail() {

@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 /**
  * @author : Hasitha Lakshan
@@ -23,5 +25,7 @@ public interface CarRepo extends JpaRepository<Car,String> {
     void updateCarFilePaths(@Param("image1")String image1,@Param("image2")String image2,@Param("image3")String image3,@Param("image4")String image4,@Param("registrationId")String registrationId);
 
     Car getCarByRegistrationId(String registrationId);
+
+
 
 }

@@ -1,6 +1,8 @@
 package lk.ijse.carRental.service.impl;
 
+import antlr.Token;
 import lk.ijse.carRental.dto.CarDTO;
+import lk.ijse.carRental.dto.CustomerDTO;
 import lk.ijse.carRental.entity.Car;
 import lk.ijse.carRental.repo.CarRepo;
 import lk.ijse.carRental.service.CarService;
@@ -102,6 +104,8 @@ public class CarServiceImpl implements CarService {
     public CarDTO searchCarByRegistrationId(String registrationId) {
         return mapper.map( repo.getCarByRegistrationId(registrationId),CarDTO.class);
     }
+
+
 
     @Override
     public void uploadCarImage(String frontPath, String BackPath, String sidePath, String InteriorPath, String registrationNumber) {

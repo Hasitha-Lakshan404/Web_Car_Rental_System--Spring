@@ -37,5 +37,8 @@ public interface CarService {
 
     CarDTO searchCarByRegistrationId(String registrationId);
 
+//    List<CarDTO> getCarCartDetails(String model,double dailyRate, double monthlyRate, double waiver_payment);
+
+
     void uploadCarImage(String carFrontViewPath, String carBackViewPath, String carSideViewPath, String carInteriorViewPath, String registrationId);
 }
