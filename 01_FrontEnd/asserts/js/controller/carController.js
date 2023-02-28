@@ -12,6 +12,7 @@ function newM() {
     let driverLicenseImg=$("#frontView")[0].files[0];
     console.log($(".front")[0].files[0])
 }
+
 function addCar() {
     var vData = new FormData();
 
@@ -267,9 +268,9 @@ function loadAllCars(path) {
 
 
                             <!--Button-->
-                            <div data-btnRentIt="${car}"  class="row mt-3 btnClzRent">
+                            <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button class="btn_RentIt">RENT IT</button>
+                                    <button data-btnRentIt="${car.brand}" class="btn_RentIt">RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
@@ -287,7 +288,7 @@ function loadAllCars(path) {
                 }
 
                 /*---SET IMG----*/
-                vNameAr.push(resp.name);
+                // vNameAr.push(resp.name);
             }
             /*Event in this Car Card*/
             carStoreCarDetailsIcon();
@@ -298,11 +299,9 @@ function loadAllCars(path) {
 }
 
 
+
 function rentItClick() {
-
     const buttons = document.querySelectorAll('.btn_RentIt');
-
-
 
     // buttons.forEach(button => {
     //     button.addEventListener('click', () => {
@@ -321,11 +320,11 @@ function rentItClick() {
         var bgColor = $(this).css("background-color");
         console.log(bgColor)
 
-        console.log($(this).attr("data-btnRentIt"));
-        // "rgb("+ 68 +","+ 68 +","+ 68 +")"
 
-        // carController.js:243
-        // console.log(this.bgColor==="rgb("+ 255 +","+ 0 +","+ 0 +")");
+        // let x=$(this).dataset.btnRentIt;
+        console.log($(this).attr("data-btnRentIt"));
+        setBrandToArray(this);
+
         console.log($(".vehicleName").text()+"--");
 
 
@@ -356,9 +355,12 @@ function rentItClick() {
                 "color":"#ffffff"
             });
         }
+
+        /*=================================================*/
+        // vNameAr.push($(this).attr("data-btnRentIt"))
+
     })
 }
-
 
 function colorsAreEqual(color1, color2) {
     var rgb1 = color1.match(/\d+/g);  // Get the RGB values of color1
@@ -375,3 +377,33 @@ function colorsAreEqual(color1, color2) {
 }
 
 
+function setBrandToArray(param) {
+
+    let bool=true;
+
+    let elementToRemove = $(param).attr("data-btnRentIt");
+    let index = vNameAr.indexOf(elementToRemove);
+
+
+
+
+
+    for(let i=0;i<vNameAr.length;i++){
+        if(vNameAr[i]===$(param).attr("data-btnRentIt")){
+            console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+            bool=false;
+        }
+    }
+
+    if(bool){
+        vNameAr.push($(param).attr("data-btnRentIt"));
+    }else{
+        console.log("index-"+index )
+        if (index > -1) {
+            vNameAr.splice(index, 1);
+        }
+    }
+
+
+
+}
