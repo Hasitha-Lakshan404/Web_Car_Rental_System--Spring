@@ -9,14 +9,14 @@ function loadCart() {
         let cRow = `<tr>
                         <th scope="row">${carNames[i].model}</th>
                         <td><a class="text-primary fw-bold" href="#">${carNames[i].dRate}</a></td>
-                        <td>227,000</td>
-                        <td class="fw-bold">${carNames[i].mRate}</td>
+                        <td>${carNames[i].mRate}</td>
+                        <td class="fw-bold">${carNames[i].dWaiver}</td>
                         <td>${carNames[i].pickupD}</td>
                         <td>${carNames[i].returnD}</td>
 
                         <td>
-                            <div class="input-group-text">
-                                <input aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
+                           <div class="input-group-text">
+                                <input data-cartDriverCheckBox="${this}"  aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
                                        type="checkbox"
                                        value="">&nbsp;Need
                             </div>
@@ -64,7 +64,10 @@ function deleteCartItem() {
         loadCart();
 
     })
+
+    // data-cartDriverCheckBox
 }
+
 
 
 function btnColourRemover(pr) {
@@ -81,6 +84,10 @@ function btnColourRemover(pr) {
 function checkDriver() {
     $(".cartDriverCheck").click(function () {
         console.log("CheckBox "+"===="+$('.cartDriverCheck').prop('checked'))
+
+        console.log($(".cartDriverCheck").attr("data-cartDriverCheckBox"))
+
+
 
     })
 }

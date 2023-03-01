@@ -4,14 +4,9 @@ var baseurl="http://localhost:8080/02_BackEnd_war_exploded/";
 $("#btnAdminAddCar").click(function () {
     let registrationNum = $("#save-car-registration").val();
     addCar();
-    // saveCar();
-    // newM();
+
 })
 
-function newM() {
-    let driverLicenseImg=$("#frontView")[0].files[0];
-    console.log($(".front")[0].files[0])
-}
 
 function addCar() {
     var vData = new FormData();
@@ -295,7 +290,6 @@ function loadAllCars(path) {
 }
 
 
-
 function rentItClick() {
     const buttons = document.querySelectorAll('.btn_RentIt');
 
@@ -307,16 +301,6 @@ function rentItClick() {
         // let x=$(this).dataset.btnRentIt;
         console.log($(this).attr("data-btnRentIt"));
         setBrandToArray(this);
-
-        // console.log($(".vehicleName").text()+"--");
-
-        // // Find the corresponding h1 element
-        // const title = this.parentNode.querySelector('.vehicleName');
-        // // Get the text content of the h1 element
-        // const titleText = title.textContent;
-        // // Display the h1 name
-        // console.log(titleText);
-
 
 
         if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){ //firstTime With hover
@@ -366,22 +350,22 @@ function setBrandToArray(param) {
     var pDate="";
 
     if($("#lux-car_Store_pickup_date").val() && $("#lux-car_Store_Return_date").val() ){
-        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val())
+        // console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val())
         isDateAdd=true;
         pDate=$("#lux-car_Store_pickup_date").val();
         rDate=$("#lux-car_Store_Return_date").val();
 
     }else if($("#premiumCar_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val() ){
-        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val());
+        // console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val());
         isDateAdd=true;
         pDate=$("#premiumCar_Store_pickup_date").val()
         rDate=$("#premiumCar_Store_Return_date").val();
 
-    }else if($("#car_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val()) {
-        console.log("Value "+"======"+$("#car_Store_Return_date").val());
+    }else if($("#car_Store_pickup_date").val() && $("#car_Store_Return_date").val()) {
+        // console.log("Value "+"======"+$("#car_Store_Return_date").val());
         isDateAdd=true;
         pDate=$("#car_Store_pickup_date").val()
-        rDate=$("#premiumCar_Store_Return_date").val()
+        rDate=$("#car_Store_Return_date").val()
     }
 
 
@@ -398,9 +382,7 @@ function setBrandToArray(param) {
         btnR:param,
     }
 
-    // let elementToRemove = $(param).attr("data-btnRentIt");
-    // alert(elementToRemove);
-    // let index = vNameAr.indexOf(elementToRemove.parentElement);
+
 
 
     for(let i=0;i<vNameAr.length;i++){
