@@ -28,9 +28,38 @@ function loadCart() {
                                        type="file">
                             </div>
                         </td>
-                        <td><i class="fa-solid fa-xmark fa-2xl"></i></td>
+                        <td><i data-crtClose="${carNames[i].model}"  class="fa-solid fa-xmark fa-2xl icnCartClose"></i></td>
                     </tr>`;
 
         $("#tblCartDetail").append(cRow);
+
     }
+    deleteCartItem();
+}
+
+function deleteCartItem() {
+    $(".icnCartClose").click(function () {
+
+        console.log("CArt  Close"+"---"+$(this).attr("data-crtClose"));
+
+        let boolCart=false;
+
+        for(let i=0;i<vNameAr.length;i++){
+            console.log(vNameAr[i].model+"==="+$(this).attr("data-crtClose"));
+            if(vNameAr[i].model===$(this).attr("data-crtClose")){
+                //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+                boolCart=true;
+            }
+        }
+
+        if(boolCart){
+            for (var i = 0; i < vNameAr.length; i++) {
+                if (vNameAr[i].model === $(this).attr("data-crtClose")) {
+                    vNameAr.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        loadCart();
+    })
 }

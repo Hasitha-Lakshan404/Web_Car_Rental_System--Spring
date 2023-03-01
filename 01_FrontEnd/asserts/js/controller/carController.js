@@ -397,9 +397,9 @@ function setBrandToArray(param) {
         returnD:rDate,
     }
 
-    let elementToRemove = $(param).attr("data-btnRentIt");
+    // let elementToRemove = $(param).attr("data-btnRentIt");
     // alert(elementToRemove);
-    let index = vNameAr.indexOf(elementToRemove.parentElement);
+    // let index = vNameAr.indexOf(elementToRemove.parentElement);
 
 
     for(let i=0;i<vNameAr.length;i++){
@@ -415,10 +415,18 @@ function setBrandToArray(param) {
         // vNameAr.push($(param).attr("data-btnRentIt"));
         vNameAr.push(cus);
     }else{
-        console.log("index-"+index )
+        /*console.log("index-"+index )
         if (index > -1) {
             vNameAr.splice(index, 1);
+        }*/
+
+        for (var i = 0; i < vNameAr.length; i++) {
+            if (vNameAr[i].model === $(param).attr("data-btnRentIt")) {
+                vNameAr.splice(i, 1);
+                break;
+            }
         }
+
     }
 
     /*======================*/
