@@ -209,7 +209,7 @@ function loadAllCars(path) {
                             <!--Title/V Name-->
                             <div class="row">
                                 <div class="d-flex justify-content-center">
-                                    <div class="icon"><img class="carCardMainImg" alt="" src=${"http://localhost:8080/02_BackEnd_war_exploded/"+car.image3}
+                                    <div class="icon"><img  class="carCardMainImg" alt ="" src=${"http://localhost:8080/02_BackEnd_war_exploded/"+car.image3}
                                                            style="width: 250px;height: 175px"></i></div>
                                 </div>
                             </div>
@@ -235,10 +235,9 @@ function loadAllCars(path) {
 
                             <div class="row">
                                 <div class="d-flex ">
-                                    <p class="mt-5 mb-3 ps-4 justify-content-center">${car.description}</p>
+                                    <p class="mt-5 mb-3 ps-4 justify-content-center">${car.VehicleDescription}</p>
                                 </div>
                             </div>
-
 
                             <!--Price-->
                             <div class="row">
@@ -268,7 +267,7 @@ function loadAllCars(path) {
                             <!--Button-->
                             <div  class="row mt-3 btnClzRent">
                                 <div class="d-flex align-items-sm-stretch col-xl-8 justify-content-around">
-                                    <button data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>
+                                    <button data-dtaImg="${car.image3}"  data-dtaDailyRate="${car.dailyRate}" data-dtaMonthlyRate="${car.monthlyRate}" data-dtaWawier="${car.waiver_payment}" data-btnRentIt="${car.model}" class="btn_RentIt">RENT IT</button>
                                 </div>
                                 <div class="d-flex align-items-sm-stretch col-xl-4 justify-content-center">
                                     <img alt="" class="carStoreIndexCarDetailIcon" height="35" src="asserts/image/icons8-popup-50.png" width="35">
@@ -319,6 +318,7 @@ function rentItClick() {
         // console.log(titleText);
 
 
+
         if(colorsAreEqual(bgColor, "rgb(68, 68, 68)")){ //firstTime With hover
             $(this).text("Added");
             $(this).css({
@@ -338,8 +338,9 @@ function rentItClick() {
                 "color":"#ffffff"
             });
         }
-
     })
+
+
 }
 
 function colorsAreEqual(color1, color2) {
@@ -359,33 +360,75 @@ function colorsAreEqual(color1, color2) {
 
 function setBrandToArray(param) {
     let bool=true;
+    let isDateAdd=false;
+
+    var rDate="";
+    var pDate="";
+
+    if($("#lux-car_Store_pickup_date").val() && $("#lux-car_Store_Return_date").val() ){
+        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val())
+        isDateAdd=true;
+        pDate=$("#lux-car_Store_pickup_date").val();
+        rDate=$("#lux-car_Store_Return_date").val();
+
+    }else if($("#premiumCar_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val() ){
+        console.log("Value "+"======"+$("#lux-car_Store_pickup_date").val());
+        isDateAdd=true;
+        pDate=$("#premiumCar_Store_pickup_date").val()
+        rDate=$("#premiumCar_Store_Return_date").val();
+
+    }else if($("#car_Store_pickup_date").val() && $("#premiumCar_Store_Return_date").val()) {
+        console.log("Value "+"======"+$("#car_Store_Return_date").val());
+        isDateAdd=true;
+        pDate=$("#car_Store_pickup_date").val()
+        rDate=$("#premiumCar_Store_Return_date").val()
+    }
+
+
+
+    var cus={
+        model:$(param).attr("data-btnRentIt"),
+        imag:$(param).attr("data-dtaImg") ,
+        dRate:$(param).attr("data-dtaDailyRate") ,
+        mRate:$(param).attr("data-dtaMonthlyRate") ,
+        dWaiver:$(param).attr("data-dtaWawier") ,
+        tnRent:$(param).attr("data-btnRentIt") ,
+        pickupD:pDate,
+        returnD:rDate,
+    }
 
     let elementToRemove = $(param).attr("data-btnRentIt");
-    let index = vNameAr.indexOf(elementToRemove);
+    // alert(elementToRemove);
+    let index = vNameAr.indexOf(elementToRemove.parentElement);
 
 
     for(let i=0;i<vNameAr.length;i++){
-        if(vNameAr[i]===$(param).attr("data-btnRentIt")){
-            console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+        console.log(vNameAr[i].model+"==="+$(param).attr("data-btnRentIt"));
+        if(vNameAr[i].model===$(param).attr("data-btnRentIt")){
+            //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
             bool=false;
         }
     }
 
+
     if(bool){
-        vNameAr.push($(param).attr("data-btnRentIt"));
+        // vNameAr.push($(param).attr("data-btnRentIt"));
+        vNameAr.push(cus);
     }else{
         console.log("index-"+index )
         if (index > -1) {
             vNameAr.splice(index, 1);
         }
     }
+
+    /*======================*/
+
 }
 
 
-/*-------------------------
+/*-------------------------------
 *    send data to the cart
 * ------------------------------*/
-
 function sendVehicleNameToCart() {
     return vNameAr;
 }

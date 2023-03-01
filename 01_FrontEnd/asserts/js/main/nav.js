@@ -327,6 +327,7 @@ $('#loginBtnLogIN').click(function () {
 
     /*this is want to call when the login rq is success*/
     sendVehicleNameToCart();
+    loadCart();
 })
 
 
