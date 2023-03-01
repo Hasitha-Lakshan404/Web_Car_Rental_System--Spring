@@ -24,6 +24,9 @@ public class DriverController {
     @Autowired
     private DriverService service;
 
+
+
+
     @PostMapping
     public ResponseUtil saveDriver(@RequestBody DriverDTO dto){
         service.saveDriver(dto);
@@ -47,4 +50,5 @@ public class DriverController {
         List<DriverDTO> allDrivers = service.getAllDriverDetail();
         return new ResponseUtil("200"," Success.!",allDrivers);
     }
+
 }

@@ -14,8 +14,8 @@ import java.util.List;
  */
 
 public interface CustomerRepo extends JpaRepository<Customer,String> {
-//    Customer findCustomerByName(String name);
-//    Customer findByNameAndAddress(String name, String address);
-//    Customer findByCustomerId(String id);
+    Customer searchCustomerByUserName(String userName);
+
+
 }
 

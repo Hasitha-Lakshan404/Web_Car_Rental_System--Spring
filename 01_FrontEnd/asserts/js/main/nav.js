@@ -315,14 +315,40 @@ $('#loginCreateAccount').click(function () {
 
 /*login button*/
 $('#loginBtnLogIN').click(function () {
-    $('#spaMainIndex').css('display', 'none');
+    /*$('#spaMainIndex').css('display', 'none');
     $('#spaMainCarStore').css('display', 'none');
     $('#spaMainCart').css('display', 'block');
     $('#spaMainOverview').css('display', 'none');
     $('#spaMainSignIn').css('display', 'none');
     $('#spaMainLogIn').css('display', 'none');
     $('#spaMainCustomerUpdate').css('display', 'none');
-    $('#spaMainCarDetail').css('display', 'none');
+    $('#spaMainCarDetail').css('display', 'none');*/
+
+
+    let userName = $('#yourUsername').val();
+    let password = $('#yourPassword').val();
+
+    $.ajax({
+        url: baseurl + "customer?userName=" + userName,
+        method: "GET",
+        success: function (resp) {
+            console.log(resp.userName + "=" + resp.data.userName)
+            console.log(resp.userName + "=" + userName)
+            if (resp.data.userName === userName && resp.data.password === password) {
+                $('#spaMainIndex').css('display', 'none');
+                $('#spaMainCarStore').css('display', 'none');
+                $('#spaMainCart').css('display', 'block');
+                $('#spaMainOverview').css('display', 'none');
+                $('#spaMainSignIn').css('display', 'none');
+                $('#spaMainLogIn').css('display', 'none');
+                $('#spaMainCustomerUpdate').css('display', 'none');
+                $('#spaMainCarDetail').css('display', 'none');
+
+            } else {
+                alert("Username or Password Incorrect!.");
+            }
+        }
+    });
 
 
     /*this is want to call when the login rq is success*/

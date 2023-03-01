@@ -71,4 +71,11 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
+
+    @Override
+    public CustomerDTO checkCustomerLogIn(String userName) {
+        return mapper.map(repo.searchCustomerByUserName(userName), CustomerDTO.class);
+    }
+
+
 }

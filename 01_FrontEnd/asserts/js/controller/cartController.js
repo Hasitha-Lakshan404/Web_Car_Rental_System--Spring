@@ -1,5 +1,5 @@
 var carNames = sendVehicleNameToCart(); /*Benz, BMW, Premio */
-console.log(carNames);
+// console.log(carNames);
 
 
 function loadCart() {
@@ -16,7 +16,7 @@ function loadCart() {
 
                         <td>
                             <div class="input-group-text">
-                                <input aria-label="Checkbox for following text input" class="form-check-input mt-0"
+                                <input aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
                                        type="checkbox"
                                        value="">&nbsp;Need
                             </div>
@@ -24,7 +24,7 @@ function loadCart() {
 
                         <td>
                             <div class="w-100">
-                                <input class="form-control" id="register-form-NIC-image1" style="border: 1px solid gray"
+                                <input class="form-control register-form-NIC-image1" id="" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -32,20 +32,20 @@ function loadCart() {
                     </tr>`;
 
         $("#tblCartDetail").append(cRow);
-
     }
     deleteCartItem();
+    checkDriver();
 }
 
 function deleteCartItem() {
     $(".icnCartClose").click(function () {
 
-        console.log("CArt  Close"+"---"+$(this).attr("data-crtClose"));
+        // console.log("CArt  Close"+"---"+$(this).attr("data-crtClose"));
 
         let boolCart=false;
 
         for(let i=0;i<vNameAr.length;i++){
-            console.log(vNameAr[i].model+"==="+$(this).attr("data-crtClose"));
+            // console.log(vNameAr[i].model+"==="+$(this).attr("data-crtClose"));
             if(vNameAr[i].model===$(this).attr("data-crtClose")){
                 btnColourRemover(vNameAr[i].btnR);
                 //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
@@ -69,11 +69,19 @@ function deleteCartItem() {
 
 function btnColourRemover(pr) {
 
-    console.log("Colour Remover :"+"-=====-"+$(pr).attr("data-btnRentIt"));
+    // console.log("Color Remover :"+"-=====-"+$(pr).attr("data-btnRentIt"));
     $(pr).text("Rent It");
     $(pr).css({
         "background":"#F7F7F7",
         "color":"#444444",
     });
-
 }
+
+
+function checkDriver() {
+    $(".cartDriverCheck").click(function () {
+        console.log("CheckBox "+"===="+$('.cartDriverCheck').prop('checked'))
+
+    })
+}
+

@@ -28,9 +28,9 @@
 </head>
 <body>
 
-<main>
+<main id="adminHeaderMain">
     <!-- ======= Header ======= -->
-    <header class="header d-flex align-items-center" id="header">
+    <header class="header d-flex align-items-center" >
 
         <!--========================-->
         <div class="d-flex align-items-center justify-content-between">
@@ -1104,6 +1104,94 @@
 </main>
 
 
+
+<!--========================================================================
+                                  LogIn
+============================================================================-->
+<main id="spaAdminMainLogIn">
+
+
+    <main>
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="d-flex justify-content-center py-4">
+                                <a class="logo d-flex align-items-center w-auto" href="index.html">
+                                    <img alt="" src="asserts/image/logo.jpg">
+                                    <span class="d-none d-lg-block">ECar Rental</span>
+                                </a>
+                            </div><!-- End Logo -->
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                        <p class="text-center small">Enter your username & password to login</p>
+                                    </div>
+
+                                    <form class="row g-3 needs-validation" novalidate>
+
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourUsername1">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                <input class="form-control" id="yourUsername1" name="username" required
+                                                       type="text">
+                                                <div class="invalid-feedback">Please enter your username.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourPassword1">Password</label>
+                                            <input class="form-control" id="yourPassword1" name="password" required
+                                                   type="password">
+                                            <div class="invalid-feedback">Please enter your password!</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" id="rememberMe" name="remember"
+                                                       type="checkbox"
+                                                       value="true">
+                                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <!--submit btn-->
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" id="loginBtnLogIN1" type="button">
+                                                Login
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <div class="credits">
+                                Designed by <a href="https://github.com/Hasitha-Lakshan404">Hasitha Lakshan</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main><!-- End #main -->
+</main>
+
+
+
+
+
 <script src="asserts/js/jquery-3.6.1.min.js"></script>
 
 <!-- Vendor JS Files -->
@@ -1119,5 +1207,6 @@
 <script src="asserts/js/controller/customerController.js"></script>
 <script src="asserts/js/controller/driverController.js"></script>
 <script src="asserts/js/controller/carController.js"></script>
+<script src="asserts/js/controller/adminController.js"></script>
 </body>
 </html>

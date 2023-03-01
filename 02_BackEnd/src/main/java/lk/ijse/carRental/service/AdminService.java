@@ -1,6 +1,7 @@
 package lk.ijse.carRental.service;
 
 import lk.ijse.carRental.dto.AdminDTO;
+import lk.ijse.carRental.dto.CustomerDTO;
 
 /**
  * @author : Hasitha Lakshan
@@ -10,5 +11,5 @@ import lk.ijse.carRental.dto.AdminDTO;
  */
 
 public interface AdminService {
-    AdminDTO checkAdminLogIn(String id, String password);
+    public AdminDTO checkAdminLogIn(String userName);
 }

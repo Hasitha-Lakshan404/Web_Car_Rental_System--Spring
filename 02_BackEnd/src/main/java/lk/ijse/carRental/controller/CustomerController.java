@@ -53,4 +53,10 @@ public class CustomerController {
     public ResponseUtil getAllCustomerDetail() {
         return new ResponseUtil("200", "Done", service.getAllCustomerDetail());
     }
+
+    @GetMapping(params = {"userName"})
+    public ResponseUtil loginCustomer(@RequestParam String userName){
+        CustomerDTO customerDTO = service.checkCustomerLogIn(userName);
+        return new ResponseUtil("200","Login Success!",customerDTO);
+    }
 }

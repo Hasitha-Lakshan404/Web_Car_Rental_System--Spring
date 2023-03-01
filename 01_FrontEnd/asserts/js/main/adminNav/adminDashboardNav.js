@@ -1,12 +1,15 @@
 
 //for the Loading Window
 $(window).on('load',function () {
-    $('#adminDashboard').css('display','block');
+    $('#adminDashboard').css('display','none');
     $('#adminAddVehicle').css('display','none');
     $('#adminCustomerVerification').css('display','none');
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#adminHeaderMain').css('display','none');
+
+    $('#spaAdminMainLogIn').css('display','block');
 })
 
 /*dashboard*/
@@ -22,6 +25,9 @@ $('#adRes').click(function () {
     $('#adminRentalVerification').css('display','block');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
+
+    // $('#adminHeaderMain').css('display','block');
 })
 
 /*View Car*/
@@ -32,6 +38,7 @@ $('#adViewCar').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 })
 
 /*car Schedule*/
@@ -42,6 +49,7 @@ $('#adCarSchedule').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 })
 
 /*customer*/
@@ -52,6 +60,7 @@ $('#adCustomer').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 })
 
 /*Driver*/
@@ -62,6 +71,7 @@ $('#adViewDriver').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','block');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 
     loadAllDrivers();
 })
@@ -74,6 +84,7 @@ $('#adDriverSchedule').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 })
 
 /*payment*/
@@ -84,6 +95,7 @@ $('#adPayment').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','none');
+    $('#spaAdminMainLogIn').css('display','none');
 })
 
 /*customer all view*/
@@ -94,7 +106,7 @@ $('#adViewAllCustomer').click(function () {
     $('#adminRentalVerification').css('display','none');
     $('#adminDriver').css('display','none');
     $('#adminViewAllCustomer').css('display','block');
+    $('#spaAdminMainLogIn').css('display','none');
 
     loadAllCustomers();
-
 })
