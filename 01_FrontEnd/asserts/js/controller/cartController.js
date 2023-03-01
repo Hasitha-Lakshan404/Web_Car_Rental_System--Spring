@@ -47,6 +47,7 @@ function deleteCartItem() {
         for(let i=0;i<vNameAr.length;i++){
             console.log(vNameAr[i].model+"==="+$(this).attr("data-crtClose"));
             if(vNameAr[i].model===$(this).attr("data-crtClose")){
+                btnColourRemover(vNameAr[i].btnR);
                 //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
                 boolCart=true;
             }
@@ -61,5 +62,18 @@ function deleteCartItem() {
             }
         }
         loadCart();
+
     })
+}
+
+
+function btnColourRemover(pr) {
+
+    console.log("Colour Remover :"+"-=====-"+$(pr).attr("data-btnRentIt"));
+    $(pr).text("Rent It");
+    $(pr).css({
+        "background":"#F7F7F7",
+        "color":"#444444",
+    });
+
 }

@@ -395,6 +395,7 @@ function setBrandToArray(param) {
         tnRent:$(param).attr("data-btnRentIt") ,
         pickupD:pDate,
         returnD:rDate,
+        btnR:param,
     }
 
     // let elementToRemove = $(param).attr("data-btnRentIt");
