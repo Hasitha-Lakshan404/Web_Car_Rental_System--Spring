@@ -1,19 +1,22 @@
 var carNames = sendVehicleNameToCart(); /*Benz, BMW, Premio */
 // console.log(carNames);
+var rentalAr = [];
 
-var rental = {
-    rentalId: "",
-    amount: 1,
-    date: 1 - 1 - 2023,
-    pickupDate: 1 - 1 - 2023,
-    pickupLocation: "panadura",
-    rentalDate: 1 - 1 - 2023,
-    returnLocation: "Bandaragama",
-    totalDamageWiewerPayment: 20000,
-    cusId:"C001"
-}
+var curDay = function(sp){
+    today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
 
-function loadCart() {
+    if(dd<10) dd='0'+dd;
+    if(mm<10) mm='0'+mm;
+    return (mm+sp+dd+sp+yyyy);
+};
+
+// console.log(curday('/'));
+// console.log(curday('-'));
+
+    function loadCart() {
     $("#tblCartDetail").empty();
 
     for (let i = 0; i < carNames.length; i++) {
@@ -45,8 +48,11 @@ function loadCart() {
 
         $("#tblCartDetail").append(cRow);
     }
-    checkDriver();
+        addRentalTOTheRentAr();
+
+        checkDriver();
     deleteCartItem();
+
 
 }
 
@@ -84,7 +90,6 @@ function deleteCartItem() {
 
 
 function btnColourRemover(pr) {
-
     // console.log("Color Remover :"+"-=====-"+$(pr).attr("data-btnRentIt"));
     $(pr).text("Rent It");
     $(pr).css({
@@ -98,9 +103,51 @@ function checkDriver() {
     $(".cartDriverCheck").click(function () {
         // console.log("CheckBox "+"===="+$('.cartDriverCheck').is(":checked"))
 
-        console.log($(this).attr("data-cartDriverCheckBoxRegId"))
+        console.log($(this).attr("data-cartDriverCheckBoxRegId"));
+        // rentalAr.push()
+        // console.log(carNames.length);
+
+
+
+        for (let i = 0; i < rentalAr.length; i++) {
+            console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-cartDriverCheckBoxRegId"));
+
+            if (rentalAr[i].rentalId === $(this).attr("data-cartDriverCheckBoxRegId")) {
+                //console.log(vNameAr[i]+"==="+$(param).attr("data-btnRentIt"));
+                // rentalAr[i].driver="Need"
+
+                if(rentalAr[i].driver==="No"){
+                    alert("if eke")
+                    rentalAr[i].driver="Need";
+                }else if(rentalAr[i].driver==="Need"){
+                    alert("else of eke")
+                    rentalAr[i].driver="No";
+                }
+
+            }
+        }
 
 
     })
 }
 
+function addRentalTOTheRentAr() {
+        rentalAr.length=0;
+    for (let i = 0; i < carNames.length; i++) {
+        console.log("Rent Id : "+carNames[i].regId);
+        var rentalObj = {
+            rentalId: carNames[i].regId,
+            amount: 0,
+            date: curDay("-"),
+            pickupDate:carNames[i].pickupD,
+            pickupLocation: $("#addressPickup").val(),
+            rentalDate: carNames[i].returnD,
+            returnLocation: $("#addressReturn").val(),
+            totalDamageWaiwerPayment: 0,
+            cusId:"C001",
+            driver:"No",
+        }
+        rentalAr.push(rentalObj);
+    }
+
+}

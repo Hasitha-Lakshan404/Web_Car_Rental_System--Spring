@@ -13,7 +13,7 @@ $('#loginBtnLogIN1').click(function (){
 
 
             } else {
-                alert("Username or Password Incorrect!.");
+                alert("Welcome!");
                 $('#adminDashboard').css('display','block');
                 $('#adminAddVehicle').css('display','none');
                 $('#adminCustomerVerification').css('display','none');
@@ -24,7 +24,6 @@ $('#loginBtnLogIN1').click(function (){
 
                 $('#spaAdminMainLogIn').css('display','none');
             }
-
         }
     });
 });
