@@ -12,9 +12,6 @@ $('#loginBtnLogIN1').click(function (){
             if (resp.data.userName === userName && resp.data.password === password) {
 
 
-
-
-
             } else {
                 alert("Username or Password Incorrect!.");
                 $('#adminDashboard').css('display','block');

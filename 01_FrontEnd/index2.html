@@ -942,13 +942,35 @@
                     </tbody>
                 </table>
 
+
+                <div class="row">
+                    <div class="d-flex col-xl-6">
+                        <!--pickup Time-->
+                        <div class="form-group col-md-6  mb-2">
+                            <label class="form-label" for="addressPickUpTime">PickUp Time</label>
+                            <input class="form-control" id="addressPickUpTime" name="name" placeholder="Pickup Time"
+                                   required type="time">
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-xl-6">
+                        <!--Return Time-->
+                        <div class="form-group col-md-6 mb-3">
+                            <label class="form-label " for="addressReturnDate">Return Time</label>
+                            <input class="form-control" id="addressReturnDate" name="name" placeholder="Pickup Time"
+                                   required type="time">
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="row mb-5">
                     <div class="d-flex col-xl-6">
                         <!--pickup-->
                         <div class="form-group col-md-6  mb-2">
                             <label class="form-label" for="addressSignIn">PickUp Location</label>
                             <input class="form-control" id="addressSignIn" name="name" placeholder="Pickup Location"
-                                   required type="text">
+                                   required type="date">
                         </div>
                     </div>
 
@@ -957,10 +979,12 @@
                         <div class="form-group col-md-6 mb-5">
                             <label class="form-label " for="addressPickup">Return Location</label>
                             <input class="form-control" id="addressPickup" name="name" placeholder="Pickup Location"
-                                   required type="text">
+                                   required type="date">
                         </div>
                     </div>
                 </div>
+
+
 
                 <div class="row">
                     <!--Rent Amount-->

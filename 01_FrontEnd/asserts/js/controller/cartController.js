@@ -1,11 +1,23 @@
 var carNames = sendVehicleNameToCart(); /*Benz, BMW, Premio */
 // console.log(carNames);
 
+var rental = {
+    rentalId: "",
+    amount: 1,
+    date: 1 - 1 - 2023,
+    pickupDate: 1 - 1 - 2023,
+    pickupLocation: "panadura",
+    rentalDate: 1 - 1 - 2023,
+    returnLocation: "Bandaragama",
+    totalDamageWiewerPayment: 20000,
+    cusId:"C001"
+}
 
 function loadCart() {
     $("#tblCartDetail").empty();
 
     for (let i = 0; i < carNames.length; i++) {
+        // console.log("RegId"+"==="+carNames[i].regId);
         let cRow = `<tr>
                         <th scope="row">${carNames[i].model}</th>
                         <td><a class="text-primary fw-bold" href="#">${carNames[i].dRate}</a></td>
@@ -16,7 +28,7 @@ function loadCart() {
 
                         <td>
                            <div class="input-group-text">
-                                <input data-cartDriverCheckBox="${this}"  aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
+                                <input data-cartDriverCheckBoxRegId="${carNames[i].regId}"  aria-label="Checkbox for following text input" class="form-check-input mt-0 cartDriverCheck"
                                        type="checkbox"
                                        value="">&nbsp;Need
                             </div>
@@ -33,8 +45,9 @@ function loadCart() {
 
         $("#tblCartDetail").append(cRow);
     }
-    deleteCartItem();
     checkDriver();
+    deleteCartItem();
+
 }
 
 function deleteCartItem() {
@@ -83,10 +96,9 @@ function btnColourRemover(pr) {
 
 function checkDriver() {
     $(".cartDriverCheck").click(function () {
-        console.log("CheckBox "+"===="+$('.cartDriverCheck').prop('checked'))
+        // console.log("CheckBox "+"===="+$('.cartDriverCheck').is(":checked"))
 
-        console.log($(".cartDriverCheck").attr("data-cartDriverCheckBox"))
-
+        console.log($(this).attr("data-cartDriverCheckBoxRegId"))
 
 
     })
