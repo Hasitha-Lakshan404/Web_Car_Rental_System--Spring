@@ -1,6 +1,8 @@
 var carNames = sendVehicleNameToCart(); /*Benz, BMW, Premio */
 // console.log(carNames);
 var rentalAr = [];
+var dayCount=0;
+
 
 var curDay = function(sp){
     today = new Date();
@@ -52,6 +54,7 @@ var curDay = function(sp){
 
         checkDriver();
     deleteCartItem();
+        getDateRange();
 
 
 }
@@ -81,6 +84,8 @@ function deleteCartItem() {
             }
         }
         loadCart();
+        driverPayment= 0;
+        $("#driverCost").text(driverPayment);
 
     })
 
@@ -98,7 +103,7 @@ function btnColourRemover(pr) {
     });
 }
 
-
+var driverPayment=0;
 function checkDriver() {
     $(".cartDriverCheck").click(function () {
         // console.log("CheckBox "+"===="+$('.cartDriverCheck').is(":checked"))
@@ -117,11 +122,19 @@ function checkDriver() {
                 // rentalAr[i].driver="Need"
 
                 if(rentalAr[i].driver==="No"){
-                    alert("if eke")
+                    // alert("if eke")
                     rentalAr[i].driver="Need";
+                    driverPayment= parseInt(driverPayment)+(1000*parseInt(dayCount));
+                    $("#driverCost").text(driverPayment);
+
+
                 }else if(rentalAr[i].driver==="Need"){
-                    alert("else of eke")
+                    driverPayment= parseInt(driverPayment)-(1000*parseInt(dayCount));
+                    $("#driverCost").text(driverPayment);
+
+                    // alert("else of eke")
                     rentalAr[i].driver="No";
+
                 }
 
             }
@@ -149,5 +162,20 @@ function addRentalTOTheRentAr() {
         }
         rentalAr.push(rentalObj);
     }
+}
+
+
+function getDateRange(){
+    // To set two dates to two variables
+    var date1 = new Date(carNames[0].pickupD);
+    var date2 = new Date(carNames[0].returnD);
+
+// To calculate the time difference of two dates
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+
+// To calculate the no. of days between two dates
+    dayCount  = Difference_In_Time / (1000 * 3600 * 24);
+    $("#clzTTDays").text(dayCount);
 
 }
+

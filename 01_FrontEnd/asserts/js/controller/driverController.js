@@ -28,8 +28,6 @@ $("#btnDeleteDriver").click(function (){
 });
 
 
-
-
 /*FUNCTIONS*/
 function saveDriver(){
     var driverDTO = {
