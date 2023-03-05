@@ -1,9 +1,13 @@
 package lk.ijse.carRental.dto;
 
+import lk.ijse.carRental.entity.Car;
+import lk.ijse.carRental.entity.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.time.LocalDate;
 
 /**
  * @author : Hasitha Lakshan
@@ -12,9 +16,25 @@ import lombok.ToString;
  * Time :12:14 AM
  */
 
-/*@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
-@ToString*/
+@ToString
 public class ReservationDTO {
+    private String rentalId;
+    private LocalDate date;
+    private LocalDate pickupDate;
+    private LocalDate returnDate;
+    private double amount;
+    private double total_damage_viewer_payment;
+    private String pickupLocation;
+    private String returnLocation;
+    private String bankSlip;
+    private String noOfDays;
+    private String reservationStatus;
+    private String driverStatus;
+
+    private CustomerDTO customer;
+    private CarDTO car;
+
 }

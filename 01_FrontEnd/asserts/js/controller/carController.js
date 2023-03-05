@@ -12,7 +12,6 @@ function addCar() {
     var vData = new FormData();
 
     let frontViewFile = $(".frontView")[0].files[0];
-    console.log(frontViewFile)
     let backViewFile = $(".backView")[0].files[0];
     let sideViewFile = $(".sideView")[0].files[0];
     let interiorViewFile = $(".interior")[0].files[0];
@@ -146,6 +145,7 @@ function uploadCarImages(registrationNum) {
     let sideFileName = registrationNum + "-image3-" + $("#save-car-sideView")[0].files[0].name;
     let interiorFileName = registrationNum + "-image4-" + $("#save-car-interior")[0].files[0].name;
 
+    console.log("save car front : "+$("#save-car-frontView")[0].files[0]);
 
     var data = new FormData();
 
@@ -382,7 +382,6 @@ function setBrandToArray(param) {
         regId:$(param).attr("data-registrationId")
     }
 
-
     for (let i = 0; i < vNameAr.length; i++) {
         console.log(vNameAr[i].model + "===" + $(param).attr("data-btnRentIt"));
         if (vNameAr[i].model === $(param).attr("data-btnRentIt")) {
@@ -571,9 +570,7 @@ function viewCars(path) {
                 $('.btnViewUpdate').click(function () {
                     viewUpdateCar();
                 });*/
-
             }
-
         }
     });
 }

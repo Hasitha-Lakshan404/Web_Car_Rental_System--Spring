@@ -33,6 +33,6 @@ public class Customer {
     private String password;
     private String imageLocation;
 
-    @OneToMany(mappedBy = "customerId")
-    private List<Rental> rentalDetails;
+    @OneToMany
+    private List<Rental> rentalDetail;
 }

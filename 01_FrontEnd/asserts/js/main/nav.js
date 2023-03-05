@@ -1,3 +1,5 @@
+var loggedCustomerId;
+
 //for the Loading Window
 $(window).on('load', function () {
     $('#spaMainIndex').css('display', 'block');
@@ -312,7 +314,6 @@ $('#loginCreateAccount').click(function () {
     $('#spaMainCustomerUpdate').css('display', 'none');
     $('#spaMainCarDetail').css('display', 'none');
 })
-
 /*login button*/
 $('#loginBtnLogIN').click(function () {
     /*$('#spaMainIndex').css('display', 'none');
@@ -335,6 +336,7 @@ $('#loginBtnLogIN').click(function () {
             console.log(resp.userName + "=" + resp.data.userName)
             console.log(resp.userName + "=" + userName)
             if (resp.data.userName === userName && resp.data.password === password) {
+                loggedCustomerId=resp.data.customerId;
                 $('#spaMainIndex').css('display', 'none');
                 $('#spaMainCarStore').css('display', 'none');
                 $('#spaMainCart').css('display', 'block');
@@ -367,6 +369,9 @@ $('#cartBtnSendRentalRq').click(function () {
     $('#spaMainLogIn').css('display', 'none');
     $('#spaMainCustomerUpdate').css('display', 'none');
     $('#spaMainCarDetail').css('display', 'none');
+
+    saveRental();
+
 })
 
 
