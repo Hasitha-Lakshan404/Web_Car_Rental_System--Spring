@@ -4,6 +4,7 @@ import lk.ijse.carRental.dto.ReservationDTO;
 import lk.ijse.carRental.service.ReservationService;
 import lk.ijse.carRental.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,11 +27,19 @@ public class ReservationController {
     @Autowired
     ReservationService carReservationService;
 
+    @GetMapping(path = "generateReservationId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateReservationId() {
+        return new ResponseUtil("200", "Done", carReservationService.generateReservationId());
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseUtil requestReservation(@RequestPart("reservation") ReservationDTO carReservation, @RequestPart("file") MultipartFile file) {
+        System.out.println(carReservation);
         carReservation.setBankSlip("uploads/" + carReservation.getBankSlip());
 
         carReservationService.requestReservation(carReservation);
+
 
         try {
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
@@ -44,15 +53,9 @@ public class ReservationController {
         return new ResponseUtil("200", "Request Send Successfully", carReservation);
     }
 
-
-    @GetMapping(path = "generateReservationId", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil generateReservationId() {
-        return new ResponseUtil("200", "Done", carReservationService.generateReservationId());
-    }
-
-    @PutMapping(params = {"reserve_id", "driver_id", "status"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateReservationStatus(@RequestParam String reserve_id, @RequestParam String driver_id, @RequestParam String status) {
-        carReservationService.updateReservationStatus(reserve_id, driver_id, status);
+    @PutMapping(params = {"rentalId", "driverId", "status"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateReservationStatus(@RequestParam String rentalId, @RequestParam String driverId, @RequestParam String status) {
+        carReservationService.updateReservationStatus(rentalId, driverId, status);
         return new ResponseUtil("200", status + " Request Successfully", null);
     }
 
@@ -65,18 +68,6 @@ public class ReservationController {
     @GetMapping(path = "getReservation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getReservationDetail(@PathVariable String id) {
         return new ResponseUtil("200", "Done", carReservationService.getReservationDetail(id));
-    }
-
-    //return all today reserve reservations
-    @GetMapping(path = "todayReservation", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllTodayReservation() {
-        return new ResponseUtil("200", "Done", carReservationService.getAllTodayReservation());
-    }
-
-    //return all reservations they are picking up today
-    @GetMapping(path = "todayPickUps", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllTodayPickUps() {
-        return new ResponseUtil("200", "Done", carReservationService.getAllTodayPickUps());
     }
 
 

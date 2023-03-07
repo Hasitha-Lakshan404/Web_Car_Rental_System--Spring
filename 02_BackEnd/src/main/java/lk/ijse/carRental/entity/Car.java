@@ -48,5 +48,4 @@ public class Car {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Rental> reservations;
-
 }

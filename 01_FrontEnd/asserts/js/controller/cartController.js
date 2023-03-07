@@ -43,7 +43,7 @@ function loadCart() {
 
                         <td>
                             <div class="w-100">
-                                <input data-slip="${carNames[i].regId}" data-sf="${this}" class="form-control register-form-NIC-image1 slipPicker"  style="border: 1px solid gray"
+                                <input data-slip="${carNames[i].regId}" data-sf="${this}" class="form-control register-form-NIC-image1 slipPicker" style="border: 1px solid gray"
                                        type="file">
                             </div>
                         </td>
@@ -161,7 +161,7 @@ function addRentalTOTheRentAr() {
             totalDamageWaiverPayment: carNames[i].dWaiver,
             cusId: "C001",
             driver: "No",
-            img:new FormData(),
+            img:"",
         }
         rentalAr.push(rentalObj);
     }
@@ -211,9 +211,6 @@ function getAmount() {
 
 
 function getLocations() {
-
-
-
     $("#addressPickup").keyup(function () {
         // console.log($("#addressPickup").val());
         for (let i = 0; i < rentalAr.length; i++) {
@@ -230,7 +227,7 @@ function getLocations() {
 }
 
 
-function setSlip() {
+/*function setSlip() {
     $(".slipPicker").change(function () {
         for (let i = 0; i < rentalAr.length; i++) {
             console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-slip"));
@@ -251,7 +248,7 @@ function setSlip() {
             }
         }
     })
-}
+}*/
 
 // loggedCustomerId
 
@@ -262,15 +259,15 @@ function saveRental() {
     var today = now.getFullYear() + "-" + (month) + "-" + (day);
 
     // console.log("save REntal Ekeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    // console.log("value eka - "+$(".slipPicker").attr("data-slip"))
+    // console.log("value  - "+$(".slipPicker").attr("data-slip"))
 
     for (let i = 0; i < rentalAr.length; i++) {
         var data = new FormData();
 
-        /*let slip_img = $("#slip-image")[0].files[0];
-        let slipFileName = slip_img.name;
-
-        data.append("file", slip_img);*/
+        // let slip_img = $("#slip-image")[0].files[0];
+        // let slipFileName = slip_img.name;
+        //
+        data.append("file", rentalAr[i].img);
 
         // var driver_status;
         /*if ($('#customer-reservation-customer-driverCheck').is(":checked")) {
@@ -279,21 +276,23 @@ function saveRental() {
             driver_status = "NO"
         }*/
 
+        // rentalAr[i]=
+
         let reservation = {
             rentalId: "R001",
             date: today,
             pickupDate: rentalAr[i].pickupDate,
-            amount: rentalAr[i].amount,
             returnDate: rentalAr[i].rentalDate,
-            totalDamageWaiverPayment: rentalAr[i].totalDamageWaiverPayment,
+            amount: rentalAr[i].amount,
+            total_damage_viewer_payment: rentalAr[i].totalDamageWaiverPayment,
             pickupLocation: rentalAr[i].pickupLocation,
             returnLocation: rentalAr[i].returnLocation,
-            bankSlip:rentalAr[i].img,
+            bankSlip:rentalAr[i].img.name,
             noOfDays:dayCount,
             reservationStatus: "Pending",
             driverStatus: rentalAr[i].driver,
             customer: {
-                nic:loggedCustomerId
+                customerId:loggedCustomerId
             },
             car: {
                 registrationId: rentalAr[i].rentalId
@@ -322,4 +321,30 @@ function saveRental() {
         });
     }
 
+}
+
+function setSlip(){
+    console.log("setSlip eke innnee")
+// Listen for the "change" event on the file input elements
+    $('.slipPicker').on('change', () => {
+        console.log("setSlip eke innnee 1 ")
+        // Iterate over each row of the table
+        $('#tblCartDetail tr').each((index, element) => {
+            console.log(index+"========="+element);
+            // Get the selected file from the file input element in the current row
+            const selectedFile = $(element).find('.slipPicker').prop('files')[0];
+
+            // rentalAr[index].img
+
+            // Do something with the selected file
+            // console.log(`Row ${index + 1}: ${selectedFile.name}`);
+            // rentalAr[index].img.append("file",selectedFile);
+            // var data = new FormData();
+            // data.append("file",selectedFile);
+
+            rentalAr[index].img=selectedFile;
+            // console.log($(element).find('.slipPicker').prop('files')[0]);
+
+        });
+    });
 }

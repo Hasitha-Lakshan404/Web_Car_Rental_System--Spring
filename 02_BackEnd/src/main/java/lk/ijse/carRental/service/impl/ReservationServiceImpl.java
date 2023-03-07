@@ -1,5 +1,6 @@
 package lk.ijse.carRental.service.impl;
 
+import lk.ijse.carRental.dto.CustomerDTO;
 import lk.ijse.carRental.dto.ReservationDTO;
 import lk.ijse.carRental.entity.Car;
 import lk.ijse.carRental.entity.Customer;
@@ -46,28 +47,37 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public String generateReservationId() {
-        return null;
+        return "R001";
     }
 
     @Override
     public void requestReservation(ReservationDTO reservationDTO) {
-//        if (!carReservationRepo.existsById(reservationDTO.getRentalId())) {
-        if (true) {
+        if (!carReservationRepo.existsById(reservationDTO.getRentalId())) {
 
             Rental carReservation = mapper.map(reservationDTO, Rental.class);
 
-            /*Customer customer = customerRepo.findById(reservationDTO.getCustomer().getNic()).get();*/
-           /* Car car = carRepo.findById(reservationDTO.getCar().getRegistrationId()).get();*/
+            Customer customer = customerRepo.findById(reservationDTO.getCustomer().getCustomerId()).get();
+//            System.out.println("Customer ID :"+reservationDTO.getCustomer().getCustomerId());
+            Car car = carRepo.findById(reservationDTO.getCar().getRegistrationId()).get();
+//            System.out.println("Car : "+carRepo.findById(reservationDTO.getCar().getRegistrationId()));
+//            System.out.println("Car with get : "+carRepo.findById(reservationDTO.getCar().getRegistrationId()).get());
 
-            Customer customer=new Customer();
-            Car car=new Car();
 
-            carReservation.setCustomer(customer);
+
+            carReservation.setCustomer(mapper.map(customer,Customer.class));
             carReservation.setCar(car);
 
-            if (reservationDTO.getDriverStatus().equalsIgnoreCase("YES")) {
 
-                /*Driver driver = driverRepo.selectDriverForReservation(
+            System.out.println("Driver eke ======="+reservationDTO.getDriverStatus());
+//            Rental entity = mapper.map(reservationDTO, Rental.class);
+            carReservationRepo.save(carReservation);
+
+
+
+//            carReservationRepo.save(carReservation);
+            /*if (reservationDTO.getDriverStatus().equalsIgnoreCase("YES")) {
+
+                Driver driver = driverRepo.selectDriverForReservation(
                         reservationDTO.getPick_up_date(),
                         reservationDTO.getReturn_date());
 
@@ -78,18 +88,18 @@ public class ReservationServiceImpl implements ReservationService {
                         mapper.map(driver, DriverDTO.class),
                         mapper.map(carReservation, ReservationDTO.class));
 
-                driverScheduleRepo.save(mapper.map(driverScheduleDTO, DriverSchedule.class));*/
+                driverScheduleRepo.save(mapper.map(driverScheduleDTO, DriverSchedule.class));
 
             } else {
                 carReservationRepo.save(carReservation);
-            }
+            }*/
         } else {
             throw new RuntimeException("Your Reservation Request can't Send in this moment,Try Again..!");
         }
     }
 
     @Override
-    public void updateReservationStatus(String reserve_id, String driver_id, String status) {
+    public void updateReservationStatus(String rentalId, String driverId, String status) {
 
     }
 
