@@ -77,6 +77,8 @@ $('#adViewCar').click(function () {
 
 /*View Car*/
 $('#adViewCarView').click(function () {
+    loadCars("allCarDetail");
+
     $('#adminDashboard').css('display','none');
     $('#adminAddVehicle').css('display','none');
     $('#adminCustomerVerification').css('display','none');
@@ -87,7 +89,9 @@ $('#adViewCarView').click(function () {
     $('#spaAdminVehicleSchedule').css('display','none');
     $('#spaAdminViewVehicle').css('display','block')
     $('#spaAdminDriverSchedule').css('display','none');
-    $('#spaAdminPayments').css('display','none');;
+    $('#spaAdminPayments').css('display','none');
+
+
 })
 
 

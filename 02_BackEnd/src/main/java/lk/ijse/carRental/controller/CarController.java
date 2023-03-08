@@ -98,5 +98,15 @@ public class CarController {
         return new ResponseUtil("200", "Done", carService.getAllCarDetail());
     }
 
+
+
+    @DeleteMapping(params = {"vehicleId"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCar(@RequestParam String vehicleId){
+        carService.deleteCar(vehicleId);
+        return new ResponseUtil("200",vehicleId+" :Car Deleted.!",null);
+    }
+
+
+
 }
 

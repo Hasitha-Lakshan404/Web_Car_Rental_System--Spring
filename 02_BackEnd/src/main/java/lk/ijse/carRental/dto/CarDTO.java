@@ -40,5 +40,4 @@ public class CarDTO {
     private String availability;
 
 
-
 }

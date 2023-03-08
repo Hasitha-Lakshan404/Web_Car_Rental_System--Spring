@@ -145,7 +145,7 @@ function uploadCarImages(registrationNum) {
     let sideFileName = registrationNum + "-image3-" + $("#save-car-sideView")[0].files[0].name;
     let interiorFileName = registrationNum + "-image4-" + $("#save-car-interior")[0].files[0].name;
 
-    console.log("save car front : "+$("#save-car-frontView")[0].files[0]);
+    console.log("save car front : " + $("#save-car-frontView")[0].files[0]);
 
     var data = new FormData();
 
@@ -379,7 +379,7 @@ function setBrandToArray(param) {
         pickupD: pDate,
         returnD: rDate,
         btnR: param,
-        regId:$(param).attr("data-registrationId")
+        regId: $(param).attr("data-registrationId")
     }
 
     for (let i = 0; i < vNameAr.length; i++) {
@@ -540,37 +540,154 @@ function viewCars(path) {
     </div>
  </div><!-- End Sales Card -->`;
                 $("#view-car-container").append(div);
-
-                /*function viewUpdateCar() {
-                    var newDetails = {
-                        registrationId: $('.txtVehicleId-update').val(car.registrationId),
-                        brand: $('.txtVehicleBrand-update').val(car.brand),
-                        model: $('.txtVehicleModel-update').val(car.model),
-                        dailyRate: $('.txtVehicleDaily-update').val(car.dailyRate),
-                        monthlyRate: $('.txtVehicleMonthly-update').val(car.monthlyRate),
-                        damageCost: $('.txtVehicleDamage-update').val(car.damageCost)
-
-                    }
-
-                    $.ajax({
-                        url: baseUrl + "car",
-                        method: "put",
-                        contentType: "application/json",
-                        data: JSON.stringify(newDetails),
-                        success: function (res) {
-                            if (res.status === 200) {
-                                alert(res.message)
-                            } else {
-
-                            }
-                        }
-                    });
-                }
-
-                $('.btnViewUpdate').click(function () {
-                    viewUpdateCar();
-                });*/
             }
         }
+    });
+}
+
+
+
+function loadCars(path) {
+    $("#admin-view-car").empty();
+    /* $("#view-car-container").empty();*/
+
+    $.ajax({
+        url: baseurl + "car/" + path,
+        method: "GET",
+        success: function (resp) {
+            model=resp.model;
+            brand=resp.brand;
+            type=resp.type;
+            noOfPassenger=resp.noOfPassenger;
+            transmissonType=resp.transmissionType;
+            fuelType=resp.fuelType;
+            image1=resp.image1;
+            image2=resp.image2;
+            image3=resp.image3;
+            image4=resp.image4;
+
+            for (const car of resp.data) {
+                let row = `<tr><td>${car.registrationId}</td><td>${car.dailyRate}</td><td>${car.monthlyRate}</td><td>${car.waiver_payment}</td><td>${car.lastServiceMileage}</td><td>${car.freeKmDay}</td><td>${car.priceForExtraKm}</td><td>${car.color}</td><td>${car.availability}</td></tr>`;
+                $("#admin-view-car").append(row);
+
+                $("#admin-view-car").off("click");
+                $("#admin-view-car").click(function () {
+                    driver_nic = $(this).children(":eq(0)").text();
+                    $("#navViewVehicle").prop('disabled', false);
+                });
+            }
+            bindRowClickEvents();
+
+        }
+    });
+}
+
+/*Update Car*/
+$('#btnUpdateCar').click(function (){
+    viewUpdate();
+});
+
+/*Delete Car*/
+$('#btnDeleteCar').click(function (){
+    $.ajax({
+        url:baseurl+$("#update-car-Id").val(),
+        method:"delete",
+        success(resp){
+            alert(resp.message);
+            // viewCars();
+            loadCars("allCarDetail");
+        }
+    });
+    clearCarTextUpdate();
+});
+
+
+
+
+function viewUpdate(){
+
+    let registrationId= $('#update-car-Id').val();
+    let dailyRate= $('#update-car-dailyRate').val();
+    let monthlyRate= $('#update-car-monthlyRate').val();
+    let damageCost= $('#update-car-damagecost').val();
+    let lastServiceMileage= $('#update-car-lastmileage').val();
+    let freeServiceMileage= $('#update-car-freemileage').val();
+    let priceForExtraKm= $('#update-car-exkm').val();
+    let color= $('#update-car-color').val();
+    let availability= $('#update-car-status').val();
+
+    var view= {
+        registrationId: registrationId,
+        dailyRate:dailyRate,
+        monthlyRate: monthlyRate,
+        damageCost: damageCost,
+        lastServiceMileage: lastServiceMileage,
+        freeServiceMileage: freeServiceMileage,
+        priceForExtraKm: priceForExtraKm,
+        color: color,
+        availability:availability,
+
+        model:model,
+        brand:brand,
+        type:type,
+        noOfPassenger: noOfPassenger,
+        transmissionType:transmissonType,
+        fuelType:fuelType,
+        image1:image1,
+        image2:image2,
+        image3:image3,
+        image4:image4,
+    }
+
+    $.ajax({
+        url: baseurl + "car",
+        method: "put",
+        contentType: "application/json",
+        data: JSON.stringify(view),
+        success: function (res) {
+            // viewCars();
+            loadCars("allCarDetail");
+            if (res.status === 200) {
+                alert(res.message)
+            } else {
+                alert('Updated!');
+                clearCarTextUpdate();
+            }
+        }
+    });
+}
+
+
+
+function clearCarTextUpdate() {
+    $('#update-car-Id,#update-car-dailyRate,#update-car-monthlyRate,#update-car-damagecost,#update-car-lastmileage,#update-car-freemileage,#update-car-exkm,#update-car-color,#update-car-status').val("");
+}
+
+function clearCarText() {
+    $('#save-car-reg-id,#save-car-brand,#save-car-type,#save-car-model,#save-car-transmission,#save-car-color,#save-car-passenger,#save-car-last-km,#save-car-free-mileage,#save-car-fuel,#save-car-dailyRate,#save-car-monthlyRate,#save-car-pr-ex-km,#save-car-damage,#save-car-availability').val("");
+}
+
+function bindRowClickEvents() {
+    $("#admin-view-car>tr").click(function () {
+        let id = $(this).children(":eq(0)").text();
+        let dRate = $(this).children(":eq(1)").text();
+        let mRate = $(this).children(":eq(2)").text();
+        let damage = $(this).children(":eq(3)").text();
+        let last = $(this).children(":eq(4)").text();
+        let free = $(this).children(":eq(5)").text();
+        let extra = $(this).children(":eq(6)").text();
+        let color = $(this).children(":eq(7)").text();
+        let status = $(this).children(":eq(8)").text();
+
+
+        $('#update-car-Id').val(id);
+        $('#update-car-dailyRate').val(dRate);
+        $('#update-car-monthlyRate').val(mRate);
+        $('#update-car-damagecost').val(damage);
+        $('#update-car-lastmileage').val(last);
+        $('#update-car-freemileage').val(free);
+        $('#update-car-exkm').val(extra);
+        $('#update-car-color').val(color);
+        $('#update-car-status').val(status);
     });
 }
