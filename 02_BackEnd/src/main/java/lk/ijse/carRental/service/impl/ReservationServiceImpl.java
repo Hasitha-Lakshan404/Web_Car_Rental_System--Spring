@@ -12,6 +12,7 @@ import lk.ijse.carRental.repo.DriverRepo;
 import lk.ijse.carRental.repo.RentalRepo;
 import lk.ijse.carRental.service.ReservationService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +48,18 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public String generateReservationId() {
-        return "R001";
+        String id = carReservationRepo.generateReservationId();
+        if (!(id == null)) {
+
+            String prefix = id.substring(0, 1);  // extract the prefix, e.g. "C"
+            int number = Integer.parseInt(id.substring(1));  // extract the numeric portion and parse it as an integer
+            number++;  // increment the number
+            return prefix + String.format("%03d", number);
+
+
+        } else {
+            return "R001";
+        }
     }
 
     @Override
@@ -126,5 +138,10 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public List<ReservationDTO> getCustomerReservationByStatus(String id, String status) {
         return null;
+    }
+
+    @Override
+    public List<ReservationDTO> getAllReservation() {
+        return mapper.map(carReservationRepo.findAll(), new TypeToken<List<ReservationDTO>>() {}.getType());
     }
 }

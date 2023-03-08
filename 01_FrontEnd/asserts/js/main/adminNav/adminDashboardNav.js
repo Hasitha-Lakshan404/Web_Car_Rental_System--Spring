@@ -38,6 +38,7 @@ $('#adRes').click(function () {
     $('#spaAdminPayments').css('display','none');
 
     // $('#adminHeaderMain').css('display','block');
+    pickups();
 })
 
 

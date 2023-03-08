@@ -261,67 +261,85 @@ function saveRental() {
     // console.log("save REntal Ekeeeeeeeeeeeeeeeeeeeeeeeeeee");
     // console.log("value  - "+$(".slipPicker").attr("data-slip"))
 
+
+
     for (let i = 0; i < rentalAr.length; i++) {
-        var data = new FormData();
-
-        // let slip_img = $("#slip-image")[0].files[0];
-        // let slipFileName = slip_img.name;
-        //
-        data.append("file", rentalAr[i].img);
-
-        // var driver_status;
-        /*if ($('#customer-reservation-customer-driverCheck').is(":checked")) {
-            driver_status = "YES"
-        } else {
-            driver_status = "NO"
-        }*/
-
-        // rentalAr[i]=
-
-        let reservation = {
-            rentalId: "R001",
-            date: today,
-            pickupDate: rentalAr[i].pickupDate,
-            returnDate: rentalAr[i].rentalDate,
-            amount: rentalAr[i].amount,
-            total_damage_viewer_payment: rentalAr[i].totalDamageWaiverPayment,
-            pickupLocation: rentalAr[i].pickupLocation,
-            returnLocation: rentalAr[i].returnLocation,
-            bankSlip:rentalAr[i].img.name,
-            noOfDays:dayCount,
-            reservationStatus: "Pending",
-            driverStatus: rentalAr[i].driver,
-            customer: {
-                customerId:loggedCustomerId
-            },
-            car: {
-                registrationId: rentalAr[i].rentalId
-            },
-        }
-        data.append("reservation", new Blob([JSON.stringify(reservation)], {type: "application/json"}));
 
         $.ajax({
-            url: baseurl + "reservation",
-            method: 'post',
-            async: true,
-            contentType:  false,
-            processData: false,
-            data: data,
+            url: baseurl + "reservation/generateReservationId",
+            method: 'get',
+            async:false,
             success: function (resp) {
                 console.log(resp.data)
-                // alert(resp.message);
-                // listNo=0;
-                // getAvailableCar();
-                // $("#bookNowModel").modal("toggle");
+                // alert(resp.data);
+                console.log("Response D :"+resp.data);
+                // sendRentalRq(i,resp.data);
+
+
+                var data = new FormData();
+
+                // let slip_img = $("#slip-image")[0].files[0];
+                // let slipFileName = slip_img.name;
+                //
+                data.append("file", rentalAr[i].img);
+
+
+                let reservation = {
+                    rentalId: resp.data,
+                    date: today,
+                    pickupDate: rentalAr[i].pickupDate,
+                    returnDate: rentalAr[i].rentalDate,
+                    amount: rentalAr[i].amount,
+                    total_damage_viewer_payment: rentalAr[i].totalDamageWaiverPayment,
+                    pickupLocation: rentalAr[i].pickupLocation,
+                    returnLocation: rentalAr[i].returnLocation,
+                    bankSlip:rentalAr[i].img.name,
+                    noOfDays:dayCount,
+                    reservationStatus: "Pending",
+                    driverStatus: rentalAr[i].driver,
+                    customer: {
+                        customerId:loggedCustomerId
+                    },
+                    car: {
+                        registrationId: rentalAr[i].rentalId
+                    },
+                }
+                data.append("reservation", new Blob([JSON.stringify(reservation)], {type: "application/json"}));
+
+                $.ajax({
+                    url: baseurl + "reservation",
+                    method: 'post',
+                    async: true,
+                    contentType:  false,
+                    processData: false,
+                    data: data,
+                    success: function (resp) {
+                        console.log(resp.data)
+                        // alert(resp.message);
+                        // listNo=0;
+                        // getAvailableCar();
+                        // $("#bookNowModel").modal("toggle");
+                    },
+                    error: function (err) {
+                        console.log(err);
+                        // getAvailableCar();
+                    }
+                });
+
             },
             error: function (err) {
                 console.log(err);
                 // getAvailableCar();
             }
-        });
+        })
+
+
     }
 
 }
+
+
+
 
 function setSlip(){
     console.log("setSlip eke innnee")

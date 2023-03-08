@@ -35,11 +35,10 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseUtil requestReservation(@RequestPart("reservation") ReservationDTO carReservation, @RequestPart("file") MultipartFile file) {
-        System.out.println(carReservation);
+//        System.out.println(carReservation);
         carReservation.setBankSlip("uploads/" + carReservation.getBankSlip());
 
         carReservationService.requestReservation(carReservation);
-
 
         try {
             String projectPath = new File(this.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getAbsolutePath();
@@ -70,6 +69,9 @@ public class ReservationController {
         return new ResponseUtil("200", "Done", carReservationService.getReservationDetail(id));
     }
 
-
+    @GetMapping(path = "detail", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllReservation() {
+        return new ResponseUtil("200", "Done", carReservationService.getAllReservation());
+    }
 
 }
