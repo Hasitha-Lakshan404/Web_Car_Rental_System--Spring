@@ -49,6 +49,7 @@ public class CustomerController {
         ArrayList<CustomerDTO> allCustomers = service.getAllCustomerDetail();
         return new ResponseUtil("200"," Success.!",allCustomers);
     }*/
+
     @GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCustomerDetail() {
         return new ResponseUtil("200", "Done", service.getAllCustomerDetail());

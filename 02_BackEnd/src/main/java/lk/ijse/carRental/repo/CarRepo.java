@@ -27,5 +27,4 @@ public interface CarRepo extends JpaRepository<Car,String> {
     Car getCarByRegistrationId(String registrationId);
 
 
-
 }

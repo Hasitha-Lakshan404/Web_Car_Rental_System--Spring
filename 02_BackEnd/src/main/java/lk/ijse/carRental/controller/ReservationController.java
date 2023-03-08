@@ -71,7 +71,13 @@ public class ReservationController {
 
     @GetMapping(path = "detail", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllReservation() {
-        return new ResponseUtil("200", "Done", carReservationService.getAllReservation());
+        return new ResponseUtil("200", "Done", carReservationService.getRentalByReservationStatus());
+    }
+
+    @GetMapping(path = "getDriverId/{rid}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getDriverId(@PathVariable String rid) {
+        System.out.println("mekata awa driverId : "+rid);
+        return new ResponseUtil("200", "Done", carReservationService.getDriverIdByScheduleId(rid));
     }
 
 }

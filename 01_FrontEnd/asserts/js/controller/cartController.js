@@ -142,7 +142,6 @@ function checkDriver() {
             }
         }
 
-
     })
 }
 
@@ -227,39 +226,11 @@ function getLocations() {
 }
 
 
-/*function setSlip() {
-    $(".slipPicker").change(function () {
-        for (let i = 0; i < rentalAr.length; i++) {
-            console.log(rentalAr[i].rentalId + "==========================" + $(this).attr("data-slip"));
-
-            if (rentalAr[i].rentalId === $(this).attr("data-slip")) {
-                var data = new FormData();
-                let slip_img = $(this)[0].files[0];
-                // console.log("slip name 1 : "+$(this)[0].files[0]);
-                // console.log("slip name 2 : "+$(".slipPicker")[0].files[0]);
-                // console.log("slip name 3 : "+$(this).attr("data-sf"));
-                // console.log("slip name 3 : "+$(this).attr("data-sf")[0].files[0]);
-
-                // let slipFileName = slip_img.name;
-
-                // console.log("slip eke")
-                // data.append("file", slip_img);
-                rentalAr[i].img.append("file",slip_img);
-            }
-        }
-    })
-}*/
-
-// loggedCustomerId
-
 function saveRental() {
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear() + "-" + (month) + "-" + (day);
-
-    // console.log("save REntal Ekeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    // console.log("value  - "+$(".slipPicker").attr("data-slip"))
 
 
 

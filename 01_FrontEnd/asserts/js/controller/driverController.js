@@ -5,6 +5,8 @@ var driver_nic;
 $("#btnAddDriver").click(function (){
     saveDriver();
     loadAllDrivers();
+    // loadAllDrivers();
+    // loadAllDrivers();
 });
 
 /*Update Driver*/
@@ -37,7 +39,7 @@ function saveDriver(){
         dob: $("#save-driver-dob").val(),
         address: $("#save-driver-address").val(),
         drivingLicenseNumber: $("#save-driver-license").val(),
-        status:""
+        status:"Available"
 
     }
 
@@ -90,7 +92,7 @@ function updateDriver(){
         nic: $("#save-driver-nic").val(),
         dob: $("#save-driver-dob").val(),
         address: $("#save-driver-address").val(),
-        drivingLicenseNumber: $("#save-driver-license").val()
+        drivingLicenseNumber: $("#save-driver-license").val(),
     }
 
     $.ajax({
