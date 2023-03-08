@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author : Hasitha Lakshan
@@ -117,10 +118,6 @@ public class ReservationServiceImpl implements ReservationService {
         }
     }
 
-    @Override
-    public void updateReservationStatus(String rentalId, String driverId, String status) {
-
-    }
 
     @Override
     public List<ReservationDTO> getAllPendingReservation() {
@@ -160,5 +157,17 @@ public class ReservationServiceImpl implements ReservationService {
     @Override
     public DriverScheduleDTO getDriverIdByScheduleId(String id) {
         return mapper.map(driverScheduleRepo.getDriverIdByScheduleId(id), DriverScheduleDTO.class);
+    }
+
+    @Override
+    public void updateReservation(ReservationDTO reservationDTO) {
+        if (carReservationRepo.existsById(reservationDTO.getRentalId())){
+            Optional<Rental> updateReservation = carReservationRepo.findById(reservationDTO.getRentalId());
+            Rental rental = updateReservation.get();
+            rental.setReservationStatus(reservationDTO.getReservationStatus());
+            carReservationRepo.save(updateReservation.get());
+        }else {
+            throw new RuntimeException("Reservation"+reservationDTO.getRentalId()+"Not Available to Update..!");
+        }
     }
 }

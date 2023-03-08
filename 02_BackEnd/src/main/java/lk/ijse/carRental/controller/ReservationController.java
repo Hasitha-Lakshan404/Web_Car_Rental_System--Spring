@@ -52,7 +52,7 @@ public class ReservationController {
         return new ResponseUtil("200", "Request Send Successfully", carReservation);
     }
 
-    @PutMapping(params = {"rentalId", "driverId", "status"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@PutMapping(params = {"rentalId", "driverId", "status"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateReservationStatus(@RequestParam String rentalId, @RequestParam String driverId, @RequestParam String status) {
         carReservationService.updateReservationStatus(rentalId, driverId, status);
         return new ResponseUtil("200", status + " Request Successfully", null);
@@ -62,7 +62,7 @@ public class ReservationController {
     @GetMapping(path = "pendingReservation", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllPendingReservation() {
         return new ResponseUtil("200", "Done", carReservationService.getAllPendingReservation());
-    }
+    }*/
 
     @GetMapping(path = "getReservation/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getReservationDetail(@PathVariable String id) {
@@ -78,6 +78,12 @@ public class ReservationController {
     public ResponseUtil getDriverId(@PathVariable String rid) {
         System.out.println("mekata awa driverId : "+rid);
         return new ResponseUtil("200", "Done", carReservationService.getDriverIdByScheduleId(rid));
+    }
+
+    @PutMapping()
+    public ResponseUtil updateReservation(@RequestBody ReservationDTO dto){
+        carReservationService.updateReservation(dto);
+        return new ResponseUtil("200",dto.getReservationStatus()+": Updated.!",null);
     }
 
 }

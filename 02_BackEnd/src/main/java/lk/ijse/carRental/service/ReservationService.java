@@ -18,8 +18,6 @@ public interface ReservationService {
 
     void requestReservation(ReservationDTO ReservationDTO);
 
-    void updateReservationStatus(String reserve_id, String driver_id, String status);
-
     List<ReservationDTO> getAllPendingReservation();
 
     ReservationDTO getReservationDetail(String id);
@@ -35,4 +33,6 @@ public interface ReservationService {
     List<ReservationDTO> getRentalByReservationStatus();
 
     DriverScheduleDTO getDriverIdByScheduleId(String id);
+
+    void updateReservation(ReservationDTO ReservationDTO);
 }
